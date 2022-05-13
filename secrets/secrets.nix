@@ -2,3 +2,4 @@ let key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPAJh+wMRLRHsNXoB5oS+cG5Bn5chyIWN
 in {
   "raroh73-password.age".publicKeys = [ key ];
 }
+
