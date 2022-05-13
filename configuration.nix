@@ -1,4 +1,6 @@
-{ config, options, pkgs, ... }: {
+{ config, options, pkgs, ... }:
+
+{
   imports = [
     <agenix/modules/age.nix>
     <home-manager/nixos>
