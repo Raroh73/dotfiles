@@ -1,6 +1,4 @@
-{ pkgs, ... }: 
-
-{
+{ pkgs, ... }: {
   imports = [
     /etc/nixos/home/git.nix
     /etc/nixos/home/gnome.nix
