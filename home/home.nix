@@ -1,7 +1,6 @@
-{ pkgs, ... }: 
-
-{
+{ pkgs, ... }: {
   imports = [
+    /etc/nixos/home/firefox.nix
     /etc/nixos/home/git.nix
     /etc/nixos/home/gnome.nix
     /etc/nixos/home/ssh.nix
