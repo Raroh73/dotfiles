@@ -59,12 +59,20 @@
     driSupport32Bit = true;
   };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  sound.enable = false;
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   services.printing.enable = true;
   
   services.fstrim.enable = true;
+
+  security.rtkit.enable = true;
 
   users.mutableUsers = false;
 
