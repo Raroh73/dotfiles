@@ -6,14 +6,14 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  
+
   age = {
     identityPaths = options.age.identityPaths.default ++ [
       /home/raroh73/.ssh/agenix
     ];
     secrets.raroh73-password.file = /etc/nixos/secrets/raroh73-password.age;
   };
-  
+
   boot.loader = {
     systemd-boot = {
       enable = true;
@@ -51,7 +51,7 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = true;  
+    powerManagement.enable = true;
   };
 
   hardware.opengl = {
@@ -69,7 +69,7 @@
   };
 
   services.printing.enable = true;
-  
+
   services.fstrim.enable = true;
 
   security.rtkit.enable = true;

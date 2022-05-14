@@ -13,10 +13,10 @@
 
   home.packages = [
     (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
-    pkgs.bitwarden 
-    pkgs.discord 
-    pkgs.nixpkgs-fmt 
-    pkgs.spotify 
+    pkgs.bitwarden
+    pkgs.discord
+    pkgs.nixpkgs-fmt
+    pkgs.spotify
     pkgs.steam
   ];
 
@@ -25,7 +25,7 @@
   };
 
   programs.bash.enable = true;
-  
+
   programs.firefox = {
     enable = true;
   };

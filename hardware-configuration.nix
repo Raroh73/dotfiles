@@ -19,12 +19,12 @@
   };
 
   fileSystems = {
-    "/" = { 
+    "/" = {
       device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
       options = [ "noatime" ];
     };
-    "/boot" = { 
+    "/boot" = {
       device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
