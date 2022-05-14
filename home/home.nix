@@ -12,7 +12,7 @@
   home.homeDirectory = "/home/raroh73";
 
   home.packages = [
-    (pkgs.callPackage <agenix/pkgs/agenix.nix> {})
+    (pkgs.callPackage <agenix/pkgs/agenix.nix> { })
     pkgs.bitwarden
     pkgs.discord
     pkgs.nixpkgs-fmt
