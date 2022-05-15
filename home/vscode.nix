@@ -8,10 +8,10 @@
       pkgs.vscode-extensions.tamasfe.even-better-toml
     ];
     userSettings = {
-      "diffEditor.ignoreTrimWhitespace" = false;
       "editor.formatOnSave" = true;
       "files.eol" = "\n";
       "files.insertFinalNewline" = true;
+      "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
     };
   };
