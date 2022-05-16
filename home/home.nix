@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    /etc/nixos/home/firefox.nix
     /etc/nixos/home/git.nix
     /etc/nixos/home/gnome.nix
     /etc/nixos/home/ssh.nix
@@ -7,6 +8,11 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
 
   home.username = "raroh73";
   home.homeDirectory = "/home/raroh73";
@@ -25,10 +31,6 @@
   };
 
   programs.bash.enable = true;
-
-  programs.firefox = {
-    enable = true;
-  };
 
   programs.gpg.enable = true;
 
