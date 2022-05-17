@@ -26,10 +26,6 @@
     pkgs.steam
   ];
 
-  home.sessionVariables = {
-    MOZ_ENABLE_WAYLAND = 1;
-  };
-
   programs.bash.enable = true;
 
   programs.gpg.enable = true;
