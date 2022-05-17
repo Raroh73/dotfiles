@@ -3,4 +3,3 @@ in
 {
   "raroh73-password.age".publicKeys = [ key ];
 }
-
