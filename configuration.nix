@@ -42,16 +42,8 @@
     enable = true;
     layout = "pl";
     videoDrivers = [ "nvidia" ];
-    displayManager.gdm = {
-      enable = true;
-      nvidiaWayland = true;
-    };
+    displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-  };
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
   };
 
   hardware.opengl = {
