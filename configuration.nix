@@ -32,15 +32,8 @@
 
   time.timeZone = "Europe/Warsaw";
 
-  i18n.defaultLocale = "pl_PL.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "pl";
-  };
-
   services.xserver = {
     enable = true;
-    layout = "pl";
     videoDrivers = [ "nvidia" ];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
