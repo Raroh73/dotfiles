@@ -71,6 +71,25 @@
   };
   home-manager.users.raroh73 = import /etc/nixos/home/home.nix;
 
+  fonts = {
+    fonts = with pkgs; [
+      cascadia-code
+      noto-fonts
+      noto-fonts-emoji
+      roboto
+      roboto-mono
+      roboto-slab
+    ];
+    fontconfig = {
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+        monospace = [ "Roboto Mono" ];
+        sansSerif = [ "Roboto" ];
+        serif = [ "Roboto Slab" ];
+      };
+    };
+  };
+
   system = {
     stateVersion = "21.11";
     autoUpgrade = {
