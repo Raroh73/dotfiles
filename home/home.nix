@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    /etc/nixos/home/bash.nix
     /etc/nixos/home/firefox.nix
     /etc/nixos/home/git.nix
     /etc/nixos/home/gnome.nix
@@ -25,8 +26,6 @@
     pkgs.spotify
     pkgs.steam
   ];
-
-  programs.bash.enable = true;
 
   programs.gpg.enable = true;
 
