@@ -71,10 +71,6 @@
   };
   home-manager.users.raroh73 = import /etc/nixos/home/home.nix;
 
-  environment.systemPackages = [
-    pkgs.gnomeExtensions.auto-move-windows
-  ];
-
   system = {
     stateVersion = "21.11";
     autoUpgrade = {
