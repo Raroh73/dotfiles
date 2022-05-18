@@ -1,5 +1,15 @@
 { lib, ... }: {
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      document-font-name = "Noto Sans 11";
+      font-antialiasing = "rgba";
+      font-hinting = "slight";
+      font-name = "Noto Sans 11";
+      monospace-font-name = "Noto Sans Mono 11";
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      titlebar-font = "Noto Sans Bold 11";
+    };
     "org/gnome/settings-daemon/plugins/color" = {
       "night-light-enabled" = true;
       "night-light-schedule-automatic" = true;
