@@ -11,8 +11,8 @@
       titlebar-font = "Noto Sans Bold 11";
     };
     "org/gnome/settings-daemon/plugins/color" = {
-      "night-light-enabled" = true;
-      "night-light-schedule-automatic" = true;
+      night-light-enabled = true;
+      night-light-schedule-automatic = true;
     };
     "org/gnome/shell" = {
       disabled-extensions = lib.hm.gvariant.mkEmptyArray "s";
