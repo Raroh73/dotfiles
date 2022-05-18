@@ -8,6 +8,8 @@
       pkgs.vscode-extensions.tamasfe.even-better-toml
     ];
     userSettings = {
+      "editor.fontFamily" = "Cascadia Code";
+      "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.rulers" = [ 80 120 ];
       "extensions.ignoreRecommendations" = true;
