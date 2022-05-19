@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   programs.vscode = {
     enable = true;
-    extensions = [
-      pkgs.vscode-extensions.esbenp.prettier-vscode
-      pkgs.vscode-extensions.jnoortheen.nix-ide
-      pkgs.vscode-extensions.matklad.rust-analyzer
-      pkgs.vscode-extensions.tamasfe.even-better-toml
+    extensions = with pkgs.vscode-extensions; [
+      esbenp.prettier-vscode
+      jnoortheen.nix-ide
+      matklad.rust-analyzer
+      tamasfe.even-better-toml
     ];
     userSettings = {
       "editor.fontFamily" = "Cascadia Code";
