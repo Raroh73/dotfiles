@@ -18,13 +18,13 @@
   home.username = "raroh73";
   home.homeDirectory = "/home/raroh73";
 
-  home.packages = [
-    (pkgs.callPackage <agenix/pkgs/agenix.nix> { })
-    pkgs.bitwarden
-    pkgs.discord
-    pkgs.nixpkgs-fmt
-    pkgs.spotify
-    pkgs.steam
+  home.packages = with pkgs; [
+    (callPackage <agenix/pkgs/agenix.nix> { })
+    bitwarden
+    discord
+    nixpkgs-fmt
+    spotify
+    steam
   ];
 
   programs.gpg.enable = true;
