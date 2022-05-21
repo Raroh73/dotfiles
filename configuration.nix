@@ -68,6 +68,7 @@
     description = "Raroh73";
     extraGroups = [ "wheel" "networkmanager" ];
     passwordFile = config.age.secrets.raroh73-password.path;
+    shell = "/home/raroh73/.nix-profile/bin/nu";
   };
   home-manager.users.raroh73 = import /etc/nixos/home/home.nix;
 

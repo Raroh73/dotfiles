@@ -18,6 +18,12 @@
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
       "telemetry.telemetryLevel" = "off";
+      "terminal.integrated.defaultProfile.linux" = "Nushell";
+      "terminal.integrated.profiles.linux" = {
+        "Nushell" = {
+          "path" = "/home/raroh73/.nix-profile/bin/nu";
+        };
+      };
     };
   };
 }
