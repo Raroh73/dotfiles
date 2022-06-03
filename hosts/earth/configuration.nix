@@ -79,7 +79,6 @@
     description = "Raroh73";
     extraGroups = [ "wheel" "networkmanager" ];
     passwordFile = config.age.secrets.earth-password.path;
-    shell = "/home/raroh73/.nix-profile/bin/nu";
   };
 
   fonts = {
