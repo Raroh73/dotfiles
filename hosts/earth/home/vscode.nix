@@ -7,6 +7,7 @@
       matklad.rust-analyzer
       tamasfe.even-better-toml
     ];
+    mutableExtensionsDir = false;
     userSettings = {
       "editor.fontFamily" = "Cascadia Code";
       "editor.fontLigatures" = true;
