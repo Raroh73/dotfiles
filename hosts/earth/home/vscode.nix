@@ -21,7 +21,7 @@
       "terminal.integrated.defaultProfile.linux" = "Nushell";
       "terminal.integrated.profiles.linux" = {
         "Nushell" = {
-          "path" = "/home/raroh73/.nix-profile/bin/nu";
+          "path" = "/etc/profiles/per-user/raroh73/bin/nu";
         };
       };
     };

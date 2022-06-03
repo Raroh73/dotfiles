@@ -1,17 +1,17 @@
-{ config, options, pkgs, ... }: {
+{ config, options, pkgs, agenix, ... }: {
   imports = [
-    <agenix/modules/age.nix>
-    <home-manager/nixos>
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = "experimental-features = nix-command flakes";
+  };
+
   age = {
-    identityPaths = options.age.identityPaths.default ++ [
-      /home/raroh73/.ssh/agenix
-    ];
-    secrets.raroh73-password.file = /etc/nixos/secrets/raroh73-password.age;
+    secrets.earth-password.file = ./secrets/earth-password.age;
   };
 
   boot.loader = {
@@ -58,6 +58,16 @@
 
   services.fstrim.enable = true;
 
+  services.openssh = {
+    enable = true;
+    hostKeys = [
+      {
+        path = "/etc/ssh/earth";
+        type = "ed25519";
+      }
+    ];
+  };
+
   security.rtkit.enable = true;
 
   users.mutableUsers = false;
@@ -68,10 +78,9 @@
     isNormalUser = true;
     description = "Raroh73";
     extraGroups = [ "wheel" "networkmanager" ];
-    passwordFile = config.age.secrets.raroh73-password.path;
+    passwordFile = config.age.secrets.earth-password.path;
     shell = "/home/raroh73/.nix-profile/bin/nu";
   };
-  home-manager.users.raroh73 = import /etc/nixos/home/home.nix;
 
   fonts = {
     fonts = with pkgs; [
@@ -93,10 +102,6 @@
   };
 
   system = {
-    stateVersion = "21.11";
-    autoUpgrade = {
-      enable = true;
-      dates = "daily";
-    };
+    stateVersion = "22.11";
   };
 }
