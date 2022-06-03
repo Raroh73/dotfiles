@@ -19,7 +19,6 @@
     discord
     nixpkgs-fmt
     spotify
-    steam
   ];
 
   programs.gpg.enable = true;
