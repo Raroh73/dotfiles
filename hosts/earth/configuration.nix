@@ -72,7 +72,7 @@
 
   users.mutableUsers = false;
 
-  users.users.root.password = "!";
+  users.users.root.hashedPassword = "!";
 
   users.users.raroh73 = {
     isNormalUser = true;
