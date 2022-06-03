@@ -1,6 +1,7 @@
 { lib, ... }: {
   dconf.settings = {
     "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
       document-font-name = "Noto Sans 11";
       font-antialiasing = "rgba";
       font-hinting = "slight";
