@@ -17,7 +17,7 @@
   boot.loader = {
     systemd-boot = {
       enable = true;
-      configurationLimit = 100;
+      configurationLimit = 16;
       consoleMode = "max";
       editor = false;
       memtest86.enable = true;
