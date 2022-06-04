@@ -9,7 +9,7 @@
     ];
     mutableExtensionsDir = false;
     userSettings = {
-      "editor.fontFamily" = "Cascadia Code";
+      "editor.fontFamily" = "CaskaydiaCove Nerd Font";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.rulers" = [ 80 120 ];

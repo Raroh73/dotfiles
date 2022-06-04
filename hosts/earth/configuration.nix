@@ -83,7 +83,7 @@
 
   fonts = {
     fonts = with pkgs; [
-      cascadia-code
+      (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
       noto-fonts
       noto-fonts-emoji
       roboto
