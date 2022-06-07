@@ -3,6 +3,9 @@
 ## Installation
 
 ```sh
+# Change to root account
+sudo -i
+
 # Create partitions
 parted /dev/sda -- mklabel gpt
 parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
