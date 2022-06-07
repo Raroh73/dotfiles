@@ -13,23 +13,20 @@
           # Settings taken from https://github.com/yokoffing/Better-Fox
           # License: https://github.com/yokoffing/Better-Fox/blob/master/LICENSE
           # SECTION: FASTFOX
-          "browser.sessionstore.restore_pinned_tabs_on_demand" = true;
           "browser.startup.preXulSkeletonUI" = false;
-          "browser.startup.homepage.abouthome_cache.enabled" = true;
+          "dom.enable_web_task_scheduling" = true;
           # SECTION: SECUREFOX
           # TRACKING PROTECTION
           "browser.contentblocking.category" = "strict";
           "privacy.trackingprotection.lower_network_priority" = true;
-          "privacy.partition.network_state.ocsp_cache" = true;
           "privacy.partition.serviceWorkers" = true;
+          "privacy.partition.bloburl_per_agent_cluster" = true;
           "beacon.enabled" = false;
           "dom.battery.enabled" = false;
           # OCSP & CERTS / HPKP
           "security.OCSP.enabled" = 0;
           "security.pki.sha1_enforcement_level" = 1;
           "security.cert_pinning.enforcement_level" = 2;
-          "security.pki.crlite_mode" = 2;
-          "security.remote_settings.crlite_filters.enabled" = true;
           # SSL / TLS
           "security.ssl.treat_unsafe_negotiation_as_broken" = true;
           "browser.xul.error_pages.expert_bad_cert" = true;
@@ -63,6 +60,7 @@
           "network.prefetch-next" = false;
           "network.http.speculative-parallel-limit" = 0;
           "network.preload" = false;
+          "browser.places.speculativeConnect.enabled" = false;
           # SEARCH / URL BAR
           "browser.search.separatePrivateDefault" = true;
           "browser.search.separatePrivateDefault.ui.enabled" = true;
@@ -75,12 +73,9 @@
           "security.insecure_connection_text.enabled" = true;
           "security.insecure_connection_text.pbmode.enabled" = true;
           "network.IDN_show_punycode" = true;
-          # HTTPS-FIRST POLICY
-          "dom.security.https_first" = true;
           # HTTPS-ONLY MODE
-          "dom.security.https_only_mode_pbm" = true;
-          "dom.security.https_only_mode_ever_enabled_pbm" = true;
-          "dom.security.https_only_mode_send_http_background_request" = false;
+          "dom.security.https_only_mode" = true;
+          "dom.security.https_only_mode_error_page_user_suggestions" = true;
           # DNS-over-HTTPS DOH
           "network.dns.skipTRR-when-parental-control-enabled" = false;
           # PASSWORDS AND AUTOFILL
@@ -125,9 +120,6 @@
           "network.http.referer.defaultPolicy.trackers" = 1;
           "network.http.referer.defaultPolicy.trackers.pbmode" = 1;
           "network.http.referer.XOriginTrimmingPolicy" = 2;
-          # GOOGLE SAFE BROWSING
-          "browser.safebrowsing.downloads.remote.enabled" = false;
-          "browser.safebrowsing.downloads.remote.url" = "";
           # MOZILLA
           "permissions.default.geo" = 2;
           "geo.provider.network.url" = "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
@@ -171,9 +163,9 @@
           "extensions.getAddons.showPane" = false;
           "extensions.htmlaboutaddons.recommendations.enabled" = false;
           "browser.shell.checkDefaultBrowser" = false;
-          "browser.aboutwelcome.enabled" = false;
           "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
           "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
+          "browser.preferences.moreFromMozilla" = false;
           # WARNINGS
           "browser.tabs.warnOnClose" = false;
           "browser.tabs.warnOnCloseOtherTabs" = false;
@@ -182,10 +174,9 @@
           # FULLSCREEN
           "full-screen-api.transition-duration.enter" = "0 0";
           "full-screen-api.transition-duration.leave" = "0 0";
-          "full-screen-api.warning.delay" = -1;
-          "full-screen-api.warning.timeout" = -1;
+          "full-screen-api.warning.delay" = 0;
+          "full-screen-api.warning.timeout" = 0;
           # NEW TAB PAGE
-          "browser.startup.page" = 3;
           "browser.newtabpage.activity-stream.discoverystream.enabled" = false;
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
@@ -208,6 +199,7 @@
           "browser.download.useDownloadDir" = false;
           "browser.download.alwaysOpenPanel" = false;
           "browser.download.manager.addToRecentDocs" = false;
+          "browser.download.always_ask_before_handling_new_types" = true;
           # VARIOUS
           "browser.compactmode.show" = true;
           "browser.menu.showViewImageInfo" = true;
@@ -216,13 +208,11 @@
           "permissions.default.desktop-notification" = 2;
           "dom.push.enabled" = false;
           "findbar.highlightAll" = true;
-          "layout.spellcheckDefault" = 2;
           "accessibility.force_disabled" = 1;
           "browser.bookmarks.max_backups" = 2;
           "browser.display.show_image_placeholders" = false;
           "view_source.wrap_long_lines" = true;
           "devtools.debugger.ui.editor-wrapping" = true;
-          "layout.css.constructable-stylesheets.enabled" = true;
           "layout.css.grid-template-masonry-value.enabled" = true;
           # TAB BEHAVIOR
           "dom.disable_window_move_resize" = true;
