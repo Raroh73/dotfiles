@@ -27,8 +27,7 @@
 
   networking = {
     hostName = "earth";
-    useDHCP = false;
-    interfaces.enp3s0.useDHCP = true;
+    networkmanager.enable = true;
   };
 
   time.timeZone = "Europe/Warsaw";
