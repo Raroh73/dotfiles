@@ -11,7 +11,7 @@
   };
 
   age = {
-    secrets.earth-password.file = ./secrets/earth-password.age;
+    secrets.earth-password.file = ../../secrets/earth-password.age;
   };
 
   boot.loader = {
