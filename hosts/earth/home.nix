@@ -1,11 +1,11 @@
 { pkgs, nurpkgs, ... }: {
   imports = [
-    ./firefox.nix
-    ./git.nix
-    ./gnome.nix
-    ./nushell.nix
-    ./ssh.nix
-    ./vscode.nix
+    ../../apps/firefox.nix
+    ../../apps/git.nix
+    ../../apps/gnome.nix
+    ../../apps/nushell.nix
+    ../../apps/ssh.nix
+    ../../apps/vscode.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

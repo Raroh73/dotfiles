@@ -20,7 +20,7 @@
         {
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit nurpkgs; };
-          home-manager.users.raroh73 = import ./hosts/earth/home/home.nix;
+          home-manager.users.raroh73 = import ./hosts/earth/home.nix;
         }
         ./hosts/earth/configuration.nix
       ];
