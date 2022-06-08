@@ -76,7 +76,7 @@
   users.users.raroh73 = {
     isNormalUser = true;
     description = "Raroh73";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     passwordFile = config.age.secrets.earth-password.path;
   };
 
