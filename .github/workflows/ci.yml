@@ -14,5 +14,5 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v9
         with:
           commit-msg: "chore: update inputs"
-          pr-title: "Update flake.lock"
+          pr-title: "chore: update inputs"
           pr-labels: dependency, flake
