@@ -25,6 +25,7 @@
         "code.desktop"
         "discord.desktop"
         "spotify.desktop"
+        "bitwarden.desktop"
         "org.gnome.Nautilus.desktop"
       ];
     };
