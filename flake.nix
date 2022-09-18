@@ -8,7 +8,6 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
     nurpkgs.url = github:nix-community/NUR;
-    nurpkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { nixpkgs, home-manager, agenix, nurpkgs, ... }: {
