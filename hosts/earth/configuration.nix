@@ -78,6 +78,7 @@
     description = "Raroh73";
     extraGroups = [ "networkmanager" "wheel" ];
     passwordFile = config.age.secrets.earth-password.path;
+    shell = pkgs.nushell;
   };
 
   fonts = {
@@ -98,6 +99,8 @@
       };
     };
   };
+
+  environment.shells = with pkgs; [ nushell ];
 
   system.stateVersion = "22.11";
 }
