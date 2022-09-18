@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, ... }: {
+{ config, lib, modulesPath, pkgs, ... }: {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot = {
@@ -15,6 +15,7 @@
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-intel" ];
+    kernelPackages = pkgs.linuxPackages_latest;
     extraModulePackages = [ ];
   };
 
