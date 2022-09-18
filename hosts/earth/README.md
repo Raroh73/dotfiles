@@ -26,4 +26,9 @@ swapon /dev/disk/by-label/swap
 nixos-generate-config --root /mnt
 curl https://gist.githubusercontent.com/Raroh73/aed2c67f3b3b95757f8910b6291962a7/raw/configuration.nix -o /mnt/etc/nixos/configuration.nix
 nixos-install --no-root-passwd
+reboot
+git clone https://github.com/Raroh73/dotfiles.git
+cd dotfiles
+sudo nixos-rebuild boot --flake .
+sudo reboot
 ```
