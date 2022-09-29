@@ -73,7 +73,7 @@
           # HTTPS-ONLY MODE
           "dom.security.https_only_mode" = true;
           "dom.security.https_only_mode_error_page_user_suggestions" = true;
-          # DNS-over-HTTPS
+          # DNS-over-HTTPS (DOH)
           "network.dns.skipTRR-when-parental-control-enabled" = false;
           # PASSWORDS AND AUTOFILL
           "signon.formlessCapture.enabled" = false;
@@ -113,9 +113,9 @@
           "permissions.default.desktop-notification" = 2;
           "permissions.default.geo" = 2;
           "geo.provider.network.url" = "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
-          "geo.provider.ms-windows-location" = false;
-          "geo.provider.use_corelocation" = false;
-          "geo.provider.use_gpsd" = false;
+          "geo.provider.ms-windows-location" = false; # WINDOWS
+          "geo.provider.use_corelocation" = false; # MAC
+          "geo.provider.use_gpsd" = false; # LINUX
           "browser.region.network.url" = "";
           "browser.region.update.enabled" = false;
           # TELEMETRY
