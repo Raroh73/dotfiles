@@ -10,8 +10,9 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  age = {
-    secrets.earth-password.file = ../../secrets/earth-password.age;
+  age.secrets = {
+    earth-password.file = ../../secrets/earth-password.age;
+    nextdns-config.file = ../../secrets/nextdns-config.age;
   };
 
   boot.loader = {
@@ -27,7 +28,16 @@
 
   networking = {
     hostName = "earth";
-    networkmanager.enable = true;
+    nameservers = [ "127.0.0.1" ];
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
+  };
+
+  services.nextdns = {
+    enable = true;
+    arguments = [ "-config-file" config.age.secrets.nextdns-config.path ];
   };
 
   time.timeZone = "Europe/Warsaw";
