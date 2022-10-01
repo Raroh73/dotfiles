@@ -54,14 +54,14 @@
           "browser.sessionstore.privacy_level" = 2;
           "browser.pagethumbnails.capturing_disabled" = true;
           # SPECULATIVE CONNECTIONS
-          "network.predictor.enabled" = false;
-          "network.predictor.enable-prefetch" = false;
+          "browser.newtab.preload" = false;
+          "network.http.speculative-parallel-limit" = 0;
           "network.dns.disablePrefetch" = true;
           "browser.urlbar.speculativeConnect.enabled" = false;
-          "network.prefetch-next" = false;
-          "network.http.speculative-parallel-limit" = 0;
-          "browser.newtab.preload" = false;
           "browser.places.speculativeConnect.enabled" = false;
+          "network.prefetch-next" = false;
+          "network.predictor.enabled" = false;
+          "network.predictor.enable-prefetch" = false;
           # SEARCH / URL BAR
           "browser.search.separatePrivateDefault" = true;
           "browser.search.separatePrivateDefault.ui.enabled" = true;
@@ -75,6 +75,10 @@
           "dom.security.https_only_mode_error_page_user_suggestions" = true;
           # DNS-over-HTTPS (DOH)
           "network.dns.skipTRR-when-parental-control-enabled" = false;
+          # PROXY / SOCKS / IPv6
+          "network.proxy.socks_remote_dns" = true;
+          "network.file.disable_unc_paths" = true;
+          "network.gio.supported-protocols" = "";
           # PASSWORDS AND AUTOFILL
           "signon.formlessCapture.enabled" = false;
           "signon.privateBrowsingCapture.enabled" = false;
