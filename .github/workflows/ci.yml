@@ -19,8 +19,8 @@ jobs:
           commit-msg: "chore: update inputs"
           pr-title: "chore: update inputs"
           pr-labels: |
-            "status: new"
-            "priority: low"
-            "type: chore"
-            "scope: dependency"
-            "scope: flake"
+            priority: low
+            scope: dependency
+            scope: flake
+            status: new
+            type: chore
