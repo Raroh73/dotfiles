@@ -1,9 +1,7 @@
 { ... }: {
   programs.nushell = {
     enable = true;
-    configFile = {
-      text = "";
-    };
+    configFile.source = ./config.nu;
     envFile.source = ./env.nu;
   };
 }
