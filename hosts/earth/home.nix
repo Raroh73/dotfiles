@@ -1,5 +1,6 @@
 { pkgs, nurpkgs, ... }: {
   imports = [
+    ../../apps/alacritty.nix
     ../../apps/firefox.nix
     ../../apps/git.nix
     ../../apps/gnome.nix

@@ -23,6 +23,7 @@
       favorite-apps = [
         "firefox.desktop"
         "code.desktop"
+        "Alacritty.desktop"
         "discord.desktop"
         "spotify.desktop"
         "bitwarden.desktop"
