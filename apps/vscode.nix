@@ -14,6 +14,8 @@
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.rulers" = [ 80 120 ];
+      "extensions.autoCheckUpdates" = false;
+      "extensions.autoUpdate" = false;
       "extensions.ignoreRecommendations" = true;
       "files.eol" = "\n";
       "files.insertFinalNewline" = true;
@@ -26,6 +28,7 @@
           "path" = "/etc/profiles/per-user/raroh73/bin/nu";
         };
       };
+      "update.mode" = "none";
     };
   };
 }
