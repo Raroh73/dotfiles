@@ -6,6 +6,7 @@
       font-antialiasing = "rgba";
       font-hinting = "slight";
       font-name = "Noto Sans 11";
+      gtk-theme = "Adwaita-dark";
       monospace-font-name = "Noto Sans Mono 11";
     };
     "org/gnome/desktop/wm/preferences" = {
