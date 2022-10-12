@@ -4,8 +4,6 @@
     configFile = {
       text = "";
     };
-    envFile = {
-      text = "";
-    };
+    envFile.source = ./env.nu;
   };
 }

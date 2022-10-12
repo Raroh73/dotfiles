@@ -23,6 +23,9 @@
 
   programs.gpg.enable = true;
 
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
   services.gpg-agent = {
     enable = true;
     pinentryFlavor = "gnome3";
