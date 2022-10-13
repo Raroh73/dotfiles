@@ -14,6 +14,10 @@
 
   home.username = "raroh73";
   home.homeDirectory = "/home/raroh73";
+  home.file.face = {
+    source = ../../static/avatar.png;
+    target = ".face";
+  };
 
   home.packages = with pkgs; [
     bitwarden
