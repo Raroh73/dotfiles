@@ -23,6 +23,7 @@
     bitwarden
     discord
     nixpkgs-fmt
+    podman-compose
     spotify
   ];
 

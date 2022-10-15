@@ -93,7 +93,7 @@
   users.users.raroh73 = {
     isNormalUser = true;
     description = "Raroh73";
-    extraGroups = [ "docker" "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "podman" "wheel" ];
     passwordFile = config.age.secrets.earth-password.path;
     shell = pkgs.nushell;
   };
@@ -117,7 +117,7 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
 
   environment.shells = with pkgs; [ nushell ];
 
