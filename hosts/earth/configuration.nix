@@ -119,6 +119,8 @@
 
   virtualisation.podman.enable = true;
 
+  networking.firewall.enable = true;
+
   environment.shells = with pkgs; [ nushell ];
 
   system.stateVersion = "22.11";
