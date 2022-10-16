@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nur.url = github:nix-community/NUR;
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = { self, agenix, home-manager, nixpkgs, nur }:
