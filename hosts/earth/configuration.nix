@@ -3,8 +3,6 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   nix = {
     gc = {
       automatic = true;

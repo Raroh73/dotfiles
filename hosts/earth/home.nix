@@ -1,4 +1,4 @@
-{ pkgs, nurpkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ../../apps/alacritty.nix
     ../../apps/firefox.nix
@@ -8,9 +8,6 @@
     ../../apps/ssh.nix
     ../../apps/vscode.nix
   ];
-
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ nurpkgs.overlay ];
 
   home.username = "raroh73";
   home.homeDirectory = "/home/raroh73";

@@ -11,22 +11,35 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nurpkgs.url = github:nix-community/NUR;
+    nur.url = github:nix-community/NUR;
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, agenix, nurpkgs, ... }: {
-    nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        agenix.nixosModule
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit nurpkgs; };
-          home-manager.users.raroh73 = import ./hosts/earth/home.nix;
-        }
-        ./hosts/earth/configuration.nix
-      ];
+  outputs = { self, agenix, home-manager, nixpkgs, nur }:
+    let
+      pkgs = (import nixpkgs) {
+        system = "x86_64-linux";
+        config = {
+          allowUnfree = true;
+        };
+        overlays = [
+          nur.overlay
+        ];
+      };
+    in
+    {
+      nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
+        system = "x86_64-linux";
+        modules = [
+          agenix.nixosModule
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.raroh73.imports = [ ./hosts/earth/home.nix ];
+          }
+          ./hosts/earth/configuration.nix
+        ];
+      };
     };
-  };
 }
