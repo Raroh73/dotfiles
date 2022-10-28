@@ -4,6 +4,7 @@
     ../../apps/firefox.nix
     ../../apps/git.nix
     ../../apps/gnome.nix
+    ../../apps/helix.nix
     ../../apps/nushell.nix
     ../../apps/ssh.nix
     ../../apps/vscode.nix
