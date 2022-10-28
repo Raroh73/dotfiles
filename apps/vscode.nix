@@ -2,6 +2,7 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
+      arcticicestudio.nord-visual-studio-code
       davidanson.vscode-markdownlint
       jnoortheen.nix-ide
       matklad.rust-analyzer
@@ -31,6 +32,7 @@
         };
       };
       "update.mode" = "none";
+      "workbench.colorTheme" = "Nord";
     };
   };
 }

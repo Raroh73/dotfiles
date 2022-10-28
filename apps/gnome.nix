@@ -6,10 +6,11 @@
       font-antialiasing = "rgba";
       font-hinting = "slight";
       font-name = "Noto Sans 11";
-      gtk-theme = "Adwaita-dark";
+      gtk-theme = "Nordic";
       monospace-font-name = "Noto Sans Mono 11";
     };
     "org/gnome/desktop/wm/preferences" = {
+      "theme" = "Nordic";
       titlebar-font = "Noto Sans Bold 11";
     };
     "org/gnome/settings-daemon/plugins/color" = {
@@ -20,6 +21,7 @@
       disabled-extensions = lib.hm.gvariant.mkEmptyArray "s";
       enabled-extensions = [
         "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
       favorite-apps = [
         "firefox.desktop"
@@ -36,6 +38,9 @@
         "firefox.desktop:1"
         "code.desktop:2"
       ];
+    };
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Nordic";
     };
   };
 }
