@@ -2,11 +2,13 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      esbenp.prettier-vscode
+      davidanson.vscode-markdownlint
       jnoortheen.nix-ide
       matklad.rust-analyzer
       mkhl.direnv
+      redhat.vscode-yaml
       tamasfe.even-better-toml
+      timonwong.shellcheck
     ];
     mutableExtensionsDir = false;
     userSettings = {
