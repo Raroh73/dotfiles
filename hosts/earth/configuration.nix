@@ -68,8 +68,6 @@
     pulse.enable = true;
   };
 
-  services.printing.enable = true;
-
   services.fstrim.enable = true;
 
   services.openssh = {
