@@ -9,8 +9,8 @@
     profiles = {
       "Raroh73" = {
         settings = {
-          # Settings taken from https://github.com/yokoffing/Better-Fox
-          # License: https://github.com/yokoffing/Better-Fox/blob/master/LICENSE
+          # Settings taken from https://github.com/yokoffing/Betterfox
+          # License: https://github.com/yokoffing/Betterfox/blob/master/LICENSE
           # SECTION: FASTFOX
           "image.jxl.enabled" = true;
           "layout.css.grid-template-masonry-value.enabled" = true;
@@ -18,6 +18,7 @@
           "gfx.offscreencanvas.enabled" = true;
           "layout.css.font-loading-api.workers.enabled" = true;
           "layout.css.animation-composition.enabled" = true;
+          "dom.importMaps.enabled" = true;
           # SECTION: SECUREFOX
           # TRACKING PROTECTION
           "browser.contentblocking.category" = "strict";
@@ -25,8 +26,8 @@
           "privacy.query_stripping.strip_list" = "__hsfp __hssc __hstc __s _hsenc _openstat dclid fbclid gbraid gclid hsCtaTracking igshid mc_eid ml_subscriber ml_subscriber_hash msclkid oft_c oft_ck oft_d oft_id oft_ids oft_k oft_lk oft_sk oly_anon_id oly_enc_id rb_clickid s_cid twclid vero_conv vero_id wbraid wickedid yclid";
           "urlclassifier.trackingSkipURLs" = "*.reddit.com = *.twitter.com = *.twimg.com";
           "urlclassifier.features.socialtracking.skipURLs" = "*.instagram.com = *.twitter.com = *.twimg.com";
-          "privacy.trackingprotection.lower_network_priority" = true;
           "privacy.partition.always_partition_third_party_non_cookie_storage" = true;
+          "privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage" = false;
           "beacon.enabled" = false;
           # OCSP & CERTS / HPKP
           "security.OCSP.enabled" = 0;
@@ -36,25 +37,19 @@
           # SSL / TLS
           "security.ssl.treat_unsafe_negotiation_as_broken" = true;
           "browser.xul.error_pages.expert_bad_cert" = true;
-          "browser.ssl_override_behavior" = 1;
           "security.tls.enable_0rtt_data" = false;
           # FONTS
           "layout.css.font-visibility.private" = 1;
-          "layout.css.font-visibility.standard" = 1;
           "layout.css.font-visibility.trackingprotection" = 1;
-          # RSP
-          "privacy.window.maxInnerWidth" = 1600;
-          "privacy.window.maxInnerHeight" = 900;
-          "browser.startup.blankWindow" = false;
-          "browser.display.use_system_colors" = false;
           # DISK AVOIDANCE
           "browser.cache.disk.enable" = false;
           "browser.privatebrowsing.forceMediaMemoryCache" = true;
           "media.memory_cache_max_size" = 65536;
           "browser.sessionstore.privacy_level" = 2;
           "browser.pagethumbnails.capturing_disabled" = true;
+          # SHUTDOWN & SANITIZING
+          "privacy.history.custom" = true;
           # SPECULATIVE CONNECTIONS
-          "browser.newtab.preload" = false;
           "network.http.speculative-parallel-limit" = 0;
           "network.dns.disablePrefetch" = true;
           "browser.urlbar.speculativeConnect.enabled" = false;
@@ -84,6 +79,8 @@
           "signon.privateBrowsingCapture.enabled" = false;
           "signon.autofillForms" = false;
           "signon.rememberSignons" = false;
+          "editor.truncate_user_pastes" = false;
+          "layout.forms.reveal-password-button.enabled" = true;
           # ADDRESS + CREDIT CARD MANAGER
           "extensions.formautofill.addresses.enabled" = false;
           "extensions.formautofill.creditCards.enabled" = false;
@@ -99,7 +96,6 @@
           "network.http.referer.defaultPolicy.trackers.pbmode" = 1;
           "network.http.referer.XOriginTrimmingPolicy" = 2;
           # CONTAINERS
-          "privacy.userContext.enabled" = true;
           "privacy.userContext.ui.enabled" = true;
           # WEBRTC
           "media.peerconnection.ice.proxy_only_if_behind_proxy" = true;
@@ -113,6 +109,7 @@
           "browser.safebrowsing.blockedURIs.enabled" = false;
           # MOZILLA
           "identity.fxaccounts.enabled" = false;
+          "browser.tabs.firefox-view" = false;
           "dom.push.enabled" = false;
           "permissions.default.desktop-notification" = 2;
           "permissions.default.geo" = 2;
@@ -120,6 +117,7 @@
           "geo.provider.ms-windows-location" = false; # WINDOWS
           "geo.provider.use_corelocation" = false; # MAC
           "geo.provider.use_gpsd" = false; # LINUX
+          "geo.provider.use_geoclue" = false; # LINUX
           "browser.region.network.url" = "";
           "browser.region.update.enabled" = false;
           # TELEMETRY
@@ -163,7 +161,9 @@
           "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
           "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
           "browser.preferences.moreFromMozilla" = false;
+          "browser.tabs.tabmanager.enabled" = false;
           "findbar.highlightAll" = true;
+          "browser.privatebrowsing.enable-new-indicator" = false;
           # FULLSCREEN
           "full-screen-api.transition-duration.enter" = "0 0";
           "full-screen-api.transition-duration.leave" = "0 0";
@@ -175,17 +175,8 @@
           "browser.urlbar.suggest.calculator" = true;
           "browser.urlbar.unitConversion.enabled" = true;
           # NEW TAB PAGE
-          "browser.newtabpage.activity-stream.discoverystream.enabled" = false;
-          "browser.newtabpage.activity-stream.showSponsored" = false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
           "browser.newtabpage.activity-stream.feeds.topsites" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
-          "browser.startup.homepage_override.mstone" = "ignore";
-          "browser.messaging-system.whatsNewPanel.enabled" = false;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
           # POCKET
           "extensions.pocket.enabled" = false;
           # DOWNLOADS
@@ -194,16 +185,15 @@
           "browser.download.manager.addToRecentDocs" = false;
           "browser.download.always_ask_before_handling_new_types" = true;
           # PDF
-          "pdfjs.annotationEditorEnabled" = true;
           "browser.download.open_pdf_attachments_inline" = true;
           # TAB BEHAVIOR
           "browser.link.open_newwindow.restriction" = 0;
           "dom.disable_window_move_resize" = true;
           "browser.tabs.loadBookmarksInTabs" = true;
           "browser.bookmarks.openInTabClosesMenu" = false;
-          "editor.truncate_user_pastes" = false;
           "clipboard.plainTextOnly" = true;
           "dom.popup_allowed_events" = "click dblclick";
+          "layout.css.has-selector.enabled" = true;
         };
       };
     };
