@@ -115,7 +115,10 @@
 
   virtualisation.podman.enable = true;
 
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8008 ];
+  };
 
   environment.shells = with pkgs; [ nushell ];
 
