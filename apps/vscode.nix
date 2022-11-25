@@ -2,6 +2,7 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
+      bradlc.vscode-tailwindcss
       davidanson.vscode-markdownlint
       jnoortheen.nix-ide
       matklad.rust-analyzer
