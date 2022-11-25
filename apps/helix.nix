@@ -2,7 +2,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "nord";
+      theme = "dark_plus";
     };
   };
 }
