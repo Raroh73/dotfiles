@@ -1,7 +1,7 @@
 { ... }: {
   programs.nushell = {
     enable = true;
-    configFile.text = ''
+    configFile.text =  ''
       let-env config = {
         hooks: {
           pre_prompt: [{
@@ -13,12 +13,6 @@
           }]
         }
       }
-
-      source ~/.cache/starship/init.nu
-    '';
-    envFile.text = ''
-      mkdir ~/.cache/starship
-      starship init nu | save ~/.cache/starship/init.nu
     '';
   };
 }

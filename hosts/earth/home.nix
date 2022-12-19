@@ -7,6 +7,7 @@
     ../../apps/helix.nix
     ../../apps/nushell.nix
     ../../apps/ssh.nix
+    ../../apps/starship.nix
     ../../apps/vscode.nix
   ];
 
