@@ -32,8 +32,6 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  programs.starship.enable = true;
-
   services.gpg-agent = {
     enable = true;
     pinentryFlavor = "gnome3";
