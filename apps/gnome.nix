@@ -24,6 +24,7 @@
       ];
       favorite-apps = [
         "firefox.desktop"
+        "steam.desktop"
         "code.desktop"
         "Alacritty.desktop"
         "discord.desktop"

@@ -122,6 +122,8 @@
     allowedTCPPorts = [ 8008 ];
   };
 
+  programs.steam.enable = true;
+
   programs.gamemode.enable = true;
 
   environment.shells = with pkgs; [ nushell ];
