@@ -120,6 +120,8 @@
     allowedTCPPorts = [ 8008 ];
   };
 
+  programs.gamemode.enable = true;
+
   environment.shells = with pkgs; [ nushell ];
 
   system.stateVersion = "22.11";
