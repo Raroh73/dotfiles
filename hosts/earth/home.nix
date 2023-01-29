@@ -5,6 +5,7 @@
     ../../apps/git.nix
     ../../apps/gnome.nix
     ../../apps/helix.nix
+    ../../apps/mangohud.nix
     ../../apps/nushell.nix
     ../../apps/ssh.nix
     ../../apps/starship.nix
