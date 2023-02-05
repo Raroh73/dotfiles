@@ -31,7 +31,7 @@
         inherit pkgs;
         system = "x86_64-linux";
         modules = [
-          agenix.nixosModule
+          agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
