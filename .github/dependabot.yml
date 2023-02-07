@@ -3,12 +3,15 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "sunday"
+      time: "04:00"
+    allow:
+      - dependency-type: "all"
     commit-message:
       prefix: "chore"
     labels:
       - "priority: low"
       - "scope: dependency"
-      - "scope: github-action"
       - "status: new"
       - "type: chore"
