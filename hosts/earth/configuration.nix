@@ -17,7 +17,6 @@
 
   age.secrets = {
     earth-password.file = ../../secrets/earth-password.age;
-    nextdns-config.file = ../../secrets/nextdns-config.age;
   };
 
   boot.loader = {
@@ -33,16 +32,16 @@
 
   networking = {
     hostName = "earth";
-    nameservers = [ "127.0.0.1" "::1" ];
+    nameservers = [ "193.110.81.0#dns0.eu" "2a0f:fc80::#dns0.eu" "185.253.5.0#dns0.eu" "2a0f:fc81::#dns0.eu" ];
     networkmanager = {
       enable = true;
-      dns = "none";
     };
   };
 
-  services.nextdns = {
+  services.resolved = {
     enable = true;
-    arguments = [ "-config-file" config.age.secrets.nextdns-config.path ];
+    dnssec = "true";
+    extraConfig = "DNSOverTLS=yes";
   };
 
   time.timeZone = "Europe/Warsaw";

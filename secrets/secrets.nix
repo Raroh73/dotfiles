@@ -2,5 +2,4 @@ let earth = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFNBr6qhrq+o3VGM+b7Rx//C8t9yroI
 in
 {
   "earth-password.age".publicKeys = [ earth ];
-  "nextdns-config.age".publicKeys = [ earth ];
 }
