@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   programs.vscode = {
     enable = true;
+    enableExtensionUpdateCheck = false;
+    enableUpdateCheck = false;
     extensions = with pkgs.vscode-extensions; [
       bradlc.vscode-tailwindcss
       davidanson.vscode-markdownlint
@@ -17,9 +19,6 @@
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
       "editor.rulers" = [ 80 120 ];
-      "extensions.autoCheckUpdates" = false;
-      "extensions.autoUpdate" = false;
-      "extensions.ignoreRecommendations" = true;
       "files.eol" = "\n";
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
@@ -31,7 +30,6 @@
           "path" = "/etc/profiles/per-user/raroh73/bin/nu";
         };
       };
-      "update.mode" = "none";
     };
   };
 }
