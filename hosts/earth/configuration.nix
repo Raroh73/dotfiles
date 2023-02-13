@@ -1,8 +1,4 @@
 { config, options, pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
   nix = {
     gc = {
       automatic = true;

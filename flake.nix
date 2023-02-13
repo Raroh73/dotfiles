@@ -39,6 +39,7 @@
             home-manager.users.raroh73.imports = [ ./hosts/earth/home.nix ];
           }
           ./hosts/earth/configuration.nix
+          ./hosts/earth/hardware-configuration.nix
         ];
       };
     };
