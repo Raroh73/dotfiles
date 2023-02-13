@@ -36,7 +36,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.raroh73.imports = [ ./hosts/earth/home.nix ];
+            home-manager.users.raroh73.imports = [ ./hosts/earth/home-configuration.nix ];
           }
           ./hosts/earth/system-configuration.nix
           ./hosts/earth/hardware-configuration.nix
