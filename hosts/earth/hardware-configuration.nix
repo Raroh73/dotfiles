@@ -1,6 +1,4 @@
 { modulesPath, pkgs, ... }: {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
   boot = {
     initrd = {
       availableKernelModules = [
@@ -33,5 +31,8 @@
 
   swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+    enableRedistributableFirmware = true;
+  };
 }
