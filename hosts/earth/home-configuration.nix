@@ -1,15 +1,15 @@
 { pkgs, ... }: {
   imports = [
-    ../../apps/alacritty.nix
-    ../../apps/firefox.nix
-    ../../apps/git.nix
-    ../../apps/gnome.nix
-    ../../apps/helix.nix
-    ../../apps/mangohud.nix
-    ../../apps/nushell.nix
-    ../../apps/ssh.nix
-    ../../apps/starship.nix
-    ../../apps/vscode.nix
+    ./home/alacritty.nix
+    ./home/firefox.nix
+    ./home/git.nix
+    ./home/gnome.nix
+    ./home/helix.nix
+    ./home/mangohud.nix
+    ./home/nushell.nix
+    ./home/ssh.nix
+    ./home/starship.nix
+    ./home/vscode.nix
   ];
 
   home.username = "raroh73";
