@@ -15,6 +15,7 @@
 
   home.username = "raroh73";
   home.homeDirectory = "/home/raroh73";
+
   home.file.face = {
     source = ../../static/avatar.png;
     target = ".face";
