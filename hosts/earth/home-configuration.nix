@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./home/alacritty.nix
+    ./home/direnv.nix
     ./home/firefox.nix
     ./home/git.nix
     ./home/gnome.nix
@@ -28,9 +29,6 @@
   ];
 
   programs.gpg.enable = true;
-
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
 
   services.gpg-agent = {
     enable = true;
