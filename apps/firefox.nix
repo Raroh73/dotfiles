@@ -1,11 +1,6 @@
 { pkgs, ... }: {
   programs.firefox = {
     enable = true;
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      bypass-paywalls-clean
-      skip-redirect
-      ublock-origin # Filters: https://github.com/yokoffing/filterlists
-    ];
     profiles = {
       "Raroh73" = {
         settings = {
