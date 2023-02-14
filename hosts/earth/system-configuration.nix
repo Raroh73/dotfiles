@@ -63,7 +63,10 @@
     pulse.enable = true;
   };
 
-  services.fstrim.enable = true;
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
 
   services.openssh = {
     enable = true;
