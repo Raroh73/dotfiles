@@ -124,6 +124,8 @@
 
   programs.gamemode.enable = true;
 
+  programs.gnupg.agent.enable = true;
+
   environment.shells = with pkgs; [ nushell ];
 
   system.stateVersion = "22.11";
