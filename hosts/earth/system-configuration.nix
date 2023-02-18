@@ -15,17 +15,6 @@
     earth-password.file = ../../secrets/earth-password.age;
   };
 
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 16;
-      consoleMode = "max";
-      editor = false;
-      memtest86.enable = true;
-    };
-    efi.canTouchEfiVariables = true;
-  };
-
   networking = {
     hostName = "earth";
     nameservers = [ "193.110.81.0#dns0.eu" "2a0f:fc80::#dns0.eu" "185.253.5.0#dns0.eu" "2a0f:fc81::#dns0.eu" ];
