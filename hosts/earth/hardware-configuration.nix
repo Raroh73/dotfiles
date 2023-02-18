@@ -21,7 +21,6 @@
     "/" = {
       device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
-      options = [ "noatime" ];
     };
     "/boot" = {
       device = "/dev/disk/by-label/boot";
