@@ -18,6 +18,7 @@
       "editor.fontFamily" = "CaskaydiaCove Nerd Font";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
+      "editor.linkedEditing" = true;
       "editor.rulers" = [ 80 120 ];
       "files.eol" = "\n";
       "files.insertFinalNewline" = true;
