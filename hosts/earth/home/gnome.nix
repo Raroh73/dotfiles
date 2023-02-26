@@ -37,6 +37,7 @@
       application-list = [
         "firefox.desktop:1"
         "code.desktop:2"
+        "steam.desktop:3"
       ];
     };
   };
