@@ -1,5 +1,9 @@
 { config, options, pkgs, ... }: {
   nix = {
+    extraOptions = ''
+      keep-derivations = true
+      keep-outputs = true
+    '';
     gc = {
       automatic = true;
       dates = "weekly";
