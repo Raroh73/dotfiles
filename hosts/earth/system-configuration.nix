@@ -69,6 +69,7 @@
         type = "ed25519";
       }
     ];
+    openFirewall = true;
     settings = {
       KbdInteractiveAuthentication = false;
       PasswordAuthentication = false;
