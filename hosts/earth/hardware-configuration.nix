@@ -19,5 +19,6 @@
   hardware = {
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
+    xone.enable = true;
   };
 }

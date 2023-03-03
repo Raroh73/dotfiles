@@ -110,8 +110,6 @@
     };
   };
 
-  hardware.xone.enable = true;
-
   virtualisation.podman.enable = true;
 
   networking.firewall = {
