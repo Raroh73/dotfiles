@@ -70,6 +70,7 @@
       }
     ];
     settings = {
+      PasswordAuthentication = false;
       PermitRootLogin = "no";
     };
   };
