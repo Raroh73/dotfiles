@@ -69,6 +69,9 @@
         type = "ed25519";
       }
     ];
+    settings = {
+      PermitRootLogin = "no";
+    };
   };
 
   security.rtkit.enable = true;
