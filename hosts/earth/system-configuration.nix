@@ -20,7 +20,7 @@
   };
 
   age.secrets = {
-    earth-password.file = ../../secrets/earth-password.age;
+    raroh73-earth-password.file = ../../secrets/raroh73-earth-password.age;
   };
 
   networking = {
@@ -67,12 +67,6 @@
 
   services.openssh = {
     enable = true;
-    hostKeys = [
-      {
-        path = "/etc/ssh/earth";
-        type = "ed25519";
-      }
-    ];
     openFirewall = true;
     settings = {
       KbdInteractiveAuthentication = false;
