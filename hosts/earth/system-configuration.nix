@@ -1,4 +1,8 @@
 { config, options, pkgs, ... }: {
+  imports = [
+    ./system/users.nix
+  ];
+
   nix = {
     extraOptions = ''
       keep-derivations = true
@@ -78,18 +82,6 @@
   };
 
   security.rtkit.enable = true;
-
-  users.mutableUsers = false;
-
-  users.users.root.hashedPassword = "!";
-
-  users.users.raroh73 = {
-    isNormalUser = true;
-    description = "Raroh73";
-    extraGroups = [ "networkmanager" "podman" "wheel" ];
-    passwordFile = config.age.secrets.earth-password.path;
-    shell = pkgs.nushell;
-  };
 
   fonts = {
     fonts = with pkgs; [
