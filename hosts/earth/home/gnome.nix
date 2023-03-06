@@ -36,8 +36,8 @@
     "org/gnome/shell/extensions/auto-move-windows" = {
       application-list = [
         "firefox.desktop:1"
-        "code.desktop:2"
-        "steam.desktop:3"
+        "steam.desktop:2"
+        "code.desktop:3"
       ];
     };
   };
