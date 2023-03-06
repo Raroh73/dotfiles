@@ -31,6 +31,7 @@
           "path" = "/etc/profiles/per-user/raroh73/bin/nu";
         };
       };
+      "window.restoreWindows" = "none";
     };
   };
 }
