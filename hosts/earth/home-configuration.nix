@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./home/alacritty.nix
+    ./home/chromium.nix
     ./home/direnv.nix
     ./home/firefox.nix
     ./home/git.nix
