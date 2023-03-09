@@ -6,6 +6,7 @@
         extensions = with pkgs.nur.repos.rycee.firefox-addons;
           [ ublock-origin ];
         settings = {
+          "app.update.auto" = false;
           "browser.aboutConfig.showWarning" = false;
           "browser.contentblocking.category" = "strict";
           "browser.shell.checkDefaultBrowser" = false;
