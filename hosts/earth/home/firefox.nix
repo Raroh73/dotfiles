@@ -7,6 +7,7 @@
           [ ublock-origin ];
         settings = {
           "browser.aboutConfig.showWarning" = false;
+          "browser.contentblocking.category" = "strict";
           "browser.shell.checkDefaultBrowser" = false;
           "browser.tabs.firefox-view" = false;
           "browser.urlbar.trimURLs" = false;
