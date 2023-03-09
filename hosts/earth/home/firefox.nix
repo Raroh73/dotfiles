@@ -6,6 +6,7 @@
         extensions = with pkgs.nur.repos.rycee.firefox-addons;
           [ ublock-origin ];
         settings = {
+          "browser.aboutConfig.showWarning" = false;
           "dom.security.https_only_mode" = true;
           "dom.security.https_only_mode_ever_enabled" = true;
         };
