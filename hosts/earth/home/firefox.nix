@@ -9,6 +9,7 @@
           "browser.aboutConfig.showWarning" = false;
           "dom.security.https_only_mode" = true;
           "dom.security.https_only_mode_ever_enabled" = true;
+          "extensions.pocket.enabled" = false;
         };
       };
     };
