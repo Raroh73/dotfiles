@@ -8,6 +8,7 @@
         settings = {
           "browser.aboutConfig.showWarning" = false;
           "browser.shell.checkDefaultBrowser" = false;
+          "browser.tabs.firefox-view" = false;
           "browser.urlbar.trimURLs" = false;
           "dom.security.https_only_mode" = true;
           "dom.security.https_only_mode_ever_enabled" = true;
