@@ -5,6 +5,9 @@
       "Raroh73" = {
         extensions = with pkgs.nur.repos.rycee.firefox-addons;
           [ ublock-origin ];
+        search = {
+          default = "DuckDuckGo";
+        };
         settings = {
           "app.update.auto" = false;
           "browser.aboutConfig.showWarning" = false;
