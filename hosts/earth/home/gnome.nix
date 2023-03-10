@@ -24,6 +24,7 @@
       ];
       favorite-apps = [
         "firefox.desktop"
+        "chromium-browser.desktop"
         "steam.desktop"
         "code.desktop"
         "Alacritty.desktop"
@@ -36,6 +37,7 @@
     "org/gnome/shell/extensions/auto-move-windows" = {
       application-list = [
         "firefox.desktop:1"
+        "chromium-browser.desktop:1"
         "steam.desktop:2"
         "code.desktop:3"
       ];
