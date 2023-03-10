@@ -13,6 +13,9 @@
       core = {
         whitespace = "trailing-space,space-before-tab";
       };
+      gpg = {
+        format = "ssh";
+      };
       pull = {
         ff = "only";
       };
@@ -20,7 +23,7 @@
         gpgSign = true;
       };
       user = {
-        signingKey = "7F60D3C92F885B70";
+        signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDtuv/+9ONhzcSoZRvlmyqtMNtQeFCQfEKfpA/4/dsY/ 96078496+Raroh73@users.noreply.github.com";
       };
     };
   };
