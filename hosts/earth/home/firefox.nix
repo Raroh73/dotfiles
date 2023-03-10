@@ -15,6 +15,7 @@
           "dom.security.https_only_mode" = true;
           "extensions.pocket.enabled" = false;
           "network.trr.mode" = 5;
+          "signon.autofillForms" = false;
           "signon.rememberSignons" = false;
         };
       };
