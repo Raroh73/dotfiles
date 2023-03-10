@@ -14,6 +14,7 @@
           "browser.urlbar.trimURLs" = false;
           "dom.security.https_only_mode" = true;
           "extensions.pocket.enabled" = false;
+          "signon.rememberSignons" = false;
         };
       };
     };
