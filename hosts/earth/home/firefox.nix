@@ -20,6 +20,7 @@
           "extensions.pocket.enabled" = false;
           "network.trr.mode" = 5;
           "signon.autofillForms" = false;
+          "signon.formlessCapture.enabled" = false;
           "signon.rememberSignons" = false;
         };
       };
