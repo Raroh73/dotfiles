@@ -7,6 +7,7 @@
           [ ublock-origin ];
         search = {
           default = "DuckDuckGo";
+          force = true;
         };
         settings = {
           "app.update.auto" = false;
