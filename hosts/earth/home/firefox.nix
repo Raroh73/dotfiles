@@ -22,6 +22,7 @@
           "extensions.pocket.enabled" = false;
           "network.dns.disablePrefetch" = true;
           "network.http.speculative-parallel-limit" = 0;
+          "network.IDN_show_punycode" = true;
           "network.predictor.enable-prefetch" = false;
           "network.predictor.enabled" = false;
           "network.prefetch-next" = false;
