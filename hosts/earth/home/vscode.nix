@@ -24,6 +24,7 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
+      "git.autofetch" = true;
       "telemetry.telemetryLevel" = "off";
       "terminal.integrated.defaultProfile.linux" = "Nushell";
       "terminal.integrated.profiles.linux" = {
