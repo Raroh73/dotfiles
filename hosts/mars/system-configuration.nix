@@ -18,13 +18,16 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "cma=256M" ];
-    loader.raspberryPi = {
-      enable = true;
-      version = 3;
-      uboot.enable = true;
-      firmwareConfig = ''
-        gpu_mem=16
-      '';
+    loader = {
+      grub.enable = false;
+      raspberryPi = {
+        enable = true;
+        version = 3;
+        uboot.enable = true;
+        firmwareConfig = ''
+          gpu_mem=16
+        '';
+      };
     };
   };
 
