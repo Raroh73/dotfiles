@@ -18,7 +18,7 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, agenix, home-manager, nixpkgs, nur }: {
+  outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
     nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
       pkgs = (import nixpkgs) {
         system = "x86_64-linux";
@@ -41,6 +41,13 @@
         ./hosts/earth/system-configuration.nix
         ./hosts/earth/hardware-configuration.nix
       ];
+    };
+    packages.x86_64-linux = {
+      mars-install = nixos-generators.nixosGenerate {
+        system = "aarch64-linux";
+        modules = [ ./hosts/mars/install-configuration.nix ];
+        format = "sd-aarch64";
+      };
     };
   };
 }
