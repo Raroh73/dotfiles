@@ -20,17 +20,17 @@
 
   time.timeZone = "Europe/Warsaw";
 
-  users.mutableUsers = false;
-
-  users.users.root.hashedPassword = "!";
-
-  users.users.raroh73 = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-    hashedPassword = "$y$j9T$E7B.wD/rB2Z6LnU05C86N1$tREsxNWhOg2Zul8lRrSaUvNX3icaHcV1Ac3QfMRAFXA";
-    packages = with pkgs; [
-      git
-    ];
+  users = {
+    mutableUsers = false;
+    users = {
+      raroh73 = {
+        isNormalUser = true;
+        extraGroups = [ "networkmanager" "wheel" ];
+        hashedPassword = "$y$j9T$E7B.wD/rB2Z6LnU05C86N1$tREsxNWhOg2Zul8lRrSaUvNX3icaHcV1Ac3QfMRAFXA";
+        packages = with pkgs; [ git ];
+      };
+      root.hashedPassword = "!";
+    };
   };
 
   services.openssh = {
