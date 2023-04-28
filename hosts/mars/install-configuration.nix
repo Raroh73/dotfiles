@@ -6,6 +6,8 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
+  boot.kernelParams = [ "cma=256M" ];
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
