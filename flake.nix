@@ -42,6 +42,19 @@
         ./hosts/earth/hardware-configuration.nix
       ];
     };
+    nixosConfigurations.mars = nixpkgs.lib.nixosSystem {
+      pkgs = (import nixpkgs) {
+        system = "aarch64-linux";
+        config = {
+          allowUnfree = true;
+        };
+      };
+      system = "aarch64-linux";
+      modules = [
+        agenix.nixosModules.default
+        ./hosts/mars/system-configuration.nix
+      ];
+    };
     packages.x86_64-linux = {
       mars-install = nixos-generators.nixosGenerate {
         system = "aarch64-linux";
