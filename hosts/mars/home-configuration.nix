@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./home/nushell.nix
+    ./home/starship.nix
   ];
 
   home.username = "raroh73";
