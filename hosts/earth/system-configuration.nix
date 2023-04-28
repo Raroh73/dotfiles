@@ -24,11 +24,13 @@
   };
 
   networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 8008 ];
+    };
     hostName = "earth";
     nameservers = [ "193.110.81.0#dns0.eu" "2a0f:fc80::#dns0.eu" "185.253.5.0#dns0.eu" "2a0f:fc81::#dns0.eu" ];
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager.enable = true;
   };
 
   services.resolved = {
@@ -97,11 +99,6 @@
   };
 
   virtualisation.podman.enable = true;
-
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 8008 ];
-  };
 
   programs.steam.enable = true;
 
