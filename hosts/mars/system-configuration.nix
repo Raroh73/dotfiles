@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   nix = {
     extraOptions = ''
       keep-derivations = true
