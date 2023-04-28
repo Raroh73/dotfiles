@@ -1,4 +1,4 @@
-{ options, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./system/users.nix
   ];
