@@ -1,10 +1,7 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-  };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.kernelParams = [ "cma=256M" ];
 
