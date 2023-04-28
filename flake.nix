@@ -52,6 +52,12 @@
       system = "aarch64-linux";
       modules = [
         agenix.nixosModules.default
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.raroh73.imports = [ ./hosts/mars/home-configuration.nix ];
+        }
         ./hosts/mars/system-configuration.nix
       ];
     };
