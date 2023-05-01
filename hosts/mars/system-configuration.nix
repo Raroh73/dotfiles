@@ -39,6 +39,7 @@
   };
 
   age.secrets = {
+    cloudflare-token.file = ../../secrets/cloudflare-token.age;
     raroh73-mars-password.file = ../../secrets/raroh73-mars-password.age;
   };
 
@@ -79,6 +80,13 @@
       PasswordAuthentication = false;
       PermitRootLogin = "no";
     };
+  };
+
+  services.cloudflare-dyndns = {
+    enable = true;
+    apiTokenFile = config.age.secrets.cloudflare-token.path;
+    domains = [ "raroh73.xyz" ];
+    proxied = true;
   };
 
   zramSwap.enable = true;
