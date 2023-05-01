@@ -1,5 +1,6 @@
 _: {
   imports = [
+    ./home/bottom.nix
     ./home/git.nix
     ./home/nushell.nix
     ./home/starship.nix
