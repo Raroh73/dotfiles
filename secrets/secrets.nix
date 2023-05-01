@@ -1,7 +1,7 @@
 let
   agenix = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBerp1nA9AU2MUHk8/Fq+OvX0L2PiMqgQh12Zdm0cMyK agenix";
   earth = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt72SaSNMlIcwwnmjAp3+oSAc9avEAkFyLdbS9xoShy root@earth";
-  mars = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG4n9GZ76/sHCZT9rpmh7UiIEWfcmecmmUEAFIEJKNVR root@mars";
+  mars = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINkLR7LepjahrdQxYkiyvnY9tYG4aI++sec1+wiNFBUJ root@mars";
 in
 {
   "cloudflare-token.age".publicKeys = [ agenix mars ];
