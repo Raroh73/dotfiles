@@ -38,6 +38,8 @@
     openFirewall = true;
   };
 
+  hardware.enableRedistributableFirmware = true;
+
   zramSwap.enable = true;
 
   system.stateVersion = "22.11";
