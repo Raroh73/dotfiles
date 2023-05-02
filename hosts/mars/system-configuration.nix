@@ -27,7 +27,10 @@
       raspberryPi = {
         enable = true;
         version = 3;
-        uboot.enable = true;
+        uboot = {
+          enable = true;
+          configurationLimit = 8;
+        };
         firmwareConfig = ''
           gpu_mem=16
         '';
