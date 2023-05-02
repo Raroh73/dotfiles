@@ -20,6 +20,7 @@
   };
 
   boot = {
+    cleanTmpDir = true;
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "cma=256M" ];
     loader = {
