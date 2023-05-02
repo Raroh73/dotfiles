@@ -94,11 +94,14 @@
     proxied = true;
   };
 
-  security.acme.certs = {
-    "raroh73.xyz" = {
-      credentialsFile = config.age.secrets.cloudflare-token.path;
-      dnsProvider = "cloudflare";
-      extraDomainNames = [ "www.raroh73.xyz" ];
+  security.acme = {
+    acceptTerms = true;
+    certs = {
+      "raroh73.xyz" = {
+        credentialsFile = config.age.secrets.cloudflare-token.path;
+        dnsProvider = "cloudflare";
+        extraDomainNames = [ "www.raroh73.xyz" ];
+      };
     };
   };
 
