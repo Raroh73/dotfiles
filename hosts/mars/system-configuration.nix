@@ -26,14 +26,14 @@
       grub.enable = false;
       raspberryPi = {
         enable = true;
-        version = 3;
+        firmwareConfig = ''
+          gpu_mem=16
+        '';
         uboot = {
           enable = true;
           configurationLimit = 8;
         };
-        firmwareConfig = ''
-          gpu_mem=16
-        '';
+        version = 3;
       };
     };
     tmp.cleanOnBoot = true;
