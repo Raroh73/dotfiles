@@ -113,6 +113,10 @@
         serverAliases = [ "www.raroh73.xyz" ];
         useACMEHost = "raroh73.xyz";
         extraConfig = ''
+          client_auth {
+            mode require_and_verify
+            trusted_ca_cert_file /etc/ssl/certs/authenticated_origin_pull_ca.pem
+          }
           root * /srv/www/raroh73_xyz
           file_server
         '';
@@ -124,6 +128,9 @@
 
   zramSwap.enable = true;
 
+  environment.etc."ssl/certs/authenticated_origin_pull_ca.pem".source = pkgs.fetchurl {
+    url = "https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem";
+  };
   environment.shells = with pkgs; [ nushell ];
   environment.systemPackages = with pkgs; [ libraspberrypi ];
 
