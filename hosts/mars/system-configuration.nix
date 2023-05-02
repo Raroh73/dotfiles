@@ -100,6 +100,7 @@
       "raroh73.xyz" = {
         credentialsFile = config.age.secrets.cloudflare-token.path;
         dnsProvider = "cloudflare";
+        email = "me@raroh73.xyz";
         extraDomainNames = [ "www.raroh73.xyz" ];
       };
     };
