@@ -89,6 +89,25 @@
     proxied = true;
   };
 
+  services.caddy = {
+    enable = true;
+    virtualHosts = {
+      "raroh73.xyz" = {
+        serverAliases = [ "www.raroh73.xyz" ];
+        extraConfig = ''
+          tls certificate.pem key.pem {
+            client_auth {
+              mode require_and_verify
+              trusted_ca_cert_file origin-pull-ca.pem
+            }
+          }
+          root * /srv/www/raroh73_xyz
+          file_server
+        '';
+      };
+    };
+  };
+
   hardware.enableRedistributableFirmware = true;
 
   zramSwap.enable = true;
