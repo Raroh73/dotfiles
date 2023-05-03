@@ -128,7 +128,7 @@
 
   services.miniflux = {
     enable = true;
-    adminCredentialsFile = miniflux-admin-credentials.path;
+    adminCredentialsFile = config.age.secrets.miniflux-admin-credentials.path;
   };
 
   hardware.enableRedistributableFirmware = true;
