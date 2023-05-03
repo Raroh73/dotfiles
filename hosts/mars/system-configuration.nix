@@ -49,6 +49,7 @@
   age.secrets = {
     cloudflare-token.file = ../../secrets/cloudflare-token.age;
     lego-token.file = ../../secrets/lego-token.age;
+    miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
     raroh73-mars-password.file = ../../secrets/raroh73-mars-password.age;
   };
 
@@ -84,7 +85,7 @@
   services.cloudflare-dyndns = {
     enable = true;
     apiTokenFile = config.age.secrets.cloudflare-token.path;
-    domains = [ "raroh73.xyz" "www.raroh73.xyz" ];
+    domains = [ "raroh73.xyz" "www.raroh73.xyz" "miniflux.raroh73.xyz" ];
     proxied = true;
   };
 
@@ -96,6 +97,11 @@
         dnsProvider = "cloudflare";
         email = "me@raroh73.xyz";
         extraDomainNames = [ "www.raroh73.xyz" ];
+      };
+      "miniflux.raroh73.xyz" = {
+        credentialsFile = config.age.secrets.lego-token.path;
+        dnsProvider = "cloudflare";
+        email = "me@raroh73.xyz";
       };
     };
   };
@@ -111,7 +117,18 @@
           file_server
         '';
       };
+      "miniflux.raroh73.xyz" = {
+        useACMEHost = "miniflux.raroh73.xyz";
+        extraConfig = ''
+          reverse_proxy localhost:8080
+        '';
+      };
     };
+  };
+
+  services.miniflux = {
+    enable = true;
+    adminCredentialsFile = miniflux-admin-credentials.path;
   };
 
   hardware.enableRedistributableFirmware = true;
