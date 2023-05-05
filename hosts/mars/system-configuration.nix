@@ -48,9 +48,9 @@
   };
 
   age.secrets = {
-    backup-mars-miniflux-environment.file = "../../backup-mars-miniflux-environment.age";
-    backup-mars-miniflux-password.file = "../../backup-mars-miniflux-password.age";
-    backup-mars-miniflux-repository.file = "../../backup-mars-miniflux-repository.age";
+    backup-mars-miniflux-environment.file = ../../secrets/backup-mars-miniflux-environment.age;
+    backup-mars-miniflux-password.file = ../../secrets/backup-mars-miniflux-password.age;
+    backup-mars-miniflux-repository.file = ../../secrets/backup-mars-miniflux-repository.age;
     cloudflare-token.file = ../../secrets/cloudflare-token.age;
     lego-token.file = ../../secrets/lego-token.age;
     miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
