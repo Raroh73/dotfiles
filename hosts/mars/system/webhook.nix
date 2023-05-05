@@ -12,8 +12,6 @@ in
 {
   services.webhook = {
     enable = true;
-    # Agenix anti-pattern
-    environment = builtins.readFile config.age.secrets.webhook-secrets.path;
     hooksTemplated = {
       hugo-webhook = ''
         {
@@ -25,7 +23,7 @@ in
               {
                 "match": {
                   "type": "payload-hmac-sha1",
-                  "secret": "{{ getenv "HUGO_WEBHOOK_SECRET" | js }}",
+                  "secret": "",
                   "parameter": {
                     "source": "header",
                     "name": "X-Hub-Signature"

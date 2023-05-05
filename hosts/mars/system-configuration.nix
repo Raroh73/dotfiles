@@ -52,7 +52,6 @@
     lego-token.file = ../../secrets/lego-token.age;
     miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
     raroh73-mars-password.file = ../../secrets/raroh73-mars-password.age;
-    webhook-secrets.file = ../../secrets/webhook-secrets.age;
   };
 
   networking = {
