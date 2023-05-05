@@ -5,7 +5,7 @@ let
     runtimeInputs = with pkgs; [ git hugo ];
     text = ''
       git pull --recurse-submodules
-      hugo --cleanDestinationDir --ignoreCache
+      hugo
     '';
   };
 in
