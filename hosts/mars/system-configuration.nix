@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./system/users.nix
+    ./system/webhook.nix
   ];
 
   nix = {
@@ -51,6 +52,7 @@
     lego-token.file = ../../secrets/lego-token.age;
     miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
     raroh73-mars-password.file = ../../secrets/raroh73-mars-password.age;
+    webhook-secrets.file = ../../secrets/webhook-secrets.age;
   };
 
   networking = {
@@ -113,7 +115,7 @@
         serverAliases = [ "www.raroh73.xyz" ];
         useACMEHost = "raroh73.xyz";
         extraConfig = ''
-          root * /srv/www/raroh73_xyz
+          root * /srv/web/raroh73.xyz/public
           file_server
         '';
       };

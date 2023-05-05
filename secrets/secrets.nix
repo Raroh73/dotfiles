@@ -9,4 +9,5 @@ in
   "miniflux-admin-credentials.age".publicKeys = [ agenix mars ];
   "raroh73-earth-password.age".publicKeys = [ agenix earth ];
   "raroh73-mars-password.age".publicKeys = [ agenix mars ];
+  "webhook-secrets.age".publicKeys = [ agenix mars ];
 }
