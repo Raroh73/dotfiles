@@ -130,7 +130,7 @@
         '';
       };
       "webhook.raroh73.xyz" = {
-        useACMEHost = "miniflux.raroh73.xyz";
+        useACMEHost = "webhook.raroh73.xyz";
         extraConfig = ''
           reverse_proxy localhost:9000
         '';
