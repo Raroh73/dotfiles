@@ -48,6 +48,9 @@
   };
 
   age.secrets = {
+    backup-mars-miniflux-environment.file = "../../backup-mars-miniflux-environment.age";
+    backup-mars-miniflux-password.file = "../../backup-mars-miniflux-password.age";
+    backup-mars-miniflux-repository.file = "../../backup-mars-miniflux-repository.age";
     cloudflare-token.file = ../../secrets/cloudflare-token.age;
     lego-token.file = ../../secrets/lego-token.age;
     miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
@@ -141,6 +144,23 @@
   services.miniflux = {
     enable = true;
     adminCredentialsFile = config.age.secrets.miniflux-admin-credentials.path;
+  };
+
+  services.restic.backups = {
+    backup-mars-miniflux = {
+      backupPrepareCommand = "pg_dump miniflux -c -f /var/backups/miniflux/backup.sql";
+      environmentFile = config.age.secrets.backup-mars-miniflux-environment.path;
+      initialize = true;
+      passwordFile = config.age.secrets.backup-mars-miniflux-password.path;
+      paths = [ "/var/backups/miniflux" ];
+      pruneOpts = [
+        "--keep-daily 31"
+        "--keep-monthly 12"
+        "--keep-yearly 1"
+      ];
+      repositoryFile = config.age.secrets.backup-mars-miniflux-repository.path;
+      user = "postgres";
+    };
   };
 
   hardware.enableRedistributableFirmware = true;
