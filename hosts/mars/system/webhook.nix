@@ -1,4 +1,4 @@
-{ config, pkgs }:
+{ config, pkgs, ... }:
 let
   hugo-build = pkgs.writeShellApplication {
     name = "hugo-build";
