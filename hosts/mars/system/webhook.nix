@@ -5,7 +5,7 @@ let
     runtimeInputs = with pkgs; [ git hugo ];
     text = ''
       git pull
-      hugo
+      hugo --cleanDestinationDir --ignoreCache
     '';
   };
 in
