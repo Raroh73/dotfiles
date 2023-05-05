@@ -4,7 +4,7 @@ let
     name = "hugo-build";
     runtimeInputs = with pkgs; [ git hugo ];
     text = ''
-      git pull
+      git pull --recurse-submodules
       hugo --cleanDestinationDir --ignoreCache
     '';
   };
