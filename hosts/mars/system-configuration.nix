@@ -148,7 +148,13 @@
 
   services.restic.backups = {
     backup-mars-miniflux = {
-      backupPrepareCommand = "pg_dump miniflux -c -f /var/backups/miniflux/backup.sql";
+      backupCleanupCommand = ''
+        rm -fr /var/backups/miniflux
+      '';
+      backupPrepareCommand = ''
+        mkdir /var/backups/miniflux
+        ${pkgs.postgresql}/bin/pg_dump miniflux -c -f /var/backups/miniflux/backup.sql
+      '';
       environmentFile = config.age.secrets.backup-mars-miniflux-environment.path;
       initialize = true;
       passwordFile = config.age.secrets.backup-mars-miniflux-password.path;
