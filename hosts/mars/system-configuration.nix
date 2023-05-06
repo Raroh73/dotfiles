@@ -48,9 +48,9 @@
   };
 
   age.secrets = {
-    backup-mars-miniflux-environment.file = ../../secrets/backup-mars-miniflux-environment.age;
-    backup-mars-miniflux-password.file = ../../secrets/backup-mars-miniflux-password.age;
-    backup-mars-miniflux-repository.file = ../../secrets/backup-mars-miniflux-repository.age;
+    backup-mars-environment.file = ../../secrets/backup-mars-environment.age;
+    backup-mars-password.file = ../../secrets/backup-mars-password.age;
+    backup-mars-repository.file = ../../secrets/backup-mars-repository.age;
     cloudflare-token.file = ../../secrets/cloudflare-token.age;
     lego-token.file = ../../secrets/lego-token.age;
     miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
@@ -147,25 +147,24 @@
   };
 
   services.restic.backups = {
-    backup-mars-miniflux = {
+    backup-mars = {
       backupCleanupCommand = ''
-        rm -fr /var/backups/miniflux
+        rm -fr /var/backups/mars
       '';
       backupPrepareCommand = ''
-        mkdir /var/backups/miniflux
-        ${pkgs.postgresql}/bin/pg_dump miniflux -c -f /var/backups/miniflux/backup.sql
+        mkdir -p /var/backups/mars
+        ${pkgs.sudo}/bin/sudo -u postgres ${pkgs.postgresql}/bin/pg_dump miniflux -c > /var/backups/mars/miniflux.sql
       '';
-      environmentFile = config.age.secrets.backup-mars-miniflux-environment.path;
+      environmentFile = config.age.secrets.backup-mars-environment.path;
       initialize = true;
-      passwordFile = config.age.secrets.backup-mars-miniflux-password.path;
-      paths = [ "/var/backups/miniflux" ];
+      passwordFile = config.age.secrets.backup-mars-password.path;
+      paths = [ "/var/backups/mars" ];
       pruneOpts = [
         "--keep-daily 31"
         "--keep-monthly 12"
         "--keep-yearly 1"
       ];
-      repositoryFile = config.age.secrets.backup-mars-miniflux-repository.path;
-      user = "postgres";
+      repositoryFile = config.age.secrets.backup-mars-repository.path;
     };
   };
 

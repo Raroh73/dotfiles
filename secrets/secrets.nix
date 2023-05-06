@@ -4,9 +4,9 @@ let
   mars = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJCqtsxDNBWMQKu3xxU8Pv87HdYnM5CUCkECqLBC7tdQ root@mars";
 in
 {
-  "backup-mars-miniflux-environment.age".publicKeys = [ agenix mars ];
-  "backup-mars-miniflux-password.age".publicKeys = [ agenix mars ];
-  "backup-mars-miniflux-repository.age".publicKeys = [ agenix mars ];
+  "backup-mars-environment.age".publicKeys = [ agenix mars ];
+  "backup-mars-password.age".publicKeys = [ agenix mars ];
+  "backup-mars-repository.age".publicKeys = [ agenix mars ];
   "cloudflare-token.age".publicKeys = [ agenix mars ];
   "lego-token.age".publicKeys = [ agenix mars ];
   "miniflux-admin-credentials.age".publicKeys = [ agenix mars ];
