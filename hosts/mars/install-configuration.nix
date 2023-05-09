@@ -21,17 +21,34 @@
   time.timeZone = "Europe/Warsaw";
 
   users = {
+    groups.deploy = { };
     mutableUsers = false;
     users = {
       raroh73 = {
         isNormalUser = true;
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "deploy" "networkmanager" "wheel" ];
         hashedPassword = "$y$j9T$E7B.wD/rB2Z6LnU05C86N1$tREsxNWhOg2Zul8lRrSaUvNX3icaHcV1Ac3QfMRAFXA";
         packages = with pkgs; [ git ];
       };
       root.hashedPassword = "!";
     };
   };
+
+  security.sudo.extraRules = [
+    {
+      groups = [ "deploy" ];
+      commands = [
+        {
+          command = "/nix/store/*/activate-rs";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/rm /tmp/deploy-rs-canary-*";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   services.openssh = {
     enable = true;

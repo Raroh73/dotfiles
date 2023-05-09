@@ -6,6 +6,10 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +22,7 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
+  outputs = { self, agenix, deploy-rs, home-manager, nixpkgs, nixos-generators, nur }: {
     nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
       pkgs = (import nixpkgs) {
         system = "x86_64-linux";
@@ -61,6 +65,23 @@
         ./hosts/mars/system-configuration.nix
       ];
     };
+    deploy.nodes = {
+      earth = {
+        hostname = "earth";
+        profiles.system = {
+          user = "root";
+          path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.earth;
+        };
+      };
+      mars = {
+        hostname = "mars";
+        profiles.system = {
+          user = "root";
+          path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mars;
+        };
+      };
+    };
+    checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     packages.x86_64-linux = {
       mars-install = nixos-generators.nixosGenerate {
         system = "aarch64-linux";
