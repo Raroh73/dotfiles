@@ -7,7 +7,7 @@ _: {
         identityFile = "/home/raroh73/.ssh/github";
       };
       "mars" = {
-        hostname = "192.168.0.10";
+        hostname = "192.168.0.11";
         user = "raroh73";
         identityFile = "/home/raroh73/.ssh/mars";
       };
