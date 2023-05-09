@@ -11,6 +11,11 @@ _: {
         user = "raroh73";
         identityFile = "/home/raroh73/.ssh/mars";
       };
+      "earth" = {
+        hostname = "192.168.0.12";
+        user = "raroh73";
+        identityFile = "/home/raroh73/.ssh/earth";
+      };
     };
   };
 }
