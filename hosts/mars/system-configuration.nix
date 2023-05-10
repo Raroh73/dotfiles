@@ -17,6 +17,7 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [ "root" "@wheel" ];
     };
   };
 
@@ -115,21 +116,19 @@
     };
   };
 
-  security.sudo.extraRules = [
-    {
-      groups = [ "deploy" ];
-      commands = [
-        {
-          command = "/nix/store/*/activate-rs";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/rm /tmp/deploy-rs-canary-*";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  security.sudo.extraRules = [{
+    groups = [ "wheel" ];
+    commands = [
+      {
+        command = "/run/current-system/sw/bin/nix-env";
+        options = [ "NOPASSWD" ];
+      }
+      {
+        command = "/nix/store/*/bin/switch-to-configuration";
+        options = [ "NOPASSWD" ];
+      }
+    ];
+  }];
 
   services.caddy = {
     enable = true;

@@ -79,22 +79,6 @@
 
   security.rtkit.enable = true;
 
-  security.sudo.extraRules = [
-    {
-      groups = [ "deploy" ];
-      commands = [
-        {
-          command = "/nix/store/*/activate-rs";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/rm /tmp/deploy-rs-canary-*";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
-
   fonts = {
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })

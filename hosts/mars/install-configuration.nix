@@ -1,7 +1,10 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    trusted-users = [ "root" "@wheel" ];
+  };
 
   boot.kernelParams = [ "cma=256M" ];
 
@@ -21,12 +24,11 @@
   time.timeZone = "Europe/Warsaw";
 
   users = {
-    groups.deploy = { };
     mutableUsers = false;
     users = {
       raroh73 = {
         isNormalUser = true;
-        extraGroups = [ "deploy" "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" ];
         hashedPassword = "$y$j9T$E7B.wD/rB2Z6LnU05C86N1$tREsxNWhOg2Zul8lRrSaUvNX3icaHcV1Ac3QfMRAFXA";
         packages = with pkgs; [ git ];
       };
@@ -34,21 +36,19 @@
     };
   };
 
-  security.sudo.extraRules = [
-    {
-      groups = [ "deploy" ];
-      commands = [
-        {
-          command = "/nix/store/*/activate-rs";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/rm /tmp/deploy-rs-canary-*";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  security.sudo.extraRules = [{
+    groups = [ "wheel" ];
+    commands = [
+      {
+        command = "/run/current-system/sw/bin/nix-env";
+        options = [ "NOPASSWD" ];
+      }
+      {
+        command = "/nix/store/*/bin/switch-to-configuration";
+        options = [ "NOPASSWD" ];
+      }
+    ];
+  }];
 
   services.openssh = {
     enable = true;
