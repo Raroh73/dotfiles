@@ -30,7 +30,6 @@
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
         hashedPassword = "$y$j9T$E7B.wD/rB2Z6LnU05C86N1$tREsxNWhOg2Zul8lRrSaUvNX3icaHcV1Ac3QfMRAFXA";
-        packages = with pkgs; [ git ];
       };
       root.hashedPassword = "!";
     };
