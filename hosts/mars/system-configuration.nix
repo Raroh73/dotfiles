@@ -85,16 +85,6 @@
     cloudflare-token.file = ../../secrets/cloudflare-token.age;
     lego-token.file = ../../secrets/lego-token.age;
     miniflux-admin-credentials.file = ../../secrets/miniflux-admin-credentials.age;
-    miniflux-oauth2-id = {
-      file = ../../secrets/miniflux-oauth2-id.age;
-      owner = "miniflux";
-      group = "miniflux";
-    };
-    miniflux-oauth2-secret = {
-      file = ../../secrets/miniflux-oauth2-secret.age;
-      owner = "miniflux";
-      group = "miniflux";
-    };
     raroh73-mars-password.file = ../../secrets/raroh73-mars-password.age;
   };
 
@@ -205,14 +195,6 @@
   services.miniflux = {
     enable = true;
     adminCredentialsFile = config.age.secrets.miniflux-admin-credentials.path;
-    config = {
-      OAUTH2_PROVIDER = "oidc";
-      OAUTH2_CLIENT_ID_FILE = config.age.secrets.miniflux-oauth2-id.path;
-      OAUTH2_CLIENT_SECRET_FILE = config.age.secrets.miniflux-oauth2-secret.path;
-      OAUTH2_REDIRECT_URL = https://miniflux.raroh73.xyz/oauth2/oidc/callback;
-      OAUTH2_OIDC_DISCOVERY_ENDPOINT = "https://authelia.raroh73.xyz";
-      OAUTH2_USER_CREATION = "1";
-    };
   };
 
   services.restic.backups = {
