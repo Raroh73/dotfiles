@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
+    ./system/boot.nix
     ./system/caddy.nix
     ./system/restic.nix
     ./system/users.nix
@@ -21,26 +22,6 @@
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
     };
-  };
-
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "cma=256M" ];
-    loader = {
-      grub.enable = false;
-      raspberryPi = {
-        enable = true;
-        firmwareConfig = ''
-          gpu_mem=16
-        '';
-        uboot = {
-          enable = true;
-          configurationLimit = 8;
-        };
-        version = 3;
-      };
-    };
-    tmp.cleanOnBoot = true;
   };
 
   fileSystems = {
