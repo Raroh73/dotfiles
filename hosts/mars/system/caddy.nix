@@ -28,6 +28,12 @@ _: {
           reverse_proxy localhost:9091
         '';
       };
+      "shiori.raroh73.xyz" = {
+        useACMEHost = "shiori.raroh73.xyz";
+        extraConfig = ''
+          reverse_proxy localhost:8081
+        '';
+      };
     };
   };
 }
