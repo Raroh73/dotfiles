@@ -2,6 +2,7 @@
   imports = [
     ./system/acme.nix
     ./system/age.nix
+    ./system/authelia.nix
     ./system/boot.nix
     ./system/caddy.nix
     ./system/restic.nix
@@ -94,17 +95,6 @@
 
   environment.shells = with pkgs; [ nushell ];
   environment.systemPackages = with pkgs; [ libraspberrypi ];
-
-  services.authelia.instances.main = {
-    enable = true;
-    secrets = {
-      jwtSecretFile = config.age.secrets.authelia-main-jwt.path;
-      oidcHmacSecretFile = config.age.secrets.authelia-main-oidc-hmac.path;
-      oidcIssuerPrivateKeyFile = config.age.secrets.authelia-main-oidc-key.path;
-      storageEncryptionKeyFile = config.age.secrets.authelia-main-storage.path;
-    };
-    settingsFiles = [ config.age.secrets.authelia-main-settings.path ];
-  };
 
   services.lldap = {
     enable = true;
