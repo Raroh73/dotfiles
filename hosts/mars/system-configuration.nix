@@ -5,6 +5,7 @@
     ./system/authelia.nix
     ./system/boot.nix
     ./system/caddy.nix
+    ./system/cloudflare-dyndns.nix
     ./system/restic.nix
     ./system/users.nix
     ./system/webhook.nix
@@ -56,13 +57,6 @@
       PasswordAuthentication = false;
       PermitRootLogin = "no";
     };
-  };
-
-  services.cloudflare-dyndns = {
-    enable = true;
-    apiTokenFile = config.age.secrets.cloudflare-token.path;
-    domains = [ "raroh73.xyz" "www.raroh73.xyz" "miniflux.raroh73.xyz" "webhook.raroh73.xyz" "authelia.raroh73.xyz" "shiori.raroh73.xyz" "lldap.raroh73.xyz" ];
-    proxied = true;
   };
 
   security.sudo.extraRules = [{
