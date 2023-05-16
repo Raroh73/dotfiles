@@ -10,22 +10,22 @@ _: {
           file_server
         '';
       };
-      "miniflux.raroh73.xyz" = {
-        useACMEHost = "miniflux.raroh73.xyz";
-        extraConfig = ''
-          reverse_proxy localhost:8080
-        '';
-      };
-      "webhook.raroh73.xyz" = {
-        useACMEHost = "webhook.raroh73.xyz";
-        extraConfig = ''
-          reverse_proxy localhost:9000
-        '';
-      };
       "authelia.raroh73.xyz" = {
         useACMEHost = "authelia.raroh73.xyz";
         extraConfig = ''
           reverse_proxy localhost:9091
+        '';
+      };
+      "lldap.raroh73.xyz" = {
+        useACMEHost = "lldap.raroh73.xyz";
+        extraConfig = ''
+          reverse_proxy localhost:17170
+        '';
+      };
+      "miniflux.raroh73.xyz" = {
+        useACMEHost = "miniflux.raroh73.xyz";
+        extraConfig = ''
+          reverse_proxy localhost:8080
         '';
       };
       "shiori.raroh73.xyz" = {
@@ -34,10 +34,10 @@ _: {
           reverse_proxy localhost:8081
         '';
       };
-      "lldap.raroh73.xyz" = {
-        useACMEHost = "lldap.raroh73.xyz";
+      "webhook.raroh73.xyz" = {
+        useACMEHost = "webhook.raroh73.xyz";
         extraConfig = ''
-          reverse_proxy localhost:17170
+          reverse_proxy localhost:9000
         '';
       };
     };
