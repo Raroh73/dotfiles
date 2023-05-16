@@ -60,7 +60,7 @@
   services.cloudflare-dyndns = {
     enable = true;
     apiTokenFile = config.age.secrets.cloudflare-token.path;
-    domains = [ "raroh73.xyz" "www.raroh73.xyz" "miniflux.raroh73.xyz" "webhook.raroh73.xyz" "authelia.raroh73.xyz" "shiori.raroh73.xyz" ];
+    domains = [ "raroh73.xyz" "www.raroh73.xyz" "miniflux.raroh73.xyz" "webhook.raroh73.xyz" "authelia.raroh73.xyz" "shiori.raroh73.xyz" "lldap.raroh73.xyz" ];
     proxied = true;
   };
 
@@ -104,6 +104,16 @@
       storageEncryptionKeyFile = config.age.secrets.authelia-main-storage.path;
     };
     settingsFiles = [ config.age.secrets.authelia-main-settings.path ];
+  };
+
+  services.lldap = {
+    enable = true;
+    settings = {
+      ldap_user_dn = "admin";
+      ldap_user_email = "admin@raroh73.xyz";
+      ldap_base_dn = "dc=raroh73,dc=xyz";
+    };
+    environmentFile = config.age.secrets.lldap-environment.path;
   };
 
   system.stateVersion = "22.11";

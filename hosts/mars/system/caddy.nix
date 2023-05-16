@@ -34,6 +34,12 @@ _: {
           reverse_proxy localhost:8081
         '';
       };
+      "lldap.raroh73.xyz" = {
+        useACMEHost = "lldap.raroh73.xyz";
+        extraConfig = ''
+          reverse_proxy localhost:17170
+        '';
+      };
     };
   };
 }
