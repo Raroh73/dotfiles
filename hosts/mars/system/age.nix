@@ -5,6 +5,16 @@ _: {
       owner = "authelia-main";
       group = "authelia-main";
     };
+    authelia-main-ldap-password = {
+      file = ../../../secrets/authelia-main-ldap-password.age;
+      owner = "authelia-main";
+      group = "authelia-main";
+    };
+    authelia-main-oidc-clients = {
+      file = ../../../secrets/authelia-main-oidc-clients.age;
+      owner = "authelia-main";
+      group = "authelia-main";
+    };
     authelia-main-oidc-hmac = {
       file = ../../../secrets/authelia-main-oidc-hmac.age;
       owner = "authelia-main";
@@ -15,18 +25,8 @@ _: {
       owner = "authelia-main";
       group = "authelia-main";
     };
-    authelia-main-settings = {
-      file = ../../../secrets/authelia-main-settings.age;
-      owner = "authelia-main";
-      group = "authelia-main";
-    };
     authelia-main-storage = {
       file = ../../../secrets/authelia-main-storage.age;
-      owner = "authelia-main";
-      group = "authelia-main";
-    };
-    authelia-main-users = {
-      file = ../../../secrets/authelia-main-users.age;
       owner = "authelia-main";
       group = "authelia-main";
     };

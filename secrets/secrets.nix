@@ -5,11 +5,11 @@ let
 in
 {
   "authelia-main-jwt.age".publicKeys = [ agenix mars ];
+  "authelia-main-ldap-password.age".publicKeys = [ agenix mars ];
+  "authelia-main-oidc-clients.age".publicKeys = [ agenix mars ];
   "authelia-main-oidc-hmac.age".publicKeys = [ agenix mars ];
   "authelia-main-oidc-key.age".publicKeys = [ agenix mars ];
-  "authelia-main-settings.age".publicKeys = [ agenix mars ];
   "authelia-main-storage.age".publicKeys = [ agenix mars ];
-  "authelia-main-users.age".publicKeys = [ agenix mars ];
   "backup-mars-environment.age".publicKeys = [ agenix mars ];
   "backup-mars-password.age".publicKeys = [ agenix mars ];
   "backup-mars-repository.age".publicKeys = [ agenix mars ];
