@@ -19,7 +19,6 @@
   hardware = {
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
-    # Currently does not work on Linux 6.3
-    #xone.enable = true;
+    xone.enable = true;
   };
 }
