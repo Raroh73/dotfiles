@@ -19,9 +19,9 @@
   };
 
   outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
-    nixosConfigurations.earth = nixpkgs.lib.nixosSystem {
-      pkgs = (import nixpkgs) {
-        system = "x86_64-linux";
+    nixosConfigurations.earth = nixpkgs.lib.nixosSystem rec {
+      pkgs = import nixpkgs {
+        inherit system;
         config = {
           allowUnfree = true;
         };
@@ -42,9 +42,9 @@
         ./hosts/earth/hardware-configuration.nix
       ];
     };
-    nixosConfigurations.mars = nixpkgs.lib.nixosSystem {
-      pkgs = (import nixpkgs) {
-        system = "aarch64-linux";
+    nixosConfigurations.mars = nixpkgs.lib.nixosSystem rec {
+      pkgs = import nixpkgs {
+        inherit system;
         config = {
           allowUnfree = true;
         };
