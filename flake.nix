@@ -24,10 +24,6 @@
         system = "x86_64-linux";
         config = {
           allowUnfree = true;
-          # Temporarily allow insecure nodejs
-          permittedInsecurePackages = [
-            "nodejs-16.20.0"
-          ];
         };
         overlays = [
           nur.overlay
