@@ -19,47 +19,49 @@
   };
 
   outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
-    nixosConfigurations.earth = nixpkgs.lib.nixosSystem rec {
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
+    nixosConfigurations = {
+      earth = nixpkgs.lib.nixosSystem rec {
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+          overlays = [
+            nur.overlay
+          ];
         };
-        overlays = [
-          nur.overlay
+        system = "x86_64-linux";
+        modules = [
+          agenix.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.raroh73.imports = [ ./hosts/earth/home-configuration.nix ];
+          }
+          ./hosts/earth/system-configuration.nix
+          ./hosts/earth/hardware-configuration.nix
         ];
       };
-      system = "x86_64-linux";
-      modules = [
-        agenix.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.raroh73.imports = [ ./hosts/earth/home-configuration.nix ];
-        }
-        ./hosts/earth/system-configuration.nix
-        ./hosts/earth/hardware-configuration.nix
-      ];
-    };
-    nixosConfigurations.mars = nixpkgs.lib.nixosSystem rec {
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
+      mars = nixpkgs.lib.nixosSystem rec {
+        pkgs = import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
         };
+        system = "aarch64-linux";
+        modules = [
+          agenix.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.raroh73.imports = [ ./hosts/mars/home-configuration.nix ];
+          }
+          ./hosts/mars/system-configuration.nix
+        ];
       };
-      system = "aarch64-linux";
-      modules = [
-        agenix.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.raroh73.imports = [ ./hosts/mars/home-configuration.nix ];
-        }
-        ./hosts/mars/system-configuration.nix
-      ];
     };
     packages.x86_64-linux = {
       mars-install = nixos-generators.nixosGenerate {
