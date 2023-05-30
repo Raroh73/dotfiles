@@ -7,6 +7,7 @@
     ./system/caddy.nix
     ./system/cloudflare-dyndns.nix
     ./system/restic.nix
+    ./system/syncthing.nix
     ./system/users.nix
     ./system/webhook.nix
   ];

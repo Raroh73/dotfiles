@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./system/syncthing.nix
     ./system/users.nix
   ];
 
