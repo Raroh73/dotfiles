@@ -8,7 +8,6 @@
       "authelia.raroh73.xyz" = { };
       "lldap.raroh73.xyz" = { };
       "miniflux.raroh73.xyz" = { };
-      "shiori.raroh73.xyz" = { };
       "webhook.raroh73.xyz" = { };
     };
     defaults = {

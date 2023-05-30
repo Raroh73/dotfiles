@@ -9,7 +9,6 @@
         ${pkgs.sqlite}/bin/sqlite3 /var/lib/lldap/users.db .dump > /var/backups/mars/lldap.sql
         ${pkgs.sqlite}/bin/sqlite3 /var/lib/authelia-main/db.sqlite3 .dump > /var/backups/mars/authelia.sql
         ${pkgs.sudo}/bin/sudo -u postgres ${pkgs.postgresql}/bin/pg_dump miniflux -c > /var/backups/mars/miniflux.sql
-        ${pkgs.sqlite}/bin/sqlite3 /var/lib/shiori/shiori.db .dump > /var/backups/mars/shiori.sql
       '';
       environmentFile = config.age.secrets.backup-mars-environment.path;
       initialize = true;

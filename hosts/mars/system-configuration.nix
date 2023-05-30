@@ -78,11 +78,6 @@
     adminCredentialsFile = config.age.secrets.miniflux-admin-credentials.path;
   };
 
-  services.shiori = {
-    enable = true;
-    port = 8081;
-  };
-
   hardware.enableRedistributableFirmware = true;
 
   zramSwap.enable = true;
