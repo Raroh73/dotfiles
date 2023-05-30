@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     bitwarden
     discord
+    element-desktop
     logseq
     nixpkgs-fmt
     podman-compose

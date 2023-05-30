@@ -28,6 +28,7 @@
         "steam.desktop"
         "code.desktop"
         "Alacritty.desktop"
+        "element-desktop.desktop"
         "discord.desktop"
         "spotify.desktop"
         "bitwarden.desktop"
