@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     bitwarden
     discord
+    logseq
     nixpkgs-fmt
     podman-compose
     spotify
