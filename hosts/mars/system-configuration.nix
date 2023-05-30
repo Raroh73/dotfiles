@@ -89,9 +89,9 @@
   services.lldap = {
     enable = true;
     settings = {
+      ldap_base_dn = "dc=raroh73,dc=xyz";
       ldap_user_dn = "admin";
       ldap_user_email = "admin@raroh73.xyz";
-      ldap_base_dn = "dc=raroh73,dc=xyz";
     };
     environmentFile = config.age.secrets.lldap-environment.path;
   };
