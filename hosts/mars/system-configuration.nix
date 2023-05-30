@@ -96,5 +96,7 @@
     environmentFile = config.age.secrets.lldap-environment.path;
   };
 
+  systemd.watchdog.runtimeTime = "15s";
+
   system.stateVersion = "22.11";
 }
