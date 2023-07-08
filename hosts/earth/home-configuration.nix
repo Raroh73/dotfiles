@@ -27,7 +27,6 @@
     element-desktop
     logseq
     nixpkgs-fmt
-    podman-compose
     spotify
   ];
 

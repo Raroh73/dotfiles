@@ -5,7 +5,7 @@
       raroh73 = {
         isNormalUser = true;
         description = "Raroh73";
-        extraGroups = [ "networkmanager" "podman" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" ];
         passwordFile = config.age.secrets.raroh73-earth-password.path;
         shell = pkgs.nushell;
       };
