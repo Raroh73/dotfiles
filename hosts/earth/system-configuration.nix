@@ -24,10 +24,7 @@
   };
 
   networking = {
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 8008 ];
-    };
+    firewall.enable = true;
     hostName = "earth";
     networkmanager.enable = true;
   };
