@@ -2,10 +2,9 @@
 let
   hugo-build = pkgs.writeShellApplication {
     name = "hugo-build";
-    runtimeInputs = with pkgs; [ git hugo ];
     text = ''
-      git pull --recurse-submodules
-      hugo
+      ${pkgs.git}/bin/git pull --recurse-submodules
+      ${pkgs.hugo}/bin/hugo
     '';
   };
 in
