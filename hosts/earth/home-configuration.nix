@@ -25,7 +25,6 @@
     bitwarden
     discord
     element-desktop
-    logseq
     nixpkgs-fmt
     spotify
   ];
