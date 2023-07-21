@@ -13,6 +13,9 @@ _: {
       core = {
         whitespace = "trailing-space,space-before-tab";
       };
+      fetch = {
+        prune = true;
+      };
       gpg = {
         format = "ssh";
       };
