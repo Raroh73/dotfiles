@@ -33,11 +33,7 @@
   };
 
   networking = {
-    firewall = {
-      enable = true;
-      allowedUDPPorts = [ 80 443 ];
-      allowedTCPPorts = [ 80 443 ];
-    };
+    firewall.enable = true;
     hostName = "mars";
     networkmanager.enable = true;
   };
