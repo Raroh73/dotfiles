@@ -3,7 +3,6 @@
     ./system/acme.nix
     ./system/age.nix
     ./system/boot.nix
-    ./system/caddy.nix
     ./system/cloudflare-dyndns.nix
     ./system/restic.nix
     ./system/users.nix

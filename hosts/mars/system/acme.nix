@@ -1,11 +1,7 @@
 { config, ... }: {
   security.acme = {
     acceptTerms = true;
-    certs = {
-      "raroh73.xyz" = {
-        extraDomainNames = [ "www.raroh73.xyz" ];
-      };
-    };
+    certs = { };
     defaults = {
       credentialsFile = config.age.secrets.lego-token.path;
       dnsProvider = "cloudflare";
