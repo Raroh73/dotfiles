@@ -2,7 +2,6 @@
   imports = [
     ./system/acme.nix
     ./system/age.nix
-    ./system/authelia.nix
     ./system/boot.nix
     ./system/caddy.nix
     ./system/cloudflare-dyndns.nix
