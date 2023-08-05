@@ -7,7 +7,6 @@
     ./system/cloudflare-dyndns.nix
     ./system/restic.nix
     ./system/users.nix
-    ./system/webhook.nix
   ];
 
   nix = {

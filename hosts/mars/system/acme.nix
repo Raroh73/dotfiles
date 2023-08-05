@@ -5,7 +5,6 @@
       "raroh73.xyz" = {
         extraDomainNames = [ "www.raroh73.xyz" ];
       };
-      "webhook.raroh73.xyz" = { };
     };
     defaults = {
       credentialsFile = config.age.secrets.lego-token.path;
