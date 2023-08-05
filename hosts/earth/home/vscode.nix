@@ -4,7 +4,6 @@
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
     extensions = with pkgs.vscode-extensions; [
-      bradlc.vscode-tailwindcss
       davidanson.vscode-markdownlint
       esbenp.prettier-vscode
       jnoortheen.nix-ide
