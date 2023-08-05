@@ -7,7 +7,7 @@ in
   "backup-mars-environment.age".publicKeys = [ agenix mars ];
   "backup-mars-password.age".publicKeys = [ agenix mars ];
   "backup-mars-repository.age".publicKeys = [ agenix mars ];
-  "cloudflare-token.age".publicKeys = [ agenix mars ];
+  "cloudflare-dyndns-token.age".publicKeys = [ agenix mars ];
   "lego-token.age".publicKeys = [ agenix mars ];
   "raroh73-earth-password.age".publicKeys = [ agenix earth ];
   "raroh73-mars-password.age".publicKeys = [ agenix mars ];
