@@ -10,12 +10,6 @@ _: {
           file_server
         '';
       };
-      "miniflux.raroh73.xyz" = {
-        useACMEHost = "miniflux.raroh73.xyz";
-        extraConfig = ''
-          reverse_proxy localhost:8080
-        '';
-      };
       "webhook.raroh73.xyz" = {
         useACMEHost = "webhook.raroh73.xyz";
         extraConfig = ''

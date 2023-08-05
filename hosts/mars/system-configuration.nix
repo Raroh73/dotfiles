@@ -74,11 +74,6 @@
     ];
   }];
 
-  services.miniflux = {
-    enable = true;
-    adminCredentialsFile = config.age.secrets.miniflux-admin-credentials.path;
-  };
-
   hardware.enableRedistributableFirmware = true;
 
   zramSwap.enable = true;
