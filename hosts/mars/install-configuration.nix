@@ -6,8 +6,6 @@
     trusted-users = [ "root" "@wheel" ];
   };
 
-  boot.kernelParams = [ "cma=256M" ];
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
