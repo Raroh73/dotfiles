@@ -6,6 +6,7 @@
     ./home/firefox.nix
     ./home/git.nix
     ./home/gnome.nix
+    ./home/librewolf.nix
     ./home/mangohud.nix
     ./home/nushell.nix
     ./home/ssh.nix
