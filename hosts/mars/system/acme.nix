@@ -5,7 +5,6 @@
       "raroh73.xyz" = {
         extraDomainNames = [ "www.raroh73.xyz" ];
       };
-      "lldap.raroh73.xyz" = { };
       "miniflux.raroh73.xyz" = { };
       "webhook.raroh73.xyz" = { };
     };

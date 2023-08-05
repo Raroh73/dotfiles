@@ -10,12 +10,6 @@ _: {
           file_server
         '';
       };
-      "lldap.raroh73.xyz" = {
-        useACMEHost = "lldap.raroh73.xyz";
-        extraConfig = ''
-          reverse_proxy localhost:17170
-        '';
-      };
       "miniflux.raroh73.xyz" = {
         useACMEHost = "miniflux.raroh73.xyz";
         extraConfig = ''

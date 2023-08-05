@@ -5,7 +5,6 @@ _: {
     backup-mars-repository.file = ../../../secrets/backup-mars-repository.age;
     cloudflare-token.file = ../../../secrets/cloudflare-token.age;
     lego-token.file = ../../../secrets/lego-token.age;
-    lldap-environment.file = ../../../secrets/lldap-environment.age;
     miniflux-admin-credentials.file = ../../../secrets/miniflux-admin-credentials.age;
     raroh73-mars-password.file = ../../../secrets/raroh73-mars-password.age;
   };

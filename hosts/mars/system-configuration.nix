@@ -86,16 +86,6 @@
   environment.shells = with pkgs; [ nushell ];
   environment.systemPackages = with pkgs; [ libraspberrypi ];
 
-  services.lldap = {
-    enable = true;
-    settings = {
-      ldap_base_dn = "dc=raroh73,dc=xyz";
-      ldap_user_dn = "admin";
-      ldap_user_email = "admin@raroh73.xyz";
-    };
-    environmentFile = config.age.secrets.lldap-environment.path;
-  };
-
   systemd.watchdog.runtimeTime = "15s";
 
   system.stateVersion = "22.11";

@@ -3,7 +3,6 @@
     enable = true;
     apiTokenFile = config.age.secrets.cloudflare-token.path;
     domains = [
-      "lldap.raroh73.xyz"
       "miniflux.raroh73.xyz"
       "raroh73.xyz"
       "webhook.raroh73.xyz"
