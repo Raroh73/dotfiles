@@ -2,6 +2,7 @@
   users = {
     mutableUsers = false;
     users = {
+      nginx.extraGroups = [ "acme" ];
       raroh73 = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];

@@ -1,7 +1,9 @@
 { config, ... }: {
   security.acme = {
     acceptTerms = true;
-    certs = { };
+    certs = {
+      "nextcloud.raroh73.xyz" = { };
+    };
     defaults = {
       credentialsFile = config.age.secrets.lego-token.path;
       dnsProvider = "cloudflare";

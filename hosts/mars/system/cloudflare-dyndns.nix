@@ -2,7 +2,7 @@
   services.cloudflare-dyndns = {
     enable = true;
     apiTokenFile = config.age.secrets.cloudflare-dyndns-token.path;
-    domains = [ ];
+    domains = [ "nextcloud.raroh73.xyz" ];
     proxied = true;
   };
 }

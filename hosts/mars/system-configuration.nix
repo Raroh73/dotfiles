@@ -4,6 +4,8 @@
     ./system/age.nix
     ./system/boot.nix
     ./system/cloudflare-dyndns.nix
+    ./system/nextcloud.nix
+    ./system/nginx.nix
     ./system/restic.nix
     ./system/users.nix
   ];
@@ -33,7 +35,11 @@
   };
 
   networking = {
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      allowedUDPPorts = [ 80 443 ];
+      allowedTCPPorts = [ 80 443 ];
+    };
     hostName = "mars";
     networkmanager.enable = true;
   };
