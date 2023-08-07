@@ -29,7 +29,7 @@
       raroh73 = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
-        hashedPassword = "$y$j9T$E7B.wD/rB2Z6LnU05C86N1$tREsxNWhOg2Zul8lRrSaUvNX3icaHcV1Ac3QfMRAFXA";
+        hashedPassword = "$y$j9T$WNW.B0QH9CemAF6JVJizJ1$eiZrj4KO/Dv51R/STGi/QmBgog7e89WlreaR2PWz0V7";
       };
       root.hashedPassword = "!";
     };
