@@ -2,6 +2,9 @@
   security.acme = {
     acceptTerms = true;
     certs = {
+      "raroh73.xyz" = {
+        extraDomainNames = [ "www.raroh73.xyz" ];
+      };
       "nextcloud.raroh73.xyz" = { };
       "webhook.raroh73.xyz" = { };
     };

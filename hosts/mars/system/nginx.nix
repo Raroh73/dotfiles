@@ -11,6 +11,16 @@ in
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts = {
+      "raroh73.xyz" = {
+        forceSSL = true;
+        useACMEHost = "raroh73.xyz";
+        serverAliases = [ "www.raroh73.xyz" ];
+        root = "/srv/web/raroh73.xyz/public";
+        extraConfig = ''
+          ssl_client_certificate ${cloudflare-origin-pull-ca};
+          ssl_verify_client on;
+        '';
+      };
       "${config.services.nextcloud.hostName}" = {
         forceSSL = true;
         useACMEHost = "nextcloud.raroh73.xyz";
