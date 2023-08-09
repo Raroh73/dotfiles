@@ -19,6 +19,17 @@ in
           ssl_verify_client on;
         '';
       };
+      "webhook.raroh73.xyz" = {
+        forceSSL = true;
+        useACMEHost = "webhook.raroh73.xyz";
+        locations."/" = {
+          proxyPass = "http://localhost:9000";
+        };
+        extraConfig = ''
+          ssl_client_certificate ${cloudflare-origin-pull-ca};
+          ssl_verify_client on;
+        '';
+      };
     };
   };
 }

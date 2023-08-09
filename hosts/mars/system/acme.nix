@@ -3,6 +3,7 @@
     acceptTerms = true;
     certs = {
       "nextcloud.raroh73.xyz" = { };
+      "webhook.raroh73.xyz" = { };
     };
     defaults = {
       credentialsFile = config.age.secrets.lego-token.path;

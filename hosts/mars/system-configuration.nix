@@ -8,6 +8,7 @@
     ./system/nginx.nix
     ./system/restic.nix
     ./system/users.nix
+    ./system/webhook.nix
   ];
 
   nix = {
@@ -82,6 +83,10 @@
   environment.systemPackages = with pkgs; [ libraspberrypi ];
 
   systemd.watchdog.runtimeTime = "15s";
+
+  systemd.tmpfiles.rules = [
+    "d /srv 1777 - - -"
+  ];
 
   system.stateVersion = "22.11";
 }
