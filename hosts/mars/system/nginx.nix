@@ -6,14 +6,19 @@ let
   };
 in
 {
-  services.nginx.virtualHosts = {
-    "${config.services.nextcloud.hostName}" = {
-      forceSSL = true;
-      useACMEHost = "nextcloud.raroh73.xyz";
-      extraConfig = ''
-        ssl_client_certificate ${cloudflare-origin-pull-ca};
-        ssl_verify_client on;
-      '';
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+    virtualHosts = {
+      "${config.services.nextcloud.hostName}" = {
+        forceSSL = true;
+        useACMEHost = "nextcloud.raroh73.xyz";
+        extraConfig = ''
+          ssl_client_certificate ${cloudflare-origin-pull-ca};
+          ssl_verify_client on;
+        '';
+      };
     };
   };
 }
