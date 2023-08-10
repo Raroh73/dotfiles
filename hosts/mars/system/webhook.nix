@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  hugo-build = pkgs.writeShellApplication {
-    name = "hugo-build";
+  raroh73_xyz-build = pkgs.writeShellApplication {
+    name = "raroh73_xyz-build";
     text = ''
       if [ ! -d /srv/web/raroh73.xyz ]
       then
@@ -21,8 +21,8 @@ in
     hooksTemplated = {
       hugo-webhook = ''
         {
-          "id": "hugo-webhook",
-          "execute-command": "${hugo-build}/bin/hugo-build",
+          "id": "raroh73_xyz-webhook",
+          "execute-command": "${raroh73_xyz-build}/bin/raroh73_xyz-build",
           "trigger-rule": {
             "and": [
               {
