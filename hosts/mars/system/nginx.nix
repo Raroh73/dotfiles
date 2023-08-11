@@ -21,6 +21,7 @@ in
         extraConfig = ''
           ssl_client_certificate ${cloudflare-origin-pull-ca};
           ssl_verify_client on;
+          error_page 404 /404.html;
         '';
       };
       "${config.services.nextcloud.hostName}" = {
