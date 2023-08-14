@@ -10,7 +10,7 @@
     };
     extraAppsEnable = true;
     extraApps = with config.services.nextcloud.package.packages.apps; {
-      inherit bookmarks calendar contacts news notes tasks twofactor_nextcloud_notification;
+      inherit bookmarks calendar contacts news notes tasks;
     };
     logType = "file";
     secretFile = config.age.secrets.nextcloud-secrets.path;
