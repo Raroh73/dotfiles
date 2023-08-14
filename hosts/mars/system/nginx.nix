@@ -1,4 +1,4 @@
-{ config, ... }:
+_:
 let
   cloudflare-origin-pull-ca = builtins.fetchurl {
     url = "https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem";
@@ -24,7 +24,7 @@ in
           error_page 404 /404.html;
         '';
       };
-      "${config.services.nextcloud.hostName}" = {
+      "nextcloud.raroh73.xyz" = {
         forceSSL = true;
         useACMEHost = "nextcloud.raroh73.xyz";
         extraConfig = ''
