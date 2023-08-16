@@ -11,7 +11,7 @@ let
         cd /srv/web/raroh73.xyz
         ${pkgs.git}/bin/git pull https://github.com/Raroh73/raroh73.xyz.git
       fi
-      ${pkgs.hugo}/bin/hugo
+      ${pkgs.hugo}/bin/hugo --minify
     '';
   };
 in
