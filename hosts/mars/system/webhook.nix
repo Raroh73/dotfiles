@@ -3,6 +3,7 @@ let
   raroh73_xyz-build = pkgs.writeShellApplication {
     name = "raroh73_xyz-build";
     text = ''
+      rm -fr /srv/web/raroh73.xyz/public
       if [ ! -d /srv/web/raroh73.xyz ]
       then
         ${pkgs.git}/bin/git clone https://github.com/Raroh73/raroh73.xyz.git /srv/web/raroh73.xyz
