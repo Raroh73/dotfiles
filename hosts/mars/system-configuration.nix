@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./system/acme.nix
     ./system/age.nix
