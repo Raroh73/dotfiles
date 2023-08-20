@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud26;
+    package = pkgs.nextcloud27;
     hostName = "nextcloud.raroh73.xyz";
     https = true;
     config = {
