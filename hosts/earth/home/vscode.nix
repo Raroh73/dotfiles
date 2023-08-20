@@ -15,7 +15,12 @@
     ];
     mutableExtensionsDir = false;
     userSettings = {
-      "css.format.enable" = false;
+      "[css][javascript][json][typescript][yaml]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[html]" = {
+        "editor.defaultFormatter" = "vscode.html-language-features";
+      };
       "editor.fontFamily" = "CaskaydiaCove Nerd Font";
       "editor.fontLigatures" = true;
       "editor.formatOnSave" = true;
@@ -26,9 +31,6 @@
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
       "git.autofetch" = true;
-      "html.format.enable" = false;
-      "javascript.format.enable" = false;
-      "json.format.enable" = false;
       "telemetry.telemetryLevel" = "off";
       "terminal.integrated.defaultProfile.linux" = "Nushell";
       "terminal.integrated.profiles.linux" = {
@@ -36,9 +38,7 @@
           "path" = "/etc/profiles/per-user/raroh73/bin/nu";
         };
       };
-      "typescript.format.enable" = false;
       "window.restoreWindows" = "none";
-      "yaml.format.enable" = false;
     };
   };
 }
