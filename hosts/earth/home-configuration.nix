@@ -26,6 +26,7 @@
     bitwarden
     discord
     element-desktop
+    hugo
     nixpkgs-fmt
     spotify
   ];
