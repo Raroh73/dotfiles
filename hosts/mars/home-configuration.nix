@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./home/atuin.nix
+    ./home/bat.nix
     ./home/bottom.nix
     ./home/nushell.nix
     ./home/starship.nix
