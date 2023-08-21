@@ -5,6 +5,7 @@ _: {
     ./home/bottom.nix
     ./home/nushell.nix
     ./home/starship.nix
+    ./home/zoxide.nix
   ];
 
   home.username = "raroh73";

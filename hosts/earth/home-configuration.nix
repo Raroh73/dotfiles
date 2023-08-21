@@ -14,6 +14,7 @@
     ./home/ssh.nix
     ./home/starship.nix
     ./home/vscode.nix
+    ./home/zoxide.nix
   ];
 
   home.username = "raroh73";
