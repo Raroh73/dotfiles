@@ -14,6 +14,7 @@
       dates = "weekly";
       options = "--delete-older-than 30d";
     };
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
