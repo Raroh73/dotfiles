@@ -9,6 +9,7 @@
       adminpassFile = config.age.secrets.nextcloud-adminpass.path;
       objectstore.s3 = {
         enable = true;
+        autocreate = false;
         bucket = "sol-nextcloud";
         key = "00341b19355e47f0000000001";
         secretFile = config.age.secrets.nextcloud-s3-secret.path;
