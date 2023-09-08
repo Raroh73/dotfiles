@@ -6,7 +6,6 @@
     ./system/cloudflare-dyndns.nix
     ./system/nextcloud.nix
     ./system/nginx.nix
-    ./system/restic.nix
     ./system/users.nix
     ./system/webhook.nix
   ];
@@ -31,10 +30,18 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
+      device = "/dev/disk/by-label/root";
       fsType = "ext4";
     };
+    "/boot" = {
+      device = "dev/disk/by-label/boot";
+      fsType = "vfat";
+    };
   };
+
+  swapDevices = [{
+    device = "/dev/vda3";
+  }];
 
   networking = {
     firewall = {
@@ -42,13 +49,13 @@
       allowedUDPPorts = [ 80 443 ];
       allowedTCPPorts = [ 80 443 ];
     };
-    hostName = "mars";
+    hostName = "sol";
     networkmanager.enable = true;
   };
 
   services.unbound.enable = true;
 
-  time.timeZone = "Europe/Warsaw";
+  time.timeZone = "Europe/Amsterdam";
 
   services.fail2ban.enable = true;
 
@@ -62,32 +69,13 @@
     };
   };
 
-  security.sudo.extraRules = [{
-    groups = [ "wheel" ];
-    commands = [
-      {
-        command = "/run/current-system/sw/bin/nix-env";
-        options = [ "NOPASSWD" ];
-      }
-      {
-        command = "/nix/store/*/bin/switch-to-configuration";
-        options = [ "NOPASSWD" ];
-      }
-    ];
-  }];
-
-  hardware.enableRedistributableFirmware = true;
-
-  zramSwap.enable = true;
-
   environment.shells = with pkgs; [ nushell ];
-  environment.systemPackages = with pkgs; [ libraspberrypi ];
-
-  systemd.watchdog.runtimeTime = "15s";
 
   systemd.tmpfiles.rules = [
     "d /srv 1777 - - -"
   ];
+
+  virtualisation.hypervGuest.enable = true;
 
   system.stateVersion = "22.11";
 }
