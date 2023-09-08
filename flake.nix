@@ -10,15 +10,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
+  outputs = { self, agenix, home-manager, nixpkgs, nur }: {
     nixosConfigurations = {
       earth = nixpkgs.lib.nixosSystem rec {
         pkgs = import nixpkgs {
@@ -43,31 +39,24 @@
           ./hosts/earth/hardware-configuration.nix
         ];
       };
-      mars = nixpkgs.lib.nixosSystem rec {
+      sol = nixpkgs.lib.nixosSystem rec {
         pkgs = import nixpkgs {
           inherit system;
           config = {
             allowUnfree = true;
           };
         };
-        system = "aarch64-linux";
+        system = "x86_64-linux";
         modules = [
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.raroh73.imports = [ ./hosts/mars/home-configuration.nix ];
+            home-manager.users.raroh73.imports = [ ./hosts/sol/home-configuration.nix ];
           }
-          ./hosts/mars/system-configuration.nix
+          ./hosts/sol/system-configuration.nix
         ];
-      };
-    };
-    packages.x86_64-linux = {
-      mars-install = nixos-generators.nixosGenerate {
-        system = "aarch64-linux";
-        modules = [ ./hosts/mars/install-configuration.nix ];
-        format = "sd-aarch64";
       };
     };
   };
