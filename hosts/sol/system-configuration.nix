@@ -34,13 +34,13 @@
       fsType = "ext4";
     };
     "/boot" = {
-      device = "dev/disk/by-label/boot";
+      device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
   };
 
   swapDevices = [{
-    device = "/dev/vda3";
+    device = "/dev/disk/by-label/swap";
   }];
 
   networking = {
