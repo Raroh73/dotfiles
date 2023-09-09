@@ -8,6 +8,8 @@
       "webhook.raroh73.xyz"
       "www.raroh73.xyz"
     ];
+    ipv4 = true;
+    ipv6 = true;
     proxied = true;
   };
 }
