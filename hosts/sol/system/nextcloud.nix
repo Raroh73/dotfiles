@@ -11,9 +11,9 @@
         enable = true;
         autocreate = false;
         bucket = "sol-nextcloud";
+        hostname = "s3.eu-central-003.backblazeb2.com";
         key = "00341b19355e47f0000000001";
         secretFile = config.age.secrets.nextcloud-s3-secret.path;
-        hostname = "s3.eu-central-003.backblazeb2.com";
       };
     };
     extraAppsEnable = true;
