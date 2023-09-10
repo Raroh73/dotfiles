@@ -1,8 +1,4 @@
 { ... }: {
-  imports = [
-    ./hardware/boot.nix
-  ];
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/nixos";
