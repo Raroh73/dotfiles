@@ -14,7 +14,10 @@
     };
   };
 
-  zramSwap.enable = true;
+  swapDevices = [{
+    device = "/dev/disk/by-label/swap";
+  }];
+
 
   hardware = {
     cpu.intel.updateMicrocode = true;
