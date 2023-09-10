@@ -22,6 +22,21 @@
     };
   };
 
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-label/boot";
+      fsType = "vfat";
+    };
+  };
+
+  swapDevices = [{
+    device = "/dev/disk/by-label/swap";
+  }];
+
   age.secrets = {
     raroh73-earth-password.file = ../../secrets/raroh73-earth-password.age;
   };
@@ -43,13 +58,18 @@
     desktopManager.gnome.enable = true;
   };
 
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true;
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+    enableRedistributableFirmware = true;
+    opengl = {
+      enable = true;
+      driSupport32Bit = true;
+    };
+    pulseaudio.enable = false;
+    xone.enable = true;
   };
 
   sound.enable = false;
-  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;

@@ -36,7 +36,6 @@
             home-manager.users.raroh73.imports = [ ./hosts/earth/home-configuration.nix ];
           }
           ./hosts/earth/system-configuration.nix
-          ./hosts/earth/hardware-configuration.nix
         ];
       };
       sol = nixpkgs.lib.nixosSystem rec {
