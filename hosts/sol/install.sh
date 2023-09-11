@@ -18,7 +18,7 @@ echo "Formatted partitions!"
 mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
-swapon /dev/vda3
+swapon /dev/disk/by-label/swap
 echo "Mounted partitions!"
 
 # Install NixOS
