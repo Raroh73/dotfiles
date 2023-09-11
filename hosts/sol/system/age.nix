@@ -18,5 +18,8 @@ _: {
       group = "nextcloud";
     };
     raroh73-sol-password.file = ../../../secrets/raroh73-sol-password.age;
+    restic-sol-environment.file = ../../../secrets/restic-sol-environment.age;
+    restic-sol-password.file = ../../../secrets/restic-sol-password.age;
+    restic-sol-repository.file = ../../../secrets/restic-sol-repository.age;
   };
 }

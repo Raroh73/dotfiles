@@ -6,6 +6,7 @@
     ./system/cloudflare-dyndns.nix
     ./system/nextcloud.nix
     ./system/nginx.nix
+    ./system/restic.nix
     ./system/users.nix
     ./system/webhook.nix
   ];

@@ -11,4 +11,7 @@ in
   "nextcloud-secrets.age".publicKeys = [ agenix sol ];
   "raroh73-earth-password.age".publicKeys = [ agenix earth ];
   "raroh73-sol-password.age".publicKeys = [ agenix sol ];
+  "restic-sol-environment.age".publicKeys = [ agenix sol ];
+  "restic-sol-password.age".publicKeys = [ agenix sol ];
+  "restic-sol-repository.age".publicKeys = [ agenix sol ];
 }
