@@ -11,9 +11,10 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  boot.loader.systemd-boot = {
+  boot.loader.grub = {
     enable = true;
     configurationLimit = 8;
+    device = "/dev/vda";
   };
 
   networking = {
