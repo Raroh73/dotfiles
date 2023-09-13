@@ -15,6 +15,6 @@ _: {
       owner = "nextcloud";
       group = "nextcloud";
     };
-    raroh73-sol-password.file = ../../../secrets/raroh73-sol-password.age;
+    raroh73-mars-password.file = ../../../secrets/raroh73-mars-password.age;
   };
 }
