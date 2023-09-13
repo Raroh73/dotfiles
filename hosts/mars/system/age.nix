@@ -1,14 +1,12 @@
 _: {
   age.secrets = {
+    backup-mars-environment.file = ../../../secrets/backup-mars-environment.age;
+    backup-mars-password.file = ../../../secrets/backup-mars-password.age;
+    backup-mars-repository.file = ../../../secrets/backup-mars-repository.age;
     cloudflare-dyndns-token.file = ../../../secrets/cloudflare-dyndns-token.age;
     lego-token.file = ../../../secrets/lego-token.age;
     nextcloud-adminpass = {
       file = ../../../secrets/nextcloud-adminpass.age;
-      owner = "nextcloud";
-      group = "nextcloud";
-    };
-    nextcloud-s3-secret = {
-      file = ../../../secrets/nextcloud-s3-secret.age;
       owner = "nextcloud";
       group = "nextcloud";
     };
@@ -18,8 +16,5 @@ _: {
       group = "nextcloud";
     };
     raroh73-sol-password.file = ../../../secrets/raroh73-sol-password.age;
-    restic-sol-environment.file = ../../../secrets/restic-sol-environment.age;
-    restic-sol-password.file = ../../../secrets/restic-sol-password.age;
-    restic-sol-repository.file = ../../../secrets/restic-sol-repository.age;
   };
 }

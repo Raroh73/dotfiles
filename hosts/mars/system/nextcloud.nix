@@ -7,14 +7,6 @@
     config = {
       adminuser = "raroh73";
       adminpassFile = config.age.secrets.nextcloud-adminpass.path;
-      objectstore.s3 = {
-        enable = true;
-        autocreate = false;
-        bucket = "sol-nextcloud";
-        hostname = "s3.eu-central-003.backblazeb2.com";
-        key = "00341b19355e47f0000000002";
-        secretFile = config.age.secrets.nextcloud-s3-secret.path;
-      };
     };
     extraAppsEnable = true;
     extraApps = with config.services.nextcloud.package.packages.apps; {
