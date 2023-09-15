@@ -3,6 +3,7 @@
     ./home/alacritty.nix
     ./home/atuin.nix
     ./home/bat.nix
+    ./home/carapace.nix
     ./home/chromium.nix
     ./home/direnv.nix
     ./home/firefox.nix

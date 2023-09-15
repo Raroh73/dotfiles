@@ -3,6 +3,7 @@ _: {
     ./home/atuin.nix
     ./home/bat.nix
     ./home/bottom.nix
+    ./home/carapace.nix
     ./home/nushell.nix
     ./home/starship.nix
     ./home/zoxide.nix
