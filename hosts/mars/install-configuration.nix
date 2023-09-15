@@ -58,5 +58,10 @@ _: {
 
   zramSwap.enable = true;
 
+  sdImage = {
+    compressImage = false;
+    imageName = "mars.img";
+  };
+
   system.stateVersion = "22.11";
 }
