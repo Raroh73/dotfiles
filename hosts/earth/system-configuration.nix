@@ -64,6 +64,9 @@
     opengl = {
       enable = true;
       driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        vaapiVdpau
+      ];
     };
     pulseaudio.enable = false;
     xone.enable = true;
@@ -77,10 +80,7 @@
     pulse.enable = true;
   };
 
-  services.fstrim = {
-    enable = true;
-    interval = "weekly";
-  };
+  services.fstrim.enable = true;
 
   services.openssh = {
     enable = true;
