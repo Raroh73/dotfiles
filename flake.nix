@@ -20,43 +20,39 @@
 
   outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
     nixosConfigurations = {
-      earth = nixpkgs.lib.nixosSystem rec {
+      earth = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
+          config.allowUnfree = true;
           overlays = [
             nur.overlay
           ];
+          system = "x86_64-linux";
         };
-        system = "x86_64-linux";
         modules = [
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           ./hosts/earth/configuration.nix
         ];
+        system = "x86_64-linux";
       };
-      mars = nixpkgs.lib.nixosSystem rec {
+      mars = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
+          config.allowUnfree = true;
+          system = "aarch64-linux";
         };
-        system = "aarch64-linux";
         modules = [
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
           ./hosts/mars/configuration.nix
         ];
+        system = "aarch64-linux";
       };
     };
     packages.x86_64-linux = {
       mars-install = nixos-generators.nixosGenerate {
-        system = "aarch64-linux";
-        modules = [ ./hosts/mars/install-configuration.nix ];
         format = "sd-aarch64";
+        modules = [ ./hosts/mars/install-configuration.nix ];
+        system = "aarch64-linux";
       };
     };
   };
