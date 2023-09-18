@@ -34,12 +34,7 @@
         modules = [
           agenix.nixosModules.default
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.raroh73.imports = [ ./hosts/earth/home-configuration.nix ];
-          }
-          ./hosts/earth/system-configuration.nix
+          ./hosts/earth/configuration.nix
         ];
       };
       mars = nixpkgs.lib.nixosSystem rec {
