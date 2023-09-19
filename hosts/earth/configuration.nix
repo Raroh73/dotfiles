@@ -178,7 +178,7 @@
         description = "Raroh73";
         extraGroups = [ "networkmanager" "wheel" ];
         isNormalUser = true;
-        passwordFile = config.age.secrets.raroh73-earth-password.path;
+        hashedPasswordFile = config.age.secrets.raroh73-earth-password.path;
         shell = pkgs.nushell;
       };
       root.hashedPassword = "!";

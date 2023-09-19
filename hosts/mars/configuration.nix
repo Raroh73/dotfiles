@@ -340,7 +340,7 @@
         extraGroups = [ "networkmanager" "wheel" ];
         isNormalUser = true;
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO+aFhxW7Q8vLMPCS8jPFtqUUePL6Ks9213gsEOJbIOz raroh73@mars" ];
-        passwordFile = config.age.secrets.raroh73-mars-password.path;
+        hashedPasswordFile = config.age.secrets.raroh73-mars-password.path;
         shell = pkgs.nushell;
       };
       root.hashedPassword = "!";
