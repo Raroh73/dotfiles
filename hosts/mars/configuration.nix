@@ -264,10 +264,10 @@
     webhook = {
       enable = true;
       hooksTemplated = {
-        hugo-webhook =
+        website-webhook =
           let
-            raroh73_xyz-build = pkgs.writeShellApplication {
-              name = "raroh73_xyz-build";
+            website-script = pkgs.writeShellApplication {
+              name = "website-script";
               runtimeInputs = with pkgs; [ git hugo ];
               text = ''
                 rm -fr /srv/web/raroh73.xyz/public
@@ -285,8 +285,8 @@
           in
           ''
             {
-              "id": "raroh73_xyz-webhook",
-              "execute-command": "${raroh73_xyz-build}/bin/raroh73_xyz-build",
+              "id": "website-webhook",
+              "execute-command": "${website-script}/bin/website-script",
               "trigger-rule": {
                 "and": [
                   {
