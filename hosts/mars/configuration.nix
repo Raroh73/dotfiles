@@ -326,10 +326,6 @@
     watchdog.runtimeTime = "15s";
   };
 
-  swapDevices = [{
-    device = "/dev/disk/by-label/swap";
-  }];
-
   time.timeZone = "Europe/Warsaw";
 
   users = {
