@@ -4,6 +4,7 @@ _: {
     stateVersion = "22.11";
     username = "raroh73";
   };
+
   programs = {
     atuin = {
       enable = true;
