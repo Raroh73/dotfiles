@@ -25,7 +25,6 @@
         configurationLimit = 16;
         consoleMode = "max";
         editor = false;
-        memtest86.enable = true;
       };
     };
     tmp.cleanOnBoot = true;
