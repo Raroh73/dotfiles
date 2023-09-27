@@ -1,12 +1,11 @@
-_: {
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "root" "@wheel" ];
+{ pkgs, ... }: {
+  boot = {
+    kernelParams = [ "cma=256M" ];
+    loader = {
+      generic-extlinux-compatible.enable = true;
+      grub.enable = false;
+    };
   };
-
-  boot.kernelParams = [ "cma=256M" ];
 
   fileSystems = {
     "/" = {
@@ -15,11 +14,60 @@ _: {
     };
   };
 
+  hardware.enableRedistributableFirmware = true;
+
   networking = {
     firewall.enable = true;
     hostName = "mars";
     networkmanager.enable = true;
   };
+
+  nix = {
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    settings = {
+      experimental-features = [ "flakes" "nix-command" ];
+      trusted-users = [ "@wheel" "root" ];
+    };
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  sdImage = {
+    compressImage = false;
+    imageName = "mars.img";
+  };
+
+  security.sudo.extraRules = [
+    {
+      commands = [
+        {
+          command = "/nix/store/*/bin/switch-to-configuration";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/nix-env";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+      groups = [ "wheel" ];
+    }
+  ];
+
+  services = {
+    fail2ban.enable = true;
+    openssh = {
+      enable = true;
+      openFirewall = true;
+      settings = {
+        KbdInteractiveAuthentication = false;
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
+    };
+    unbound.enable = true;
+  };
+
+  system.stateVersion = "22.11";
 
   time.timeZone = "Europe/Warsaw";
 
@@ -27,41 +75,14 @@ _: {
     mutableUsers = false;
     users = {
       raroh73 = {
-        isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
-        hashedPassword = "$y$j9T$/kpTtNX40QPSPs3I5vnO80$ZsE8ej9u6.5ok0DCbRTZ5T.6yaHuM1eb5R9.RxQ7kV8";
+        hashedPassword = "$y$j9T$G0rX4W6eqrwz2gNOSuM9/1$M1SiWyYp.Xq4u0GPAJxZYeW0CJ6q3BzIJ2ubkgi6DP3";
+        isNormalUser = true;
+        openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO+aFhxW7Q8vLMPCS8jPFtqUUePL6Ks9213gsEOJbIOz raroh73@mars" ];
       };
       root.hashedPassword = "!";
     };
   };
 
-  security.sudo.extraRules = [{
-    groups = [ "wheel" ];
-    commands = [
-      {
-        command = "/run/current-system/sw/bin/nix-env";
-        options = [ "NOPASSWD" ];
-      }
-      {
-        command = "/nix/store/*/bin/switch-to-configuration";
-        options = [ "NOPASSWD" ];
-      }
-    ];
-  }];
-
-  services.openssh = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  hardware.enableRedistributableFirmware = true;
-
   zramSwap.enable = true;
-
-  sdImage = {
-    compressImage = false;
-    imageName = "mars.img";
-  };
-
-  system.stateVersion = "22.11";
 }
