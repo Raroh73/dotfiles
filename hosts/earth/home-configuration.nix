@@ -212,11 +212,8 @@
       ];
       mutableExtensionsDir = false;
       userSettings = {
-        "[css][javascript][json][typescript][yaml]" = {
+        "[css][html][javascript][json][typescript][yaml]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
-        "[html]" = {
-          "editor.defaultFormatter" = "vscode.html-language-features";
         };
         "editor.fontFamily" = "CaskaydiaCove Nerd Font";
         "editor.fontLigatures" = true;
