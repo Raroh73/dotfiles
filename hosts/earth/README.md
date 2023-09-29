@@ -3,29 +3,11 @@
 ## Installation
 
 ```sh
-# Change to root account
-sudo -i
-
-# Create partitions
-parted /dev/sda -- mklabel gpt
-parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
-parted /dev/sda -- mkpart primary 512MiB 100%
-parted /dev/sda -- set 1 esp on
-
-# Format partitions
-mkfs.fat -F32 -n boot /dev/sda1
-mkfs.ext4 -L nixos /dev/sda2
-
-# Install NixOS
-mount /dev/disk/by-label/nixos /mnt
-mkdir -p /mnt/boot
-mount /dev/disk/by-label/boot /mnt/boot
-nixos-generate-config --root /mnt
-curl https://gist.githubusercontent.com/Raroh73/aed2c67f3b3b95757f8910b6291962a7/raw/configuration.nix -o /mnt/etc/nixos/configuration.nix
-nixos-install --no-root-passwd
-reboot
-git clone https://github.com/Raroh73/dotfiles.git
-cd dotfiles
-sudo nixos-rebuild boot --flake .
-sudo reboot
+curl https://raw.githubusercontent.com/Raroh73/dotfiles/main/hosts/earth/install.sh | sudo bash
 ```
+
+## First configuration
+
+1. Clone repository.
+2. Update earth key.
+3. Rekey secrets.
