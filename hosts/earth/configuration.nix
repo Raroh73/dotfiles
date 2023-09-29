@@ -137,6 +137,11 @@
   security.rtkit.enable = true;
 
   services = {
+    avahi = {
+      enable = true;
+      nssmdns = true;
+      openFirewall = true;
+    };
     fstrim.enable = true;
     openssh = {
       enable = true;
@@ -154,6 +159,7 @@
       jack.enable = true;
       pulse.enable = true;
     };
+    printing.enable = true;
     unbound.enable = true;
     xserver = {
       enable = true;
