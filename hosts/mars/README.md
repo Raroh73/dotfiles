@@ -5,7 +5,7 @@
 
 ```sh
 nix build .#mars-install
-sudo dd if=result/sd-image/mars.img of=dev/sdX bs=4096 conv=fsync status=progress
+sudo dd if=result/sd-image/mars.img of=/dev/sdX bs=4096 conv=fsync status=progress
 ```
 
 ## First configuration
