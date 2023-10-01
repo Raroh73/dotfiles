@@ -223,10 +223,10 @@
               ssl_verify_client on;
             '';
             forceSSL = true;
-            useACMEHost = "webhook.raroh73.xyz";
             locations."/" = {
               proxyPass = "http://localhost:9000";
             };
+            useACMEHost = "webhook.raroh73.xyz";
           };
         };
     };
