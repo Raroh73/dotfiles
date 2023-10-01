@@ -1,7 +1,7 @@
 let
   agenix = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBerp1nA9AU2MUHk8/Fq+OvX0L2PiMqgQh12Zdm0cMyK agenix";
   earth = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt72SaSNMlIcwwnmjAp3+oSAc9avEAkFyLdbS9xoShy root@earth";
-  mars = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ4YhyTK9a4T4xQ1Um4c/fAmpdHJNxpeGn03rlQZhGKL root@mars";
+  mars = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBCGVRZWaJShhjuQlmqntWR1plRVB2yJEVpvghj6yqP5 root@mars";
 in
 {
   "backup-mars-environment.age".publicKeys = [ agenix mars ];
