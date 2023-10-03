@@ -57,6 +57,7 @@
       discord
       element-desktop
       hugo
+      nextcloud-client
       nixpkgs-fmt
       spotify
     ];
