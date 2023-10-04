@@ -156,7 +156,11 @@
       config = {
         adminpassFile = config.age.secrets.nextcloud-adminpass.path;
         adminuser = "raroh73";
+        dbtype = "pgsql";
+        overwriteProtocol = "https";
       };
+      configureRedis = true;
+      database.createLocally = true;
       extraApps = with config.services.nextcloud.package.packages.apps; {
         inherit bookmarks calendar contacts news notes tasks;
       };
