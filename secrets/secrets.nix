@@ -4,9 +4,9 @@ let
   mars = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFSXgqzlzIn12brvcJ9BXwcZmsYwDzjgNPH2zl74M8hT root@mars";
 in
 {
-  "backup-mars-environment.age".publicKeys = [ agenix mars ];
-  "backup-mars-password.age".publicKeys = [ agenix mars ];
-  "backup-mars-repository.age".publicKeys = [ agenix mars ];
+  "backups-nextcloud-environment.age".publicKeys = [ agenix mars ];
+  "backups-nextcloud-password.age".publicKeys = [ agenix mars ];
+  "backups-nextcloud-repository.age".publicKeys = [ agenix mars ];
   "cloudflare-dyndns-token.age".publicKeys = [ agenix mars ];
   "lego-token.age".publicKeys = [ agenix mars ];
   "nextcloud-adminpass.age".publicKeys = [ agenix mars ];

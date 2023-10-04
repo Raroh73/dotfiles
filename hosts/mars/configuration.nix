@@ -1,8 +1,20 @@
 { config, lib, pkgs, ... }: {
   age.secrets = {
-    backup-mars-environment.file = ../../secrets/backup-mars-environment.age;
-    backup-mars-password.file = ../../secrets/backup-mars-password.age;
-    backup-mars-repository.file = ../../secrets/backup-mars-repository.age;
+    backups-nextcloud-environment = {
+      file = ../../secrets/backups-nextcloud-environment.age;
+      group = "nextcloud";
+      owner = "nextcloud";
+    };
+    backups-nextcloud-password = {
+      file = ../../secrets/backups-nextcloud-password.age;
+      group = "nextcloud";
+      owner = "nextcloud";
+    };
+    backups-nextcloud-repository = {
+      file = ../../secrets/backups-nextcloud-repository.age;
+      group = "nextcloud";
+      owner = "nextcloud";
+    };
     cloudflare-dyndns-token.file = ../../secrets/cloudflare-dyndns-token.age;
     lego-token.file = ../../secrets/lego-token.age;
     nextcloud-adminpass = {
@@ -243,26 +255,25 @@
         PermitRootLogin = "no";
       };
     };
-    restic.backups.mars = {
+    restic.backups.nextcloud = {
       backupCleanupCommand = ''
-        rm -fr /var/backups/mars
-        nextcloud-occ maintenance:mode --off
+        ${config.services.nextcloud.occ}/bin/nextcloud-occ maintenance:mode --off
       '';
       backupPrepareCommand = ''
-        nextcloud-occ maintenance:mode --on
-        mkdir -p /var/backups/mars
-        ${pkgs.rsync}/bin/rsync -Aavx /var/lib/nextcloud/ /var/backups/mars/nextcloud/
+        ${config.services.nextcloud.occ}/bin/nextcloud-occ maintenance:mode --on
+        ${config.services.postgresql.package}/bin/pg_dump ${config.services.nextcloud.config.dbname} > /var/lib/nextcloud/database.sql
       '';
-      environmentFile = config.age.secrets.backup-mars-environment.path;
+      environmentFile = config.age.secrets.backups-nextcloud-environment.path;
       initialize = true;
-      passwordFile = config.age.secrets.backup-mars-password.path;
-      paths = [ "/var/backups/mars" ];
+      passwordFile = config.age.secrets.backups-nextcloud-password.path;
+      paths = [ "/var/lib/nextcloud" ];
       pruneOpts = [
         "--keep-daily 31"
         "--keep-monthly 12"
         "--keep-yearly 1"
       ];
-      repositoryFile = config.age.secrets.backup-mars-repository.path;
+      repositoryFile = config.age.secrets.backups-nextcloud-repository.path;
+      user = "nextcloud";
     };
     unbound.enable = true;
     webhook = {
