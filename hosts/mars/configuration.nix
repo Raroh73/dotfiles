@@ -179,7 +179,6 @@
       extraAppsEnable = true;
       hostName = "nextcloud.raroh73.xyz";
       https = true;
-      logType = "file";
       secretFile = config.age.secrets.nextcloud-secrets.path;
     };
     nginx = {
