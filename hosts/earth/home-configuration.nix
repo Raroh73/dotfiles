@@ -18,7 +18,7 @@
       night-light-schedule-automatic = true;
     };
     "org/gnome/shell" = {
-      disabled-extensions = lib.hm.gvariant.mkEmptyArray "s";
+      disabled-extensions = [ ];
       enabled-extensions = [
         "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
       ];
