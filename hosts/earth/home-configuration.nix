@@ -73,6 +73,7 @@
       flags = [ "--disable-up-arrow" ];
     };
     bat.enable = true;
+    bottom.enable = true;
     carapace = {
       enable = true;
       enableNushellIntegration = true;
