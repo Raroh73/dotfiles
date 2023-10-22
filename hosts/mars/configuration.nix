@@ -131,21 +131,6 @@
         email = "me@raroh73.xyz";
       };
     };
-    sudo.extraRules = [
-      {
-        commands = [
-          {
-            command = "/nix/store/*/bin/switch-to-configuration";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/nix-env";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-        groups = [ "wheel" ];
-      }
-    ];
   };
 
   services = {
@@ -251,7 +236,6 @@
       settings = {
         KbdInteractiveAuthentication = false;
         PasswordAuthentication = false;
-        PermitRootLogin = "no";
       };
     };
     restic.backups.nextcloud = {
@@ -353,7 +337,10 @@
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO+aFhxW7Q8vLMPCS8jPFtqUUePL6Ks9213gsEOJbIOz raroh73@mars" ];
         shell = pkgs.nushell;
       };
-      root.hashedPassword = "!";
+      root = {
+        hashedPassword = "!";
+        openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMDOJfQ/gx7JYRBLRwz6iMKiwzec5vu8jFjcxlwIOG0E root" ];
+      };
     };
   };
 
