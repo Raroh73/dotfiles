@@ -168,16 +168,16 @@
       configFile.source =
         let
           default-config = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/nushell/nushell/0.85.0/crates/nu-utils/src/sample_config/default_config.nu";
-            sha256 = "0s2qlqani3yvf9w78paxw855xfmjycza9hnqr4nck2z78fdxld4h";
+            url = "https://raw.githubusercontent.com/nushell/nushell/0.86.0/crates/nu-utils/src/sample_config/default_config.nu";
+            sha256 = "1pwxx79v5597cbf80kr8gfz1hkfnnffqq95vlvibsb7p309x468w";
           };
         in
         "${default-config}";
       envFile.source =
         let
           default-env = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/nushell/nushell/0.85.0/crates/nu-utils/src/sample_config/default_env.nu";
-            sha256 = "1bqrk8l7lb4c3q1jzpg4l3jqr4sbabng51sp4ad0gv2rqfgi6n70";
+            url = "https://raw.githubusercontent.com/nushell/nushell/0.86.0/crates/nu-utils/src/sample_config/default_env.nu";
+            sha256 = "122jb77r0kbgpzsigq04ysa9ydicxmpba0551ps7fwrzlyg9r0px";
           };
         in
         "${default-env}";
