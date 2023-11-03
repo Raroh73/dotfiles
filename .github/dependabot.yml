@@ -3,9 +3,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "sunday"
-      time: "03:00"
+      interval: "daily"
     commit-message:
       prefix: "chore"
     labels:
