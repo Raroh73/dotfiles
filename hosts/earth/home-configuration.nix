@@ -156,7 +156,6 @@
       userName = "Raroh73";
       userEmail = "96078496+Raroh73@users.noreply.github.com";
     };
-    librewolf.enable = true;
     mangohud = {
       enable = true;
       settings = {
