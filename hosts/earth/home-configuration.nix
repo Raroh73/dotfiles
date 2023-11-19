@@ -56,7 +56,6 @@
       calibre
       discord
       element-desktop
-      hugo
       libreoffice
       nextcloud-client
       nixpkgs-fmt
