@@ -64,6 +64,7 @@
   };
 
   networking = {
+    domain = "raroh73.xyz";
     firewall = {
       enable = true;
       allowedTCPPorts = [ 80 443 ];

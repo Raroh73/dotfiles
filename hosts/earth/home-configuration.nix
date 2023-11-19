@@ -188,13 +188,13 @@
           hostname = "github.com";
           identityFile = "/home/raroh73/.ssh/github";
         };
-        "raroh73.mars" = {
-          hostname = "192.168.0.11";
+        "raroh73.mars.raroh73.xyz" = {
+          hostname = "mars.raroh73.xyz";
           identityFile = "/home/raroh73/.ssh/mars";
           user = "raroh73";
         };
-        "root.mars" = {
-          hostname = "192.168.0.11";
+        "root.mars.raroh73.xyz" = {
+          hostname = "mars.raroh73.xyz";
           identityFile = "/home/raroh73/.ssh/root";
           user = "root";
         };
