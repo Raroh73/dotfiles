@@ -1,5 +1,8 @@
 { lib, pkgs, ... }: {
   dconf.settings = {
+    "org/gnome/desktop/datetime" = {
+      automatic-timezone = true;
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       document-font-name = "Noto Sans 11";
@@ -42,6 +45,9 @@
         "steam.desktop:2"
         "code.desktop:3"
       ];
+    };
+    "org/gnome/system/location" = {
+      enabled = true;
     };
   };
 

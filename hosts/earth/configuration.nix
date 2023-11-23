@@ -179,8 +179,6 @@
 
   system.stateVersion = "22.11";
 
-  time.timeZone = "Europe/Warsaw";
-
   users = {
     mutableUsers = false;
     users = {
