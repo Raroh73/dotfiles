@@ -7,23 +7,21 @@
     initrd = {
       availableKernelModules = [
         "ahci"
-        "ehci_pci"
-        "firewire_ohci"
+        "nvme"
         "sd_mod"
         "usb_storage"
         "usbhid"
         "xhci_pci"
       ];
-      kernelModules = [ ];
+      kernelModules = [ "amdgpu" ];
     };
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
         enable = true;
         configurationLimit = 16;
-        consoleMode = "max";
         editor = false;
       };
     };
@@ -34,11 +32,11 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-label/nixos";
+      device = "/dev/disk/by-uuid/806c8aa2-d22e-4e1b-a688-c0c4da72293b";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-label/boot";
+      device = "/dev/disk/by-uuid/25A2-C505";
       fsType = "vfat";
     };
   };
@@ -63,15 +61,12 @@
   };
 
   hardware = {
-    cpu.intel.updateMicrocode = true;
+    cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
     opengl = {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        vaapiVdpau
-      ];
     };
     pulseaudio.enable = false;
     xone.enable = true;
@@ -169,15 +164,14 @@
       enable = true;
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
-      videoDrivers = [ "nvidia" ];
     };
   };
 
   swapDevices = [{
-    device = "/dev/disk/by-label/swap";
+    device = "/dev/disk/by-uuid/e369f49e-b657-4e07-89d8-acdbe6b12b25";
   }];
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.11";
 
   users = {
     mutableUsers = false;
