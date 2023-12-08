@@ -25,6 +25,7 @@
         editor = false;
       };
     };
+    plymouth.enable = true;
     tmp.cleanOnBoot = true;
   };
 
