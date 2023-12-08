@@ -40,9 +40,5 @@ _: {
       enable = true;
       enableNushellIntegration = true;
     };
-    zoxide = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
   };
 }

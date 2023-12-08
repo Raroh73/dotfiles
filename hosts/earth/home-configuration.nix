@@ -248,9 +248,5 @@
         "window.restoreWindows" = "none";
       };
     };
-    zoxide = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
   };
 }
