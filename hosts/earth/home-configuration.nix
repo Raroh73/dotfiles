@@ -67,7 +67,7 @@
       nixpkgs-fmt
       spotify
     ];
-    stateVersion = "22.11";
+    stateVersion = "23.11";
     username = "raroh73";
   };
 
