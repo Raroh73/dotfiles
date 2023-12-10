@@ -13,6 +13,10 @@ _: {
     };
     bat.enable = true;
     bottom.enable = true;
+    broot = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
     carapace = {
       enable = true;
       enableNushellIntegration = true;
