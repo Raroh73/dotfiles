@@ -168,6 +168,7 @@
     mangohud = {
       enable = true;
       settings = {
+        fps_limit = 69;
         full = true;
       };
     };
