@@ -141,6 +141,7 @@
       openFirewall = true;
     };
     fstrim.enable = true;
+    fwupd.enable = true;
     openssh = {
       enable = true;
       openFirewall = true;
