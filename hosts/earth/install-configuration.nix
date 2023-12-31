@@ -59,13 +59,15 @@
     unbound.enable = true;
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
-      videoDrivers = [ "nvidia" ];
+      #desktopManager.gnome.enable = true;
+      #displayManager.gdm.enable = true;
+      desktopManager.plasma5.enable = true;
+      displayManager.sddm.enable = true;
+      xkb.layout = "us,pl";
     };
   };
 
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.11";
 
   time.timeZone = "Europe/Warsaw";
 
