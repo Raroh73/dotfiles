@@ -59,7 +59,6 @@
     homeDirectory = "/home/raroh73";
     packages = with pkgs; [
       bitwarden
-      calibre
       discord
       element-desktop
       libreoffice
