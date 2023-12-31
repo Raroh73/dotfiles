@@ -1,4 +1,6 @@
 { config, pkgs, ... }: {
+  #imports = [ ./disko-configuration.nix ];
+
   age.secrets.raroh73-earth-password.file = ../../secrets/raroh73-earth-password.age;
 
   boot = {
