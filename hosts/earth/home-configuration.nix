@@ -158,7 +158,8 @@
           gpgSign = true;
         };
         user = {
-          signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDtuv/+9ONhzcSoZRvlmyqtMNtQeFCQfEKfpA/4/dsY/ 96078496+Raroh73@users.noreply.github.com";
+          #signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDtuv/+9ONhzcSoZRvlmyqtMNtQeFCQfEKfpA/4/dsY/ 96078496+Raroh73@users.noreply.github.com";
+          signingKey = "~/.ssh/github.pub";
         };
       };
       userName = "Raroh73";
@@ -192,6 +193,7 @@
     };
     ssh = {
       enable = true;
+      addKeysToAgent = "yes";
       matchBlocks = {
         "github.com" = {
           hostname = "github.com";
@@ -242,6 +244,7 @@
         "files.trimFinalNewlines" = true;
         "files.trimTrailingWhitespace" = true;
         "git.autofetch" = true;
+        "git.useIntegratedAskPass" = false;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.defaultProfile.linux" = "Nushell";
         "terminal.integrated.profiles.linux" = {

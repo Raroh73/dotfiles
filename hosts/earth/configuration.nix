@@ -129,6 +129,7 @@
       '';
       syntaxHighlight = true;
     };
+    ssh.startAgent = true;
     steam.enable = true;
   };
 
