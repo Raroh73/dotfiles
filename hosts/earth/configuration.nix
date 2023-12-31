@@ -164,8 +164,10 @@
     unbound.enable = true;
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+      #desktopManager.gnome.enable = true;
+      #displayManager.gdm.enable = true;
+      desktopManager.plasma5.enable = true;
+      displayManager.sddm.enable = true;
       xkb.layout = "us,pl";
     };
   };

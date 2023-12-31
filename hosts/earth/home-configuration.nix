@@ -1,55 +1,55 @@
 { lib, pkgs, ... }: {
-  dconf.settings = {
-    "org/gnome/desktop/datetime" = {
-      automatic-timezone = true;
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      document-font-name = "Noto Sans 11";
-      font-antialiasing = "rgba";
-      font-hinting = "slight";
-      font-name = "Noto Sans 11";
-      gtk-theme = "Adwaita-dark";
-      monospace-font-name = "Noto Sans Mono 11";
-    };
-    "org/gnome/desktop/wm/preferences" = {
-      theme = "Adwaita";
-      titlebar-font = "Noto Sans Bold 11";
-    };
-    "org/gnome/settings-daemon/plugins/color" = {
-      night-light-enabled = true;
-      night-light-schedule-automatic = true;
-    };
-    "org/gnome/shell" = {
-      disabled-extensions = [ ];
-      enabled-extensions = [
-        "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-      ];
-      favorite-apps = [
-        "firefox.desktop"
-        "chromium-browser.desktop"
-        "steam.desktop"
-        "code.desktop"
-        "Alacritty.desktop"
-        "element-desktop.desktop"
-        "discord.desktop"
-        "spotify.desktop"
-        "bitwarden.desktop"
-        "org.gnome.Nautilus.desktop"
-      ];
-    };
-    "org/gnome/shell/extensions/auto-move-windows" = {
-      application-list = [
-        "firefox.desktop:1"
-        "chromium-browser.desktop:1"
-        "steam.desktop:2"
-        "code.desktop:3"
-      ];
-    };
-    "org/gnome/system/location" = {
-      enabled = true;
-    };
-  };
+  #dconf.settings = {
+  #  "org/gnome/desktop/datetime" = {
+  #    automatic-timezone = true;
+  #  };
+  #  "org/gnome/desktop/interface" = {
+  #    color-scheme = "prefer-dark";
+  #    document-font-name = "Noto Sans 11";
+  #    font-antialiasing = "rgba";
+  #    font-hinting = "slight";
+  #    font-name = "Noto Sans 11";
+  #    gtk-theme = "Adwaita-dark";
+  #    monospace-font-name = "Noto Sans Mono 11";
+  #  };
+  #  "org/gnome/desktop/wm/preferences" = {
+  #    theme = "Adwaita";
+  #    titlebar-font = "Noto Sans Bold 11";
+  #  };
+  #  "org/gnome/settings-daemon/plugins/color" = {
+  #    night-light-enabled = true;
+  #    night-light-schedule-automatic = true;
+  #  };
+  #  "org/gnome/shell" = {
+  #    disabled-extensions = [ ];
+  #    enabled-extensions = [
+  #      "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+  #    ];
+  #    favorite-apps = [
+  #      "firefox.desktop"
+  #      "chromium-browser.desktop"
+  #      "steam.desktop"
+  #      "code.desktop"
+  #      "Alacritty.desktop"
+  #      "element-desktop.desktop"
+  #      "discord.desktop"
+  #      "spotify.desktop"
+  #      "bitwarden.desktop"
+  #      "org.gnome.Nautilus.desktop"
+  #    ];
+  #  };
+  #  "org/gnome/shell/extensions/auto-move-windows" = {
+  #    application-list = [
+  #      "firefox.desktop:1"
+  #      "chromium-browser.desktop:1"
+  #      "steam.desktop:2"
+  #      "code.desktop:3"
+  #    ];
+  #  };
+  #  "org/gnome/system/location" = {
+  #    enabled = true;
+  #  };
+  #};
 
   home = {
     file.face = {
