@@ -72,7 +72,6 @@
   };
 
   programs = {
-    alacritty.enable = true;
     atuin = {
       enable = true;
       enableNushellIntegration = true;
