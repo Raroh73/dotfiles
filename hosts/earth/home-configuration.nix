@@ -61,10 +61,12 @@
       bitwarden
       discord
       element-desktop
+      handbrake
       libreoffice
       nextcloud-client
       nixpkgs-fmt
       spotify
+      vlc
     ];
     stateVersion = "23.11";
     username = "raroh73";
