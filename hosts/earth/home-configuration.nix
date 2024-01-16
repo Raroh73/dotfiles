@@ -169,6 +169,8 @@
       settings = {
         fps_limit = 69;
         full = true;
+        gl_vsync = -1;
+        vsync = 0;
       };
     };
     nushell = {
