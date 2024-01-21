@@ -155,7 +155,6 @@
         adminpassFile = config.age.secrets.nextcloud-adminpass.path;
         adminuser = "raroh73";
         dbtype = "pgsql";
-        overwriteProtocol = "https";
       };
       configureRedis = true;
       database.createLocally = true;
@@ -163,6 +162,7 @@
         inherit bookmarks calendar contacts news notes tasks;
       };
       extraAppsEnable = true;
+      extraOptions.overwriteProtocol = "https";
       hostName = "nextcloud.raroh73.xyz";
       https = true;
       secretFile = config.age.secrets.nextcloud-secrets.path;
