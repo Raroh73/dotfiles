@@ -23,7 +23,7 @@
 #        };
 #        type = "gpt";
 #      };
-#      device = "/dev/disk/nvme0n1";
+#      device = "/dev/nvme0n1";
 #      type = "disk";
 #    };
 #  };
