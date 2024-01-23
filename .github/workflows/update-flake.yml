@@ -1,4 +1,4 @@
-name: Update flake
+name: Update Flake
 on:
   schedule:
     - cron: "0 0 * * 0"
@@ -10,11 +10,11 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v9
-      - name: Update flake
+      - name: Update Flake
         uses: DeterminateSystems/update-flake-lock@v20
         with:
           commit-msg: "chore: update flake"
