@@ -23,7 +23,7 @@
         };
         type = "gpt";
       };
-      device = "/dev/disk/sda";
+      device = "/dev/sda";
       type = "disk";
     };
   };
