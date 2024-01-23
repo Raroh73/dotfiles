@@ -9,10 +9,10 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    #disko = {
-    #  url = "github:nix-community/disko";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,8 +25,7 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  #outputs = { self, agenix, disko, home-manager, nixpkgs, nixos-generators, nur }: {
-  outputs = { self, agenix, home-manager, nixpkgs, nixos-generators, nur }: {
+  outputs = { self, agenix, disko, home-manager, nixpkgs, nixos-generators, nur }: {
     nixosConfigurations = {
       earth = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
@@ -55,6 +54,19 @@
           ./hosts/mars/configuration.nix
         ];
         system = "aarch64-linux";
+      };
+      sirius = nixpkgs.lib.nixosSystem {
+        pkgs = import nixpkgs {
+          config.allowUnfree = true;
+          system = "x86_64-linux";
+        };
+        modules = [
+          agenix.nixosModules.default
+          disko.nixosModules.disko
+          home-manager.nixosModules.home-manager
+          ./hosts/sirius/configuration.nix
+        ];
+        system = "x86_64-linux";
       };
     };
     packages.x86_64-linux = {
