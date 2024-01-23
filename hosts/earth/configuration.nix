@@ -145,6 +145,7 @@
     };
     fstrim.enable = true;
     fwupd.enable = true;
+    ollama.enable = true;
     openssh = {
       enable = true;
       openFirewall = true;
