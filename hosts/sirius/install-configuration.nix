@@ -51,7 +51,7 @@
 
   system.stateVersion = "22.11";
 
-  time.timeZone = "Europe/Warsaw";
+  time.timeZone = "Europe/Helsinki";
 
   users = {
     mutableUsers = false;
