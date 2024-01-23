@@ -17,10 +17,6 @@ _: {
       enable = true;
       enableNushellIntegration = true;
     };
-    carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
     nushell = {
       enable = true;
       configFile.source =
