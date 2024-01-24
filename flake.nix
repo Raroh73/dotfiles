@@ -58,7 +58,7 @@
       sirius = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           config.allowUnfree = true;
-          system = "x86_64-linux";
+          system = "aarch64-linux";
         };
         modules = [
           agenix.nixosModules.default
@@ -66,7 +66,7 @@
           home-manager.nixosModules.home-manager
           ./hosts/sirius/configuration.nix
         ];
-        system = "x86_64-linux";
+        system = "aarch64-linux";
       };
     };
     packages.x86_64-linux = {
