@@ -43,7 +43,7 @@
         ];
         system = "x86_64-linux";
       };
-      mars = nixpkgs.lib.nixosSystem {
+      /* mars = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           config.allowUnfree = true;
           system = "aarch64-linux";
@@ -54,7 +54,7 @@
           ./hosts/mars/configuration.nix
         ];
         system = "aarch64-linux";
-      };
+      }; */
       sirius = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           config.allowUnfree = true;
