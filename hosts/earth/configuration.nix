@@ -4,7 +4,6 @@
   age.secrets.raroh73-earth-password.file = ../../secrets/raroh73-earth-password.age;
 
   boot = {
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
     extraModulePackages = [ ];
     initrd = {
       availableKernelModules = [
