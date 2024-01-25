@@ -17,6 +17,7 @@ _: {
       enable = true;
       enableNushellIntegration = true;
     };
+    git.enable = true;
     nushell = {
       enable = true;
       configFile.source =
