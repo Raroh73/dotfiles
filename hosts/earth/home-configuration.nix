@@ -194,6 +194,11 @@
           identityFile = "/home/raroh73/.ssh/root";
           user = "root";
         };
+        "ssh.raroh73.xyz" = {
+          hostname = "ssh.raroh73.xyz";
+          identityFile = "/home/raroh73/.ssh/sirius";
+          user = "raroh73";
+        };
       };
     };
     starship = {
