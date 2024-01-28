@@ -102,6 +102,10 @@
       options = "--delete-older-than 30d";
     };
     nixPath = [ "nixpkgs=${pkgs.path}" ];
+    registry.nixpkgs.to = {
+      type = "path";
+      path = pkgs.path;
+    };
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "flakes" "nix-command" ];
