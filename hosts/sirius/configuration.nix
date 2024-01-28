@@ -77,10 +77,6 @@
   };
 
   nix = {
-    extraOptions = ''
-      keep-derivations = true
-      keep-outputs = true
-    '';
     gc = {
       automatic = true;
       dates = "weekly";
@@ -94,6 +90,8 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "flakes" "nix-command" ];
+      keep-derivations = true;
+      keep-outputs = true;
     };
   };
 
