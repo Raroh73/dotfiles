@@ -84,8 +84,6 @@
   };
 
   networking = {
-    domain = "raroh73.xyz";
-    extraHosts = "192.168.0.11 mars.raroh73.xyz";
     firewall.enable = true;
     hostName = "earth";
     networkmanager.enable = true;
