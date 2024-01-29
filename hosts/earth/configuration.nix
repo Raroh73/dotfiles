@@ -87,6 +87,7 @@
     firewall.enable = true;
     hostName = "earth";
     networkmanager.enable = true;
+    stevenblack.enable = true;
   };
 
   nix = {
