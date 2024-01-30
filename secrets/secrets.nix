@@ -15,5 +15,4 @@ in
   "raroh73-earth-password.age".publicKeys = [ agenix earth ];
   "raroh73-mars-password.age".publicKeys = [ agenix mars ];
   "raroh73-sirius-password.age".publicKeys = [ agenix sirius ];
-  "webhook-environment.age".publicKeys = [ agenix sirius ];
 }
