@@ -30,6 +30,7 @@
       owner = "nextcloud";
     };
     raroh73-sirius-password.file = ../../secrets/raroh73-sirius-password.age;
+    webhook-environment.file = ../../secrets/webhook-environment.age;
   };
 
   boot = {
@@ -267,6 +268,8 @@
     unbound.enable = true;
     webhook = {
       enable = true;
+      # anti-pattern
+      environment = builtins.readFile config.age.secrets.webhook-environment.path;
       hooksTemplated = {
         website-webhook =
           let
@@ -300,7 +303,7 @@
                         "name": "X-Hub-Signature",
                         "source": "header"
                       },
-                      "secret": ""
+                      "secret":  "{{ getenv "SECRET" }}"
                     }
                   },
                   {
