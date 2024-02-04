@@ -62,7 +62,6 @@
       discord
       element-desktop
       handbrake
-      libreoffice
       nextcloud-client
       nixpkgs-fmt
       spotify
