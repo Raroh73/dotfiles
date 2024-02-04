@@ -4,6 +4,7 @@
   "nix": {
     "enabled": true
   },
+  "labels": ["priority: low", "type: chore"],
   "lockFileMaintenance": {
     "enabled": true
   }
