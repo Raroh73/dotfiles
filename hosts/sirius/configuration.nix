@@ -166,7 +166,7 @@
         inherit bookmarks calendar contacts news notes tasks;
       };
       extraAppsEnable = true;
-      extraOptions.overwriteProtocol = "https";
+      settings.overwriteProtocol = "https";
       hostName = "nextcloud.raroh73.xyz";
       https = true;
       secretFile = config.age.secrets.nextcloud-secrets.path;
