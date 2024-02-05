@@ -53,7 +53,7 @@
 
   home = {
     file.face = {
-      source = ../../static/avatar.png;
+      source = ../../static/avatar.jpg;
       target = ".face";
     };
     homeDirectory = "/home/raroh73";
