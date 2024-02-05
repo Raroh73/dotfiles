@@ -1,0 +1,22 @@
+name: Check Flake
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  check-flake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.1
+      - name: Install QEMU
+        run: |
+          sudo apt-get update -q -y
+          sudo apt-get install -q -y binfmt-support qemu-efi qemu-system-aarch64 qemu-user-static
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v9
+      - name: Check Flake
+        run: nix flake check
