@@ -124,16 +124,16 @@
     acme = {
       acceptTerms = true;
       certs = {
-        "nextcloud.raroh73.xyz" = { };
-        "raroh73.xyz" = {
-          extraDomainNames = [ "www.raroh73.xyz" ];
+        "nextcloud.raroh73.com" = { };
+        "raroh73.com" = {
+          extraDomainNames = [ "www.raroh73.com" ];
         };
-        "webhook.raroh73.xyz" = { };
+        "webhook.raroh73.com" = { };
       };
       defaults = {
         credentialsFile = config.age.secrets.lego-token.path;
         dnsProvider = "cloudflare";
-        email = "me@raroh73.xyz";
+        email = "me@raroh73.com";
       };
     };
   };
@@ -143,10 +143,10 @@
       enable = true;
       apiTokenFile = config.age.secrets.cloudflare-dyndns-token.path;
       domains = [
-        "nextcloud.raroh73.xyz"
-        "raroh73.xyz"
-        "webhook.raroh73.xyz"
-        "www.raroh73.xyz"
+        "nextcloud.raroh73.com"
+        "raroh73.com"
+        "webhook.raroh73.com"
+        "www.raroh73.com"
       ];
       ipv4 = true;
       proxied = true;
@@ -167,7 +167,7 @@
       };
       extraAppsEnable = true;
       settings.overwriteProtocol = "https";
-      hostName = "nextcloud.raroh73.xyz";
+      hostName = "nextcloud.raroh73.com";
       https = true;
       secretFile = config.age.secrets.nextcloud-secrets.path;
     };
@@ -203,26 +203,26 @@
           };
         in
         {
-          "nextcloud.raroh73.xyz" = {
+          "nextcloud.raroh73.com" = {
             extraConfig = ''
               ssl_client_certificate ${cloudflare-origin-pull-ca};
               ssl_verify_client on;
             '';
             forceSSL = true;
-            useACMEHost = "nextcloud.raroh73.xyz";
+            useACMEHost = "nextcloud.raroh73.com";
           };
-          "raroh73.xyz" = {
+          "raroh73.com" = {
             extraConfig = ''
               ssl_client_certificate ${cloudflare-origin-pull-ca};
               ssl_verify_client on;
               error_page 404 /404.html;
             '';
             forceSSL = true;
-            root = "/srv/web/raroh73.xyz/public";
-            serverAliases = [ "www.raroh73.xyz" ];
-            useACMEHost = "raroh73.xyz";
+            root = "/srv/web/raroh73.com/public";
+            serverAliases = [ "www.raroh73.com" ];
+            useACMEHost = "raroh73.com";
           };
-          "webhook.raroh73.xyz" = {
+          "webhook.raroh73.com" = {
             extraConfig = ''
               ssl_client_certificate ${cloudflare-origin-pull-ca};
               ssl_verify_client on;
@@ -231,7 +231,7 @@
             locations."/" = {
               proxyPass = "http://localhost:9000";
             };
-            useACMEHost = "webhook.raroh73.xyz";
+            useACMEHost = "webhook.raroh73.com";
           };
         };
     };
@@ -274,14 +274,14 @@
               name = "website-script";
               runtimeInputs = with pkgs; [ git hugo ];
               text = ''
-                rm -fr /srv/web/raroh73.xyz/public
-                if [ ! -d /srv/web/raroh73.xyz ]
+                rm -fr /srv/web/raroh73.com/public
+                if [ ! -d /srv/web/raroh73.com ]
                 then
-                  git clone https://github.com/Raroh73/raroh73.xyz.git /srv/web/raroh73.xyz
-                  cd /srv/web/raroh73.xyz
+                  git clone https://github.com/Raroh73/raroh73.com.git /srv/web/raroh73.com
+                  cd /srv/web/raroh73.com
                 else
-                  cd /srv/web/raroh73.xyz
-                  git pull https://github.com/Raroh73/raroh73.xyz.git
+                  cd /srv/web/raroh73.com
+                  git pull https://github.com/Raroh73/raroh73.com.git
                 fi
                 hugo --minify
               '';

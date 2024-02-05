@@ -183,8 +183,8 @@
           hostname = "github.com";
           identityFile = "/home/raroh73/.ssh/github";
         };
-        "ssh.raroh73.xyz" = {
-          hostname = "ssh.raroh73.xyz";
+        "sirius" = {
+          hostname = "sirius.raroh73.com";
           identityFile = "/home/raroh73/.ssh/sirius";
           user = "raroh73";
         };
