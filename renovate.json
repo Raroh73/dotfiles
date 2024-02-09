@@ -3,7 +3,7 @@
   "extends": ["config:recommended"],
   "automerge": true,
   "ignoreTests": true,
-  "labels": ["priority: low", "type: chore"],
+  "labels": ["chore"],
   "lockFileMaintenance": {
     "enabled": true
   },
