@@ -223,6 +223,7 @@
         "files.trimFinalNewlines" = true;
         "files.trimTrailingWhitespace" = true;
         "git.autofetch" = true;
+        "git.pruneOnFetch" = true;
         "git.useIntegratedAskPass" = false;
         "telemetry.telemetryLevel" = "off";
         "terminal.integrated.defaultProfile.linux" = "Nushell";
