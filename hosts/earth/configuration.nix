@@ -94,7 +94,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 28d";
     };
     nixPath = [ "nixpkgs=${pkgs.path}" ];
     registry.nixpkgs.to = {
@@ -104,8 +104,6 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "flakes" "nix-command" ];
-      keep-derivations = true;
-      keep-outputs = true;
     };
   };
 
