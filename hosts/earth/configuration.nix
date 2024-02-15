@@ -132,6 +132,38 @@
       '';
       syntaxHighlight = true;
     };
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        alsa-lib
+        atk
+        cairo
+        cups
+        dbus
+        expat
+        fontconfig
+        gdk-pixbuf
+        glib
+        gtk3
+        nspr
+        nss
+        pango
+        stdenv.cc.cc
+        systemd
+        xorg.libX11
+        xorg.libxcb
+        xorg.libXcomposite
+        xorg.libXcursor
+        xorg.libXdamage
+        xorg.libXext
+        xorg.libXfixes
+        xorg.libXi
+        xorg.libXrandr
+        xorg.libXrender
+        xorg.libXScrnSaver
+        xorg.libXtst
+      ];
+    };
     ssh.startAgent = true;
     steam.enable = true;
   };
