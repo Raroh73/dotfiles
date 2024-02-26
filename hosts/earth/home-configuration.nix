@@ -155,6 +155,12 @@
         vsync = 0;
       };
     };
+    mpv = {
+      enable = true;
+      config = {
+        hwdec = "auto";
+      };
+    };
     nushell = {
       enable = true;
       configFile.source =
