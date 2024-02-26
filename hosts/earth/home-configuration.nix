@@ -199,19 +199,16 @@
       enableUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         davidanson.vscode-markdownlint
-        esbenp.prettier-vscode
         jnoortheen.nix-ide
-        matklad.rust-analyzer
         mkhl.direnv
+        streetsidesoftware.code-spell-checker
         redhat.vscode-yaml
         tamasfe.even-better-toml
         timonwong.shellcheck
+        yzhang.markdown-all-in-one
       ];
       mutableExtensionsDir = false;
       userSettings = {
-        "[css][html][javascript][json][typescript][yaml]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
         "editor.fontFamily" = "CaskaydiaCove Nerd Font";
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
