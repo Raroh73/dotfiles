@@ -150,9 +150,8 @@
     mangohud = {
       enable = true;
       settings = {
-        fps_limit = 69;
+        fps_limit = 120;
         full = true;
-        gl_vsync = -1;
         vsync = 0;
       };
     };
