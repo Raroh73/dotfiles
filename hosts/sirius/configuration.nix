@@ -80,16 +80,15 @@
   nix = {
     gc = {
       automatic = true;
-      dates = "weekly";
       options = "--delete-older-than 14d";
     };
     nixPath = [ "nixpkgs=${pkgs.path}" ];
+    optimise.automatic = true;
     registry.nixpkgs.to = {
       type = "path";
       path = pkgs.path;
     };
     settings = {
-      auto-optimise-store = true;
       experimental-features = [ "flakes" "nix-command" ];
     };
   };

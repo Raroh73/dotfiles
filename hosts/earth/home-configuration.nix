@@ -70,6 +70,13 @@
     username = "raroh73";
   };
 
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 28d";
+    };
+  };
+
   programs = {
     atuin = {
       enable = true;

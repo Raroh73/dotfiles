@@ -5,6 +5,13 @@ _: {
     username = "raroh73";
   };
 
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 14d";
+    };
+  };
+
   programs = {
     atuin = {
       enable = true;
