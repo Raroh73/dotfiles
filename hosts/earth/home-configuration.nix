@@ -89,12 +89,6 @@
       enable = true;
       enableNushellIntegration = true;
     };
-    chromium = {
-      enable = true;
-      extensions = [{
-        id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";
-      }];
-    };
     direnv = {
       enable = true;
       enableNushellIntegration = true;
