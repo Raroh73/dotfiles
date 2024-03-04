@@ -180,6 +180,7 @@
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
+        continue.continue
         davidanson.vscode-markdownlint
         jnoortheen.nix-ide
         mkhl.direnv
