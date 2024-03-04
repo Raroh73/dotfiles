@@ -174,7 +174,10 @@
     };
     fstrim.enable = true;
     fwupd.enable = true;
-    ollama.enable = true;
+    ollama = {
+      enable = true;
+      acceleration = "rocm";
+    };
     openssh = {
       enable = true;
       openFirewall = true;
