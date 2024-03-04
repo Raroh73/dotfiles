@@ -84,7 +84,6 @@
     firewall.enable = true;
     hostName = "earth";
     networkmanager.enable = true;
-    stevenblack.enable = true;
   };
 
   nix = {
@@ -225,6 +224,25 @@
         shell = pkgs.nushell;
       };
       root.hashedPassword = "!";
+    };
+  };
+
+  services.isso = {
+    enable = true;
+    settings = {
+      general = {
+        host = "http://localhost:1313";
+      };
+      moderation = {
+        enabled = true;
+      };
+      admin = {
+        enabled = true;
+        password = "secret52";
+      };
+      guard = {
+        direct-reply = 100;
+      };
     };
   };
 }

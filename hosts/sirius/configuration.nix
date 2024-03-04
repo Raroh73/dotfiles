@@ -74,7 +74,6 @@
     };
     hostName = "sirius";
     networkmanager.enable = true;
-    stevenblack.enable = true;
   };
 
   nix = {
