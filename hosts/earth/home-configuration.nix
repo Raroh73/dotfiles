@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ pkgs, ... }: {
   #dconf.settings = {
   #  "org/gnome/desktop/datetime" = {
   #    automatic-timezone = true;
