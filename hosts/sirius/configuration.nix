@@ -89,6 +89,8 @@
     };
     settings = {
       experimental-features = [ "flakes" "nix-command" ];
+      keep-derivations = true;
+      keep-outputs = true;
     };
   };
 

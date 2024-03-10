@@ -89,7 +89,7 @@
   nix = {
     gc = {
       automatic = true;
-      options = "--delete-older-than 28d";
+      options = "--delete-older-than 14d";
     };
     nixPath = [ "nixpkgs=${pkgs.path}" ];
     optimise.automatic = true;
@@ -99,6 +99,8 @@
     };
     settings = {
       experimental-features = [ "flakes" "nix-command" ];
+      keep-derivations = true;
+      keep-outputs = true;
     };
   };
 

@@ -73,7 +73,7 @@
   nix = {
     gc = {
       automatic = true;
-      options = "--delete-older-than 28d";
+      options = "--delete-older-than 14d";
     };
   };
 
