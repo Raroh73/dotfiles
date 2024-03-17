@@ -39,19 +39,6 @@
         ];
         system = "x86_64-linux";
       };
-      sirius = nixpkgs.lib.nixosSystem {
-        pkgs = import nixpkgs {
-          config.allowUnfree = true;
-          system = "aarch64-linux";
-        };
-        modules = [
-          agenix.nixosModules.default
-          disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
-          ./hosts/sirius/configuration.nix
-        ];
-        system = "aarch64-linux";
-      };
     };
   };
 }
