@@ -62,7 +62,6 @@
       discord
       element-desktop
       handbrake
-      nextcloud-client
       nixpkgs-fmt
       spotify
     ];
