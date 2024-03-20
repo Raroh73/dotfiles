@@ -177,7 +177,8 @@
     fwupd.enable = true;
     ollama = {
       enable = true;
-      acceleration = "rocm";
+      # https://github.com/NixOS/nixpkgs/issues/297081
+      # acceleration = "rocm";
     };
     openssh = {
       enable = true;
