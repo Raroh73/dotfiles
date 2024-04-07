@@ -18,6 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "/home/raroh73/nixpkgs";
     nur.url = "github:nix-community/NUR";
     stylix = {
       url = "github:danth/stylix";
