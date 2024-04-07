@@ -19,9 +19,16 @@
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs = {
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
-  outputs = { self, agenix, disko, home-manager, nixpkgs, nur }: {
+  outputs = { self, agenix, disko, home-manager, nixpkgs, nur, stylix }: {
     nixosConfigurations = {
       earth = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
