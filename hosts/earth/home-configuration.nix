@@ -83,10 +83,6 @@
       flags = [ "--disable-up-arrow" ];
     };
     bottom.enable = true;
-    broot = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
     direnv = {
       enable = true;
       enableNushellIntegration = true;
