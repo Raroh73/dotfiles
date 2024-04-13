@@ -79,13 +79,14 @@
   programs = {
     atuin = {
       enable = true;
-      enableNushellIntegration = true;
+      enableBashIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
+    bash.enable = true;
     bottom.enable = true;
     direnv = {
       enable = true;
-      enableNushellIntegration = true;
+      enableBashIntegration = true;
       nix-direnv.enable = true;
     };
     firefox = {
@@ -131,25 +132,6 @@
         hwdec = "auto";
       };
     };
-    nushell = {
-      enable = true;
-      configFile.source =
-        let
-          default-config = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/nushell/nushell/0.89.0/crates/nu-utils/src/sample_config/default_config.nu";
-            sha256 = "0qlhba79mryar4rh7k0s32vvhywqljy1v2z86grhp6p9c9m7ky83";
-          };
-        in
-        "${default-config}";
-      envFile.source =
-        let
-          default-env = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/nushell/nushell/0.89.0/crates/nu-utils/src/sample_config/default_env.nu";
-            sha256 = "162nzdz7n9kjpl2k02dsv5vrawg7c3f7c4lp6822i93i9kl6k4vr";
-          };
-        in
-        "${default-env}";
-    };
     ssh = {
       enable = true;
       addKeysToAgent = "yes";
@@ -162,7 +144,7 @@
     };
     starship = {
       enable = true;
-      enableNushellIntegration = true;
+      enableBashIntegration = true;
     };
     vscode = {
       enable = true;
@@ -194,12 +176,6 @@
         "git.pruneOnFetch" = true;
         "git.useIntegratedAskPass" = false;
         "telemetry.telemetryLevel" = "off";
-        "terminal.integrated.defaultProfile.linux" = "Nushell";
-        "terminal.integrated.profiles.linux" = {
-          "Nushell" = {
-            "path" = "/etc/profiles/per-user/raroh73/bin/nu";
-          };
-        };
         "window.restoreWindows" = "none";
       };
     };

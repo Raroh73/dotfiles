@@ -30,8 +30,6 @@
     tmp.cleanOnBoot = true;
   };
 
-  environment.shells = with pkgs; [ nushell ];
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/806c8aa2-d22e-4e1b-a688-c0c4da72293b";
@@ -223,7 +221,6 @@
         extraGroups = [ "networkmanager" "wheel" ];
         hashedPasswordFile = config.age.secrets.raroh73-earth-password.path;
         isNormalUser = true;
-        shell = pkgs.nushell;
       };
       root.hashedPassword = "!";
     };
