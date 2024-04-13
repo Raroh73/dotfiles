@@ -82,7 +82,6 @@
       enableNushellIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
-    bat.enable = true;
     bottom.enable = true;
     broot = {
       enable = true;
