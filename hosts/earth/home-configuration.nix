@@ -132,6 +132,17 @@
         hwdec = "auto";
       };
     };
+    readline = {
+      enable = true;
+      bindings = {
+        "\\e[A" = "history-search-backward";
+        "\\e[B" = "history-search-forward";
+      };
+      variables = {
+        completion-ignore-case = true;
+        show-all-if-ambiguous = true;
+      };
+    };
     ssh = {
       enable = true;
       addKeysToAgent = "yes";
