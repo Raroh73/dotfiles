@@ -153,6 +153,7 @@
       extensions = with pkgs.vscode-extensions; [
         continue.continue
         davidanson.vscode-markdownlint
+        editorconfig.editorconfig
         jnoortheen.nix-ide
         mkhl.direnv
         streetsidesoftware.code-spell-checker
