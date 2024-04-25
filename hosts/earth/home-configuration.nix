@@ -62,7 +62,8 @@
       discord
       element-desktop
       handbrake
-      nixpkgs-fmt
+      nil
+      nixfmt-rfc-style
       spotify
     ];
     stateVersion = "23.11";
@@ -187,6 +188,15 @@
         "git.autofetch" = true;
         "git.pruneOnFetch" = true;
         "git.useIntegratedAskPass" = false;
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nil";
+        "nix.serverSettings" = {
+          "nil" = {
+            "formatting" = {
+              "command" = [ "nixfmt" ];
+            };
+          };
+        };
         "telemetry.telemetryLevel" = "off";
         "window.restoreWindows" = "none";
       };
