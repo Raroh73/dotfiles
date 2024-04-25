@@ -43,6 +43,7 @@
           agenix.nixosModules.default
           #disko.nixosModules.disko
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
           ./hosts/earth/configuration.nix
         ];
         system = "x86_64-linux";
