@@ -89,29 +89,6 @@
 
   programs = {
     gamemode.enable = true;
-    nano = {
-      nanorc = ''
-        bind ^C copy main
-        bind ^F whereis main
-        bind ^H replace main
-        bind ^Q exit main
-        bind ^V paste main
-        bind ^X cut main
-        bind ^Y redo main
-        bind ^Z undo main
-        set autoindent
-        set constantshow
-        set historylog
-        set linenumbers
-        set minibar
-        set nohelp
-        set positionlog
-        set tabsize 2
-        set tabstospaces
-        set zap
-      '';
-      syntaxHighlight = true;
-    };
     nix-ld = {
       enable = true;
       libraries = [
