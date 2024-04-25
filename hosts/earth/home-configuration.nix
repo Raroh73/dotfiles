@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   #dconf.settings = {
   #  "org/gnome/desktop/datetime" = {
   #    automatic-timezone = true;
@@ -180,7 +181,10 @@
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
         "editor.linkedEditing" = true;
-        "editor.rulers" = [ 80 120 ];
+        "editor.rulers" = [
+          80
+          120
+        ];
         "files.eol" = "\n";
         "files.insertFinalNewline" = true;
         "files.trimFinalNewlines" = true;

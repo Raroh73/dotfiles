@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   #imports = [ ./disko-configuration.nix ];
 
   age.secrets.raroh73-earth-password.file = ../../secrets/raroh73-earth-password.age;
@@ -44,7 +45,10 @@
   fonts = {
     fontconfig = {
       defaultFonts = {
-        emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+        emoji = [
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
         monospace = [ "Roboto Mono" ];
         sansSerif = [ "Roboto" ];
         serif = [ "Roboto Slab" ];
@@ -96,7 +100,10 @@
       path = pkgs.path;
     };
     settings = {
-      experimental-features = [ "flakes" "nix-command" ];
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
       keep-derivations = true;
       keep-outputs = true;
     };
@@ -214,9 +221,7 @@
   };
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
 
-  swapDevices = [{
-    device = "/dev/disk/by-uuid/e369f49e-b657-4e07-89d8-acdbe6b12b25";
-  }];
+  swapDevices = [ { device = "/dev/disk/by-uuid/e369f49e-b657-4e07-89d8-acdbe6b12b25"; } ];
 
   system.stateVersion = "23.11";
 
@@ -225,7 +230,10 @@
     users = {
       raroh73 = {
         description = "Raroh73";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+        ];
         hashedPasswordFile = config.age.secrets.raroh73-earth-password.path;
         isNormalUser = true;
       };

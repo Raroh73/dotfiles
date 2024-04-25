@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     #"${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
@@ -29,7 +30,10 @@
 
   nix = {
     nixPath = [ "nixpkgs=${pkgs.path}" ];
-    settings.experimental-features = [ "flakes" "nix-command" ];
+    settings.experimental-features = [
+      "flakes"
+      "nix-command"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -76,7 +80,10 @@
     users = {
       raroh73 = {
         description = "Raroh73";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+        ];
         hashedPassword = "$y$j9T$G0rX4W6eqrwz2gNOSuM9/1$M1SiWyYp.Xq4u0GPAJxZYeW0CJ6q3BzIJ2ubkgi6DP3";
         isNormalUser = true;
       };
