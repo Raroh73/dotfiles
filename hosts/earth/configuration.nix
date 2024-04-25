@@ -114,34 +114,34 @@
     };
     nix-ld = {
       enable = true;
-      libraries = with pkgs; [
-        alsa-lib
-        atk
-        cairo
-        cups
-        dbus
-        expat
-        fontconfig
-        gdk-pixbuf
-        glib
-        gtk3
-        nspr
-        nss
-        pango
-        stdenv.cc.cc
-        systemd
-        xorg.libX11
-        xorg.libxcb
-        xorg.libXcomposite
-        xorg.libXcursor
-        xorg.libXdamage
-        xorg.libXext
-        xorg.libXfixes
-        xorg.libXi
-        xorg.libXrandr
-        xorg.libXrender
-        xorg.libXScrnSaver
-        xorg.libXtst
+      libraries = [
+        pkgs.alsa-lib
+        pkgs.atk
+        pkgs.cairo
+        pkgs.cups
+        pkgs.dbus
+        pkgs.expat
+        pkgs.fontconfig
+        pkgs.gdk-pixbuf
+        pkgs.glib
+        pkgs.gtk3
+        pkgs.nspr
+        pkgs.nss
+        pkgs.pango
+        pkgs.stdenv.cc.cc
+        pkgs.systemd
+        pkgs.xorg.libX11
+        pkgs.xorg.libxcb
+        pkgs.xorg.libXcomposite
+        pkgs.xorg.libXcursor
+        pkgs.xorg.libXdamage
+        pkgs.xorg.libXext
+        pkgs.xorg.libXfixes
+        pkgs.xorg.libXi
+        pkgs.xorg.libXrandr
+        pkgs.xorg.libXrender
+        pkgs.xorg.libXScrnSaver
+        pkgs.xorg.libXtst
       ];
     };
     ssh.startAgent = true;

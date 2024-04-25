@@ -58,14 +58,14 @@
       target = ".face";
     };
     homeDirectory = "/home/raroh73";
-    packages = with pkgs; [
-      bitwarden
-      discord
-      element-desktop
-      handbrake
-      nil
-      nixfmt-rfc-style
-      spotify
+    packages = [
+      pkgs.bitwarden
+      pkgs.discord
+      pkgs.element-desktop
+      pkgs.handbrake
+      pkgs.nil
+      pkgs.nixfmt-rfc-style
+      pkgs.spotify
     ];
     stateVersion = "23.11";
     username = "raroh73";
@@ -95,9 +95,9 @@
       enable = true;
       profiles = {
         "Raroh73" = {
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            proton-pass
-            ublock-origin
+          extensions = [
+            pkgs.nur.repos.rycee.firefox-addons.proton-pass
+            pkgs.nur.repos.rycee.firefox-addons.ublock-origin
           ];
         };
       };
@@ -163,17 +163,17 @@
       enable = true;
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
-      extensions = with pkgs.vscode-extensions; [
-        continue.continue
-        davidanson.vscode-markdownlint
-        editorconfig.editorconfig
-        jnoortheen.nix-ide
-        mkhl.direnv
-        streetsidesoftware.code-spell-checker
-        redhat.vscode-yaml
-        tamasfe.even-better-toml
-        timonwong.shellcheck
-        yzhang.markdown-all-in-one
+      extensions = [
+        pkgs.vscode-extensions.continue.continue
+        pkgs.vscode-extensions.davidanson.vscode-markdownlint
+        pkgs.vscode-extensions.editorconfig.editorconfig
+        pkgs.vscode-extensions.jnoortheen.nix-ide
+        pkgs.vscode-extensions.mkhl.direnv
+        pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
+        pkgs.vscode-extensions.redhat.vscode-yaml
+        pkgs.vscode-extensions.tamasfe.even-better-toml
+        pkgs.vscode-extensions.timonwong.shellcheck
+        pkgs.vscode-extensions.yzhang.markdown-all-in-one
       ];
       mutableExtensionsDir = false;
       userSettings = {
