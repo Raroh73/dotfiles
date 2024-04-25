@@ -125,9 +125,12 @@
         pkgs.gdk-pixbuf
         pkgs.glib
         pkgs.gtk3
+        pkgs.libxkbcommon
         pkgs.nspr
         pkgs.nss
         pkgs.pango
+        pkgs.vulkan-loader
+        pkgs.wayland
         pkgs.xorg.libX11
         pkgs.xorg.libxcb
         pkgs.xorg.libXcomposite
