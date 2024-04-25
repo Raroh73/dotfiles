@@ -177,7 +177,6 @@
       ];
       mutableExtensionsDir = false;
       userSettings = {
-        "editor.fontFamily" = "CaskaydiaCove Nerd Font";
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
         "editor.linkedEditing" = true;
