@@ -128,8 +128,6 @@
         pkgs.nspr
         pkgs.nss
         pkgs.pango
-        pkgs.stdenv.cc.cc
-        pkgs.systemd
         pkgs.xorg.libX11
         pkgs.xorg.libxcb
         pkgs.xorg.libXcomposite
