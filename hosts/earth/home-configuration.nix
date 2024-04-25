@@ -177,6 +177,7 @@
       ];
       mutableExtensionsDir = false;
       userSettings = {
+        "diffEditor.ignoreTrimWhitespace" = false;
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
         "editor.linkedEditing" = true;
