@@ -215,11 +215,13 @@
     };
   };
 
-  stylix.image = pkgs.fetchurl {
+  stylix = {
+    image = pkgs.fetchurl {
     url = "https://w.wallhaven.cc/full/43/wallhaven-43lej9.png";
     hash = "sha256-QY9EnxPoHXlo6J0q1sDdkdC6Jl69RMPnlvOOT3ljqqk=";
   };
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+  };
 
   swapDevices = [ { device = "/dev/disk/by-uuid/e369f49e-b657-4e07-89d8-acdbe6b12b25"; } ];
 
