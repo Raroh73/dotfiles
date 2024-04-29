@@ -178,8 +178,6 @@
     };
   };
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/e369f49e-b657-4e07-89d8-acdbe6b12b25"; } ];
-
   system.stateVersion = "23.11";
 
   users = {
