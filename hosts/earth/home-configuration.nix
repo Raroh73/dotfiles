@@ -53,9 +53,28 @@
   #};
 
   home = {
-    file.face = {
-      source = ../../static/avatar.jpg;
-      target = ".face";
+    file = {
+      continue = {
+        text = builtins.toJSON {
+          models = [
+            {
+              title = "Llama 3";
+              provider = "ollama";
+              model = "llama3:instruct";
+            }
+          ];
+          tabAutocompleteModel = {
+            title = "Tab Autocomplete Model";
+            provider = "ollama";
+            model = "starcoder2:3b";
+          };
+        };
+        target = ".continue/config.json";
+      };
+      face = {
+        source = ../../static/avatar.jpg;
+        target = ".face";
+      };
     };
     homeDirectory = "/home/raroh73";
     packages = [
