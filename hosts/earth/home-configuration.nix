@@ -54,27 +54,21 @@
 
   home = {
     file = {
-      continue = {
-        text = builtins.toJSON {
-          models = [
-            {
-              title = "Llama 3";
-              provider = "ollama";
-              model = "llama3:instruct";
-            }
-          ];
-          tabAutocompleteModel = {
-            title = "Tab Autocomplete Model";
+      ".continue/config.json".text = builtins.toJSON {
+        models = [
+          {
+            title = "Llama 3";
             provider = "ollama";
-            model = "starcoder2:3b";
-          };
+            model = "llama3:instruct";
+          }
+        ];
+        tabAutocompleteModel = {
+          title = "Tab Autocomplete Model";
+          provider = "ollama";
+          model = "starcoder2:3b";
         };
-        target = ".continue/config.json";
       };
-      face = {
-        source = ../../static/avatar.jpg;
-        target = ".face";
-      };
+      ".face".source = ../../static/avatar.jpg;
     };
     homeDirectory = "/home/raroh73";
     packages = [
