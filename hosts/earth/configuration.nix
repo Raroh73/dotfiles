@@ -136,11 +136,7 @@
     };
     fstrim.enable = true;
     fwupd.enable = true;
-    ollama = {
-      enable = true;
-      # https://github.com/NixOS/nixpkgs/issues/305641
-      # acceleration = "rocm";
-    };
+    ollama.enable = true;
     openssh = {
       enable = true;
       openFirewall = true;

@@ -43,7 +43,10 @@
       nixosConfigurations = {
         earth = nixpkgs.lib.nixosSystem {
           pkgs = import nixpkgs {
-            config.allowUnfree = true;
+            config = {
+              allowUnfree = true;
+              rocmSupport = true;
+            };
             overlays = [ nur.overlay ];
             system = "x86_64-linux";
           };
