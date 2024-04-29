@@ -123,7 +123,10 @@
       ];
     };
     ssh.startAgent = true;
-    steam.enable = true;
+    steam = {
+      enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
   };
 
   security.rtkit.enable = true;
