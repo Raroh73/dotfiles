@@ -122,10 +122,7 @@
         pkgs.xorg.libXtst
       ];
     };
-    steam = {
-      enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
-    };
+    steam.enable = true;
   };
 
   security.rtkit.enable = true;
