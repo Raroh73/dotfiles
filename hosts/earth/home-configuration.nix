@@ -104,7 +104,7 @@
       extraConfig = {
         apply.whitespace = "fix";
         commit.gpgSign = true;
-        core.whitespace = "trailing-space,space-before-tab";
+        core.whitespace = "space-before-tab,trailing-space";
         fetch.prune = true;
         gpg.format = "ssh";
         pull.ff = "only";
