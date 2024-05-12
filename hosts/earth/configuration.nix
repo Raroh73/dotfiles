@@ -173,6 +173,7 @@
       url = "https://w.wallhaven.cc/full/43/wallhaven-43lej9.png";
       hash = "sha256-QY9EnxPoHXlo6J0q1sDdkdC6Jl69RMPnlvOOT3ljqqk=";
     };
+    polarity = "dark";
   };
 
   system.stateVersion = "23.11";
