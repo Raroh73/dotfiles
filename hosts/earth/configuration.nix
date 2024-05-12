@@ -122,7 +122,6 @@
         pkgs.xorg.libXtst
       ];
     };
-    ssh.startAgent = true;
     steam = {
       enable = true;
       extraCompatPackages = [ pkgs.proton-ge-bin ];
@@ -162,10 +161,8 @@
     unbound.enable = true;
     xserver = {
       enable = true;
-      #desktopManager.gnome.enable = true;
-      #displayManager.gdm.enable = true;
-      desktopManager.plasma6.enable = true;
-      displayManager.sddm.enable = true;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
       xkb.layout = "us,pl";
     };
   };
