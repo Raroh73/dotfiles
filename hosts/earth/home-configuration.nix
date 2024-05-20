@@ -41,16 +41,11 @@
       ".continue/config.json".text = builtins.toJSON {
         models = [
           {
-            title = "Llama 3";
-            provider = "ollama";
-            model = "llama3:instruct";
+            title = "Llama CPP";
+            provider = "llama.cpp";
+            model = "Phi-3";
           }
         ];
-        tabAutocompleteModel = {
-          title = "Tab Autocomplete Model";
-          provider = "ollama";
-          model = "starcoder2:3b";
-        };
       };
       ".face".source = ../../static/avatar.jpg;
     };
