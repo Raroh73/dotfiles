@@ -55,7 +55,6 @@
       pkgs.discord
       pkgs.element-desktop
       pkgs.handbrake
-      pkgs.jan
       pkgs.nil
       pkgs.nixfmt-rfc-style
       pkgs.spotify
