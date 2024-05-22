@@ -152,6 +152,7 @@
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
       extensions = [
+        pkgs.vscode-extensions.bradlc.vscode-tailwindcss
         pkgs.vscode-extensions.charliermarsh.ruff
         pkgs.vscode-extensions.continue.continue
         pkgs.vscode-extensions.davidanson.vscode-markdownlint
