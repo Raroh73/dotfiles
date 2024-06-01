@@ -71,12 +71,7 @@
       automatic = true;
       options = "--delete-older-than 14d";
     };
-    nixPath = [ "nixpkgs=${pkgs.path}" ];
     optimise.automatic = true;
-    registry.nixpkgs.to = {
-      type = "path";
-      path = pkgs.path;
-    };
     settings = {
       experimental-features = [
         "flakes"
