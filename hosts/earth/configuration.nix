@@ -130,21 +130,7 @@
     };
     fstrim.enable = true;
     fwupd.enable = true;
-    llama-cpp = {
-      enable = true;
-      extraFlags = [
-        "--chat-template"
-        "phi3"
-        "--ctx-size"
-        "4096"
-        "-ngl"
-        "100"
-      ];
-      model = pkgs.fetchurl {
-        url = "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf/resolve/main/Phi-3-mini-4k-instruct-q4.gguf";
-        hash = "sha256-ioPH+5BJqbLpImb6etBJM7tTqh6FE2t7MPG4AA/y7e8=";
-      };
-    };
+    ollama.enable = true;
     openssh = {
       enable = true;
       openFirewall = true;
