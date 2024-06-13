@@ -1,5 +1,5 @@
 {
-  description = "Raroh73's dotfiles";
+  description = "My personal dotfiles.";
 
   inputs = {
     agenix = {
