@@ -160,6 +160,7 @@
   };
 
   stylix = {
+    enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
     image = pkgs.fetchurl {
       url = "https://w.wallhaven.cc/full/43/wallhaven-43lej9.png";
