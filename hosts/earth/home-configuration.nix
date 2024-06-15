@@ -59,7 +59,6 @@
       pkgs.bitwarden
       pkgs.discord
       pkgs.element-desktop
-      pkgs.handbrake
       pkgs.nil
       pkgs.nixfmt-rfc-style
       pkgs.spotify
