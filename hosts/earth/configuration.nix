@@ -129,7 +129,10 @@
     };
     fstrim.enable = true;
     fwupd.enable = true;
-    ollama.enable = true;
+    ollama = {
+      enable = true;
+      rocmOverrideGfx = "10.3.0";
+    };
     openssh = {
       enable = true;
       openFirewall = true;
