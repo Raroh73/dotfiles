@@ -5,18 +5,14 @@
   age.secrets.raroh73-earth-password.file = ../../secrets/raroh73-earth-password.age;
 
   boot = {
-    extraModulePackages = [ ];
-    initrd = {
-      availableKernelModules = [
-        "ahci"
-        "nvme"
-        "sd_mod"
-        "usb_storage"
-        "usbhid"
-        "xhci_pci"
-      ];
-      kernelModules = [ "amdgpu" ];
-    };
+    initrd.availableKernelModules = [
+      "ahci"
+      "nvme"
+      "sd_mod"
+      "usb_storage"
+      "usbhid"
+      "xhci_pci"
+    ];
     kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
@@ -43,12 +39,15 @@
   };
 
   hardware = {
+    amdgpu = {
+      initrd.enable = true;
+      opencl.enable = true;
+    };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
     pulseaudio.enable = false;
     xone.enable = true;
