@@ -156,14 +156,11 @@
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
       extensions = [
-        pkgs.vscode-extensions.bradlc.vscode-tailwindcss
-        pkgs.vscode-extensions.charliermarsh.ruff
         pkgs.vscode-extensions.continue.continue
         pkgs.vscode-extensions.davidanson.vscode-markdownlint
         pkgs.vscode-extensions.editorconfig.editorconfig
         pkgs.vscode-extensions.jnoortheen.nix-ide
         pkgs.vscode-extensions.mkhl.direnv
-        pkgs.vscode-extensions.ms-python.python
         pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
         pkgs.vscode-extensions.redhat.vscode-yaml
         pkgs.vscode-extensions.tamasfe.even-better-toml
@@ -172,13 +169,6 @@
       ];
       mutableExtensionsDir = false;
       userSettings = {
-        "[python]" = {
-          "editor.codeActionsOnSave" = {
-            "source.fixAll" = "explicit";
-            "source.organizeImports" = "explicit";
-          };
-          "editor.defaultFormatter" = "charliermarsh.ruff";
-        };
         "diffEditor.ignoreTrimWhitespace" = false;
         "editor.fontLigatures" = true;
         "editor.formatOnSave" = true;
