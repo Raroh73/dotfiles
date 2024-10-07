@@ -58,10 +58,8 @@
     packages = [
       pkgs.bitwarden
       pkgs.discord
-      pkgs.element-desktop
       pkgs.nil
       pkgs.nixfmt-rfc-style
-      pkgs.spotify
     ];
     stateVersion = "23.11";
     username = "raroh73";
@@ -119,12 +117,6 @@
         fps_limit = 120;
         full = true;
         vsync = 0;
-      };
-    };
-    mpv = {
-      enable = true;
-      config = {
-        hwdec = "auto";
       };
     };
     readline = {
