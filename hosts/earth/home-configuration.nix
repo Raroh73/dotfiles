@@ -59,6 +59,7 @@
       pkgs.bitwarden
       pkgs.discord
       pkgs.nil
+      pkgs.nixd
       pkgs.nixfmt-rfc-style
     ];
     stateVersion = "23.11";
@@ -187,6 +188,10 @@
         "telemetry.telemetryLevel" = "off";
         "window.restoreWindows" = "none";
       };
+    };
+    zed-editor = {
+      enable = true;
+      extensions = [ "nix" ];
     };
   };
 }
