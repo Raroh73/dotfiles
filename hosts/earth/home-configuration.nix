@@ -18,9 +18,9 @@
       favorite-apps = [
         "firefox.desktop"
         "steam.desktop"
+        "dev.zed.Zed.desktop"
         "code.desktop"
         "discord.desktop"
-        "spotify.desktop"
         "org.gnome.Nautilus.desktop"
       ];
     };
@@ -28,7 +28,9 @@
       application-list = [
         "firefox.desktop:1"
         "steam.desktop:2"
+        "dev.zed.Zed.desktop:3"
         "code.desktop:3"
+        "discord.desktop:4"
       ];
     };
     "org/gnome/system/location" = {
