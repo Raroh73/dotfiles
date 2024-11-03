@@ -194,7 +194,20 @@
     };
     zed-editor = {
       enable = true;
-      extensions = [ "nix" ];
+      extensions = [
+        "astro"
+        "html"
+        "nix"
+      ];
+      userSettings = {
+        "assistant" = {
+          "default_model" = {
+            "provider" = "ollama";
+            "model" = "phi3.5:latest";
+          };
+          "version" = "2";
+        };
+      };
     };
   };
 }
