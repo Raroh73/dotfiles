@@ -151,6 +151,7 @@
       enableExtensionUpdateCheck = false;
       enableUpdateCheck = false;
       extensions = [
+        pkgs.vscode-extensions.astro-build.astro-vscode
         pkgs.vscode-extensions.continue.continue
         pkgs.vscode-extensions.davidanson.vscode-markdownlint
         pkgs.vscode-extensions.editorconfig.editorconfig
