@@ -41,17 +41,21 @@
   home = {
     file = {
       ".continue/config.json".text = builtins.toJSON {
-        models = [
+        "embeddingsProvider" = {
+          "provider" = "ollama";
+          "model" = "nomic-embed-text";
+        };
+        "models" = [
           {
-            title = "Phi-3";
-            provider = "ollama";
-            model = "phi3";
+            "title" = "Llama3.1";
+            "provider" = "ollama";
+            "model" = "llama3.1";
           }
         ];
-        tabAutocompleteModel = {
-          title = "StarCoder2";
-          provider = "ollama";
-          model = "starcoder2";
+        "tabAutocompleteModel" = {
+          "title" = "StarCoder2";
+          "provider" = "ollama";
+          "model" = "starcoder2";
         };
       };
       ".face".source = ../../static/avatar.jpg;
