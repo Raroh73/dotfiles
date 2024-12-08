@@ -47,7 +47,7 @@
               allowUnfree = true;
               rocmSupport = true;
             };
-            overlays = [ nur.overlay ];
+            overlays = [ nur.overlays.default ];
             system = "x86_64-linux";
           };
           modules = [
