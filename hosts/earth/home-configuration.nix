@@ -121,6 +121,13 @@
       userName = "Raroh73";
       userEmail = "96078496+Raroh73@users.noreply.github.com";
     };
+    gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+        prompt = "enabled";
+      };
+    };
     mangohud = {
       enable = true;
       settings = {
