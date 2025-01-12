@@ -40,8 +40,7 @@
           pkgs = import nixpkgs {
             config = {
               allowUnfree = true;
-              # https://github.com/NixOS/nixpkgs/issues/368672
-              #rocmSupport = true;
+              rocmSupport = true;
             };
             overlays = [ nur.overlays.default ];
             system = "x86_64-linux";
