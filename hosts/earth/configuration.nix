@@ -41,8 +41,7 @@
   hardware = {
     amdgpu = {
       initrd.enable = true;
-      # https://github.com/NixOS/nixpkgs/issues/375745
-      #opencl.enable = true;
+      opencl.enable = true;
     };
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
