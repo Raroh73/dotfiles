@@ -44,21 +44,27 @@
   home = {
     file = {
       ".continue/config.json".text = builtins.toJSON {
-        "embeddingsProvider" = {
-          "provider" = "ollama";
-          "model" = "nomic-embed-text";
-        };
         "models" = [
           {
-            "title" = "Llama3.1";
+            "title" = "OLMo";
             "provider" = "ollama";
-            "model" = "llama3.1";
+            "model" = "olmo";
+          }
+          {
+            "title" = "Phi";
+            "provider" = "ollama";
+            "model" = "phi";
+          }
+          {
+            "title" = "Qwen Coder";
+            "provider" = "ollama";
+            "model" = "qwen-coder-instruct";
           }
         ];
         "tabAutocompleteModel" = {
-          "title" = "StarCoder2";
+          "title" = "Qwen Coder";
           "provider" = "ollama";
-          "model" = "starcoder2";
+          "model" = "qwen-coder-base";
         };
       };
       ".face".source = ../../static/avatar.jpg;
