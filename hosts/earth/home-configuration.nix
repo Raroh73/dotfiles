@@ -122,7 +122,7 @@
         gpg.format = "ssh";
         pull.ff = "only";
         tag.gpgSign = true;
-        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGHApUp3xinRyckb/TjsugZdF9wFFFxbVe79lvxpLVTo earth";
+        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFheJBiBFv3InmZmINg6TbI5ani8f8s/Fw0C2d5tdHa earth";
       };
       userName = "Raroh73";
       userEmail = "96078496+Raroh73@users.noreply.github.com";
