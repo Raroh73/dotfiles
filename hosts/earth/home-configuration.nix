@@ -71,7 +71,6 @@
     };
     homeDirectory = "/home/raroh73";
     packages = [
-      pkgs.bitwarden
       pkgs.discord
       pkgs.nil
       pkgs.nixd
