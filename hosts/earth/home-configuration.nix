@@ -118,13 +118,16 @@
         commit.gpgSign = true;
         core.whitespace = "space-before-tab,trailing-space";
         fetch.prune = true;
-        gpg.format = "ssh";
         pull.ff = "only";
         tag.gpgSign = true;
-        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFheJBiBFv3InmZmINg6TbI5ani8f8s/Fw0C2d5tdHa earth";
       };
-      userName = "Raroh73";
+      signing = {
+        format = "ssh";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFheJBiBFv3InmZmINg6TbI5ani8f8s/Fw0C2d5tdHa earth";
+        signByDefault = true;
+      };
       userEmail = "96078496+Raroh73@users.noreply.github.com";
+      userName = "Raroh73";
     };
     gh = {
       enable = true;
