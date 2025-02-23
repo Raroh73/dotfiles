@@ -167,48 +167,49 @@
     };
     vscode = {
       enable = true;
-      enableExtensionUpdateCheck = false;
-      enableUpdateCheck = false;
-      extensions = [
-        pkgs.vscode-extensions.astro-build.astro-vscode
-        pkgs.vscode-extensions.continue.continue
-        pkgs.vscode-extensions.davidanson.vscode-markdownlint
-        pkgs.vscode-extensions.editorconfig.editorconfig
-        pkgs.vscode-extensions.jnoortheen.nix-ide
-        pkgs.vscode-extensions.mkhl.direnv
-        pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
-        pkgs.vscode-extensions.redhat.vscode-yaml
-        pkgs.vscode-extensions.tamasfe.even-better-toml
-        pkgs.vscode-extensions.timonwong.shellcheck
-        pkgs.vscode-extensions.yzhang.markdown-all-in-one
-      ];
-      mutableExtensionsDir = false;
-      userSettings = {
-        "diffEditor.ignoreTrimWhitespace" = false;
-        "editor.fontLigatures" = true;
-        "editor.formatOnSave" = true;
-        "editor.linkedEditing" = true;
-        "editor.rulers" = [
-          80
-          120
+      profiles.default = {
+        enableExtensionUpdateCheck = false;
+        enableUpdateCheck = false;
+        extensions = [
+          pkgs.vscode-extensions.astro-build.astro-vscode
+          pkgs.vscode-extensions.continue.continue
+          pkgs.vscode-extensions.davidanson.vscode-markdownlint
+          pkgs.vscode-extensions.editorconfig.editorconfig
+          pkgs.vscode-extensions.jnoortheen.nix-ide
+          pkgs.vscode-extensions.mkhl.direnv
+          pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
+          pkgs.vscode-extensions.svelte.svelte-vscode
+          pkgs.vscode-extensions.redhat.vscode-yaml
+          pkgs.vscode-extensions.timonwong.shellcheck
+          pkgs.vscode-extensions.yzhang.markdown-all-in-one
         ];
-        "files.eol" = "\n";
-        "files.insertFinalNewline" = true;
-        "files.trimFinalNewlines" = true;
-        "files.trimTrailingWhitespace" = true;
-        "git.autofetch" = true;
-        "git.pruneOnFetch" = true;
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nil";
-        "nix.serverSettings" = {
-          "nil" = {
-            "formatting" = {
-              "command" = [ "nixfmt" ];
+        userSettings = {
+          "diffEditor.ignoreTrimWhitespace" = false;
+          "editor.fontLigatures" = true;
+          "editor.formatOnSave" = true;
+          "editor.linkedEditing" = true;
+          "editor.rulers" = [
+            80
+            120
+          ];
+          "files.eol" = "\n";
+          "files.insertFinalNewline" = true;
+          "files.trimFinalNewlines" = true;
+          "files.trimTrailingWhitespace" = true;
+          "git.autofetch" = true;
+          "git.pruneOnFetch" = true;
+          "nix.enableLanguageServer" = true;
+          "nix.serverPath" = "nil";
+          "nix.serverSettings" = {
+            "nil" = {
+              "formatting" = {
+                "command" = [ "nixfmt" ];
+              };
             };
           };
+          "telemetry.telemetryLevel" = "off";
+          "window.restoreWindows" = "none";
         };
-        "telemetry.telemetryLevel" = "off";
-        "window.restoreWindows" = "none";
       };
     };
     zed-editor = {
