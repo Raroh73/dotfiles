@@ -104,10 +104,7 @@
       enable = true;
       profiles = {
         "Raroh73" = {
-          extensions = [
-            pkgs.nur.repos.rycee.firefox-addons.proton-pass
-            pkgs.nur.repos.rycee.firefox-addons.ublock-origin
-          ];
+          extensions.packages = [ pkgs.nur.repos.rycee.firefox-addons.ublock-origin ];
         };
       };
     };
