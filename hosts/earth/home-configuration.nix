@@ -218,6 +218,7 @@
         "astro"
         "html"
         "nix"
+        "svelte"
       ];
       userSettings = {
         "assistant" = {
