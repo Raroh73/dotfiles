@@ -138,7 +138,6 @@
       settings = {
         fps_limit = 120;
         full = true;
-        vsync = 0;
       };
     };
     readline = {
