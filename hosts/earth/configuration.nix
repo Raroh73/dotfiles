@@ -122,7 +122,10 @@
       jack.enable = true;
       pulse.enable = true;
     };
-    printing.enable = true;
+    printing = {
+      enable = true;
+      browsed.enable = false;
+    };
     unbound.enable = true;
     xserver = {
       enable = true;
