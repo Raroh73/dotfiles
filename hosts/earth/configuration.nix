@@ -106,12 +106,7 @@
     };
     openssh = {
       enable = true;
-      openFirewall = true;
-      settings = {
-        KbdInteractiveAuthentication = false;
-        PasswordAuthentication = false;
-        PermitRootLogin = "no";
-      };
+      openFirewall = false;
     };
     pipewire = {
       enable = true;
