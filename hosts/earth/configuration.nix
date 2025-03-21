@@ -49,6 +49,10 @@
       enable = true;
       enable32Bit = true;
     };
+    sane = {
+      enable = true;
+      sane.extraBackends = [ pkgs.sane-airscan ];
+    };
     xone.enable = true;
   };
 
@@ -135,7 +139,9 @@
       raroh73 = {
         description = "Raroh73";
         extraGroups = [
+          "lp"
           "networkmanager"
+          "scanner"
           "wheel"
         ];
         hashedPasswordFile = config.age.secrets.raroh73-earth-password.path;
