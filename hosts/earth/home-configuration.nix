@@ -90,14 +90,13 @@
   programs = {
     atuin = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
       flags = [ "--disable-up-arrow" ];
     };
-    bash.enable = true;
     bottom.enable = true;
     direnv = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
       nix-direnv.enable = true;
     };
     firefox = {
@@ -140,17 +139,6 @@
         full = true;
       };
     };
-    readline = {
-      enable = true;
-      bindings = {
-        "\\e[A" = "history-search-backward";
-        "\\e[B" = "history-search-forward";
-      };
-      variables = {
-        completion-ignore-case = true;
-        show-all-if-ambiguous = true;
-      };
-    };
     ssh = {
       enable = true;
       matchBlocks = {
@@ -162,7 +150,7 @@
     };
     starship = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
     };
     vscode = {
       enable = true;
@@ -227,6 +215,19 @@
           };
           "version" = "2";
         };
+      };
+    };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion = {
+        enable = true;
+      };
+      historySubstringSearch = {
+        enable = true;
+      };
+      syntaxHighlighting = {
+        enable = true;
       };
     };
   };

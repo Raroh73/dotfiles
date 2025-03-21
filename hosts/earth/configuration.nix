@@ -88,6 +88,7 @@
     gamemode.enable = true;
     nix-ld.enable = true;
     steam.enable = true;
+    zsh.enable = true;
   };
 
   security.rtkit.enable = true;
@@ -144,6 +145,7 @@
         ];
         hashedPasswordFile = config.age.secrets.raroh73-earth-password.path;
         isNormalUser = true;
+        shell = pkgs.zsh;
       };
     };
   };
